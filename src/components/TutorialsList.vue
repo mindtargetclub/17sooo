@@ -21,19 +21,41 @@
               multiple
               no-title
               scrollable
-            >
-               
+            > 
         </v-date-picker> -->
              
           
-        </li>
-
-
+        </li> 
       </ul>
 
+        
 
+         <v-container fluid> 
+                <v-select 
+                  :items="season_states"
+                  label="請選擇"
+                  multiple
+                  chips
+                  hint="這是一個測試選項"
+                  persistent-hint
+                ></v-select> 
+          </v-container> 
 
+ 
+        <v-container fluid> 
+                <v-select 
+                  :items="FVB"
+                  label="HashTag"
+                  multiple
+                  chips
+                  hint="請選一個 基本設置"
+                  persistent-hint
+                ></v-select> 
+          </v-container>  
 
+<button class="m-3 btn btn-sm btn-danger" @click="removeAllTutorials">
+        增加一個數
+      </button>
 
       <button class="m-3 btn btn-sm btn-danger" @click="removeAllTutorials">
         移除所有資料
@@ -51,6 +73,9 @@
         <p>Please 確認 on a Tutorial...</p>
       </div>
     </div>
+<hr>
+ 
+
   </div>
 </template>
 
@@ -61,21 +86,26 @@ import TutorialDetails from "./TutorialMdf";
 export default {
   name: "tutorials-list",
   components: { TutorialDetails },
-
+  
 
   data() {
-    return {
+    return { 
+      FVB:[],
+      tempp: [], 
+      season_states2:[{"description":"我都不知道"},{"description":"這是測試 3"}],
+      season_states:['s1', 's2', 's3', 's4',],
       tutorials: [],
       currentTutorial: null,
       currentIndex: -1
     };
-  },
-
-
-
-  methods: {
+  }, 
+  methods: { 
     onDataChange(items) {
+       
       let _tutorials = [];
+      let _tu = [];
+      let _tu_dtl2 = [];
+
 
       items.forEach((item) => {
         let key = item.key;
@@ -90,7 +120,67 @@ export default {
         });
       });
 
-      this.tutorials = _tutorials;
+    //  ::  藉由使用  ::
+    var temp_ary = _tutorials.map(function(item, index, array){ 
+        if (item.description !== '') {
+              return item.description;
+            }  
+      }) ; 
+    this.FVB = temp_ary ;
+    console.log('- - - < temp_ary > - - -');  
+    console.log(temp_ary); 
+
+
+
+
+
+
+
+// // 這邊是   ::外加的新資料::
+//       var result = [];    
+
+//       items.forEach((item) => {
+//         let keey = item.key;
+//         let datae = item.val();
+//         _tu.push({ 
+//           description: datae.description, 
+//         });  
+        
+//       }); 
+
+//       this.tutorials = _tutorials; 
+//       this.tempp = JSON.stringify(_tu, ["description"], 0);
+       
+       
+
+
+//       console.log(_tutorials); 
+
+      
+//       console.log('- - - <tu> - - -');
+//       console.log(_tu);
+//       console.log('- - - < tu_dtl2 > - - -');
+//       console.log(_tu_dtl2);
+
+//       console.log('- - - < result__result > - - -');  
+      
+
+//       result = JSON.stringify(_tu, ["description"], 0)
+//       console.log(result );    
+
+ 
+
+ 
+
+       
+       
+
+
+// var cloned_array = JSON.parse( JSON.stringify(_tu, ["description"], 0),(2,'description') );
+// console.log(cloned_array);
+      // const animals = ['pigsss', 'goasts', 'sheep']
+      //  console.log(animals);
+      //  console.log(this.tempp);
     },
 
     refreshList() {
@@ -112,13 +202,21 @@ export default {
           console.log(e);
         });
     },
+
+    
   },
   mounted() {
+    // console.log(_tutorials.title);  
     TutorialDataService.getAll().on("value", this.onDataChange);
+    
+
+    
   },
   beforeDestroy() {
     TutorialDataService.getAll().off("value", this.onDataChange);
-  }
+  }, 
+
+    
 };
 </script>
 

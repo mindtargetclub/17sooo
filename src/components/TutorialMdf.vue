@@ -82,25 +82,25 @@
     </form>
 
     <button
-      class="badge badge-primary mr-2"
+      class="border-2 border-solid px-2 mr-2"
       v-if="currentTutorial.published"
       @click="updatePublished(false)"
     >
-      UnPublish
+      未發佈
     </button>
     <button
       v-else
-      class="badge badge-primary mr-2"
+      class="border-2 border-solid px-2 mr-2"
       @click="updatePublished(true)"
     >
       儲存
     </button>
 
-    <button class="badge badge-danger mr-2" @click="deleteTutorial">
+    <button class="border-2 border-solid px-2 mr-2" @click="deleteTutorial">
       刪除
     </button>
 
-    <button type="submit" class="border-2 border-solid  px-2 " @click="updateTutorial">
+    <button type="submit" class="border-2 border-solid px-2" @click="updateTutorial">
       更新
     </button>
     <p>{{ message }}</p>

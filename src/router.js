@@ -6,12 +6,12 @@ Vue.use(Router);
 export default new Router({
   // mode: "history",
   routes: [
-    {
-      path: "/",
-      alias: "/tutorials",
-      name: "tutorials",
-      component: () => import("./components/TutorialsList")
-    },
+    // {
+    //   path: "/",
+    //   alias: "/tutorials",
+    //   name: "tutorials",
+    //   component: () => import("./components/TutorialsList")
+    // },
     {
       path: "/add",
       name: "add",
@@ -23,16 +23,30 @@ export default new Router({
       component: () => import("./components/v3")
     },
     {
-      path: "/WordAdd",
-      name: "WordAdd",
-      component: () => import("./components/WordAdd")
+      path: "/",
+      name: "PMSAdd",
+      component: () => import("./components/PMSAdd")
     },
     {
-      path: "/WordList",
-      name: "WordList",
-      component: () => import("./components/WordList")
+      path: "/PMSAdd",
+      name: "PMSAdd",
+      component: () => import("./components/PMSAdd")
     },
-     
+    {
+      path: "/PMSList",
+      name: "PMSList",
+      component: () => import("./components/PMSList")
+    }, 
+    {
+      path: "/PMNAdd",
+      name: "PMNAdd",
+      component: () => import("./components/PMNAdd")
+    },
+    {
+      path: "/PMNList",
+      name: "PMNList",
+      component: () => import("./components/PMNList")
+    },
     {
       path: "/cardDisplay",
       name: "cardDisplay",

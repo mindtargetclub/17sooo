@@ -22,6 +22,15 @@ class TutorialDataService {
   deleteAll() {
     return db.remove();
   }
+
+
+  getRef() {
+    return db.no('value',(snapshot) => {
+
+console.log(snapshot.val());
+
+      });
+  }
 }
 
 export default new TutorialDataService();
