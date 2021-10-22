@@ -144,103 +144,129 @@
                 <div class="border-1 border-gray-300 rounded-lg p-2 col-span-1  ">  
                   <!-- <strong> 首次消費： </strong> -->
                      
-                    <strong>接駁：</strong> 小計： {{ }} 元
+                    <strong>接駁：</strong> {{ sumBus([pNote.bus_1W, pNote.bus_2W]) }}  元
+
+  
                       <div class="md:grid grid-cols-2 gap-2 "> 
                         <div class=" md:p-2 col-span-2">
+                          <!-- <v-select 
+                           
+                          ></v-select> -->
+                          
                           <v-select
-                            v-model="PMN.Payment_Type"
+                            v-model="pNote.bus_1W"
                             :items="cntPeoepe"
                             prepend-icon="mdi-bus"
-                            label="單趟.接駁人數" 
+                            label="單趟.接駁..人數" 
                             solo
                             chips 
-                            persistent-hint
+                            persistent-hint  
                           ></v-select>  
 
                           <v-select
-                            v-model="PMN.Payment_TypeDown"
+                            v-model='pNote.bus_2W'
                             :items="cntPeoepe" 
                             prepend-icon="mdi-swap-horizontal"
                             label="來回.接駁人數" 
                             solo
                             chips 
-                            persistent-hint
+                            persistent-hint 
                           ></v-select>
                         </div> 
+                        <div class=" md:p-2 col-span-2">
+                          <v-select
+                            v-model='pNote.bus_payW'
+                            :items="temp_payType"  
+                            label="支付方式"  
+                            chips 
+                            filled
+                            persistent-hint
+                          ></v-select>
+                        </div>  
                         <!-- <a class="col-span-2 "> </a> -->
                         
                       </div> 
                       
                   </div> 
-        <div class="border-1 border-gray-300 rounded-lg p-2 col-span-1 "> 
-                    <strong>弓具：</strong> 小計： {{ }} 元
+<div class="border-1 border-gray-300 rounded-lg p-2 col-span-2  ">  
+                  <div class="md:grid grid-cols-2 gap-4">
+        <div class=" col-span-1 ">                  
+                    <strong>弓具：</strong> {{ sumTools([pNote.tool_1, pNote.tool_2,pNote.tool_3,pNote.tool_4,pNote.tool_prd1,pNote.tool_prd2]) }}   元
                       <div class="md:grid grid-cols-2 "> 
                         <div class=" md:p-2 ">
                           <v-select
-                            v-model="PMN.Payment_Type"
+                            v-model='pNote.tool_1'
                             :items="cntPeoepe" 
                             chips  
                             label="傳統弓 100" 
-                            persistent-hint
+                            persistent-hint 
                           ></v-select> 
                         </div>  
                         <div class=" md:p-2 ">
                           <v-select
-                            v-model="PMN.Payment_TypeDown"
+                            v-model='pNote.tool_2'
                             :items="cntPeoepe"  
                             label="反曲弓 200"  
                             chips 
-                            persistent-hint
+                            persistent-hint 
                           ></v-select>
                         </div> 
                         <div class=" md:p-2 ">
                           <v-select
-                            v-model="PMN.Payment_Type"
+                            v-model='pNote.tool_3'
                             :items="cntPeoepe" 
                             label=" 複合弓 200"  
                             chips  
-                            persistent-hint
+                            persistent-hint 
                           ></v-select> 
                         </div>  
                         <div class=" md:p-2 ">
                           <v-select
-                            v-model="PMN.Payment_TypeDown"
+                            v-model='pNote.tool_4'
                             :items="cntPeoepe"  
                             label="租箭(6支) 100"  
                             chips 
-                            persistent-hint
+                            persistent-hint 
                           ></v-select>
                         </div>  
                         <div class=" md:p-2 ">
                           <v-select
-                            v-model="PMN.Payment_TypeDown"
+                            v-model='pNote.tool_prd1'
                             :items="cntPeoepe"  
                             label="輕.體驗 400"  
                             chips 
-                            persistent-hint
+                            persistent-hint 
                           ></v-select>
                          </div>  
                          <div class=" md:p-2 ">
                           <v-select
-                            v-model="PMN.Payment_TypeDown"
+                            v-model='pNote.tool_prd2'
                             :items="cntPeoepe"
                             label="晚.體驗 500"   
                             chips 
-                            persistent-hint
+                            persistent-hint 
                           ></v-select>
                         </div> 
-                        <div class=" md:pt-5 cols-2">  
-                        </div> 
+                         <div class=" md:p-2 col-span-2">
+                          <v-select
+                            v-model='pNote.tool_payW'
+                            :items="temp_payType"  
+                            label="支付方式" 
+                            chips
+                            filled
+                            persistent-hint
+                          ></v-select>
+                        </div>  
                       </div>   
                     </div> 
 
 
-        <div class="border-1 border-gray-300 rounded-lg p-2 col-span-1 ">
-        <strong> 場地： </strong> 小計： {{ }} 元
+        <div class=" col-span-1 ">
+        <strong> 場地： </strong> {{ sumRoom([pNote.room_prd1,pNote.room_prd2]) }} 元
         <div class="md:grid grid-cols-2 gap-2 ">  
                     <div class=" md:p-2 ">
                           <v-select
-                            v-model="PMN.Payment_TypeDown"
+                            v-model='pNote.room_prd1'
                             :items="cntPeoepe"  
                             label="首次.場地費 200"  
                             chips 
@@ -249,7 +275,7 @@
                         </div>  
                         <div class=" md:p-2 ">
                           <v-select
-                            v-model="PMN.Payment_TypeDown"
+                            v-model='pNote.room_prd2'
                             :items="cntPeoepe"  
                             label="觀賞.清潔費 100"  
                             chips 
@@ -259,33 +285,47 @@
                          <div class=" md:p-2 col-span-2">
                           <v-select
                             v-model="PMN.Payment_TypeDown"
-                            :items="cntPeoepe"  
-                            label="支付方式"  
-                            chips 
+                            :items="temp_payType"  
+                            label="支付方式" 
+                            chips
+                            filled
                             persistent-hint
                           ></v-select>
                         </div>   
                     </div> 
                 </div>
+              </div>        
+          </div>  
         <div class="border-1 border-gray-300 rounded-lg p-2 col-span-1 ">
 
-        <strong> 續時加購： </strong> 小計： {{ }} 元
+        <strong> 續時加購： </strong> 
+        {{ sumAdd([pNote.addTm_prd1,pNote.addTm_prd2,pNote.addTm_prd3]) }} 元
+          
         <div class="md:grid grid-cols-2 gap-2 ">  
                        
                         <div class=" md:p-2 ">
                           <v-select
-                            v-model="PMN.Payment_Type"
+                            v-model='pNote.addTm_prd1'
                             :items="cntPeoepe" 
-                            label="標靶 200"  
+                            label="標靶 100"  
                             chips  
                             persistent-hint
                           ></v-select> 
                         </div>  
                         <div class=" md:p-2 ">
                           <v-select
-                            v-model="PMN.Payment_TypeDown"
+                            v-model='pNote.addTm_prd2'
                             :items="cntPeoepe"  
                             label="應用 300"  
+                            chips 
+                            persistent-hint
+                          ></v-select>
+                        </div>
+                        <div class=" md:p-2 ">
+                          <v-select
+                            v-model='pNote.addTm_prd3'
+                            :items="cntPeoepe"  
+                            label="投影互動 50"  
                             chips 
                             persistent-hint
                           ></v-select>
@@ -293,9 +333,10 @@
                         <div class=" md:p-2 col-span-2">
                           <v-select
                             v-model="PMN.Payment_TypeDown"
-                            :items="cntPeoepe"  
-                            label="支付方式"  
+                            :items="temp_payType"  
+                            label="支付方式" 
                             chips 
+                            filled 
                             persistent-hint
                           ></v-select>
                         </div>   
@@ -304,19 +345,26 @@
 
         <div class="border-1 border-gray-300 rounded-lg p-2 col-span-1 ">
        
-                                     <strong> 雜項： </strong>
+                  <strong> 雜項： {{ pNote.oth_iNcm }} 元 </strong>
                     <div class="  ">  
                        <v-textarea
-                            v-model="PMN.Payment_Type"
+                            v-model='pNote.oth_des'
                             label="可留下顧客臨時狀況.由當班教練向上呈報"  
                             chips 
                             persistent-hint
                           ></v-textarea> 
+                          <v-text-field   
+                            label="實收金額"
+                            v-model='pNote.oth_iNcm'
+                            solo
+                            clearable 
+                          ></v-text-field> 
                         <v-select
-                            v-model="PMN.Payment_TypeDown"
-                            :items="cntPeoepe"  
+                            v-model='pNote.oth_iNcm'
+                            :items="temp_payType"  
                             label="支付方式"  
-                            chips 
+                            chips
+                            filled 
                             persistent-hint
                           ></v-select> 
                     </div>  
@@ -337,23 +385,39 @@
           ></v-text-field> 
         </div>
         <div class="md:p-2 col-span-1  ">
-          <strong>首次結算金額：</strong>
+
+          <strong>應收金額：</strong>
+          {{  sum([pNote.bus_iNcm, pNote.tool_iNcm, pNote.room_iNcm, pNote.oth_iNcm]) }}
+        <br>
+          <!-- <strong>首次結算金額：</strong> -->
             <v-text-field
+              label="首次結算金額"
               solo  
+              clearable
+              v-model="PMN.input_money"
+            ></v-text-field> 
+        </div>
+        
+        <div class="md:p-2 col-span-1  ">
+          <!-- <strong>續時結算金額：</strong> -->
+            <strong>應收金額：</strong>
+          {{  sum([ pNote.addTm_iNcm ]) }}
+            <br>
+            <v-text-field
+              label="續時結算金額"
+              solo  
+              clearable
               v-model="PMN.input_money"
             ></v-text-field> 
         </div>
         <div class="md:p-2 col-span-1  ">
-          <strong>續時結算金額：</strong>
+          <!-- <strong>實收總金額：</strong> -->
+          <strong>應收金額：</strong>
+          {{  sum([pNote.bus_iNcm, pNote.tool_iNcm, pNote.room_iNcm, pNote.addTm_iNcm, pNote.oth_iNcm]) }}
             <v-text-field
+              label="實收總金額"
               solo  
-              v-model="PMN.input_money"
-            ></v-text-field> 
-        </div>
-        <div class="md:p-2 col-span-1  ">
-          <strong>實收總金額：</strong>
-            <v-text-field
-              solo  
+              clearable
               v-model="PMN.input_money"
             ></v-text-field>  
         </div>
@@ -364,6 +428,11 @@
             </button>   
         <a class="text-xs text-gray-300 col-span-5 " > 開始編輯時間：  {{ systime }} </a> 
       </div> 
+      {{nowPMS}}
+      <hr>
+       {{temp_toolsBorrow}}
+      <!-- <hr>
+        {{temp_toolsBorrow[0].price}} -->
    </v-container> 
                   
            </v-form> 
@@ -396,16 +465,53 @@ export default {
         date: null,
         menu: false,
         picker: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10), 
-        cntPeoepe:['0 位','1 位','2 位','3 位','4 位','5 位','6 位','7 位','8 位','9 位','10 位','11 位','12 位','13 位','14 位','15 位','16 位','17 位','18 位','19 位','20 位',],
+        cntPeoepe:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+        cntPeoepeP:['0 位','1 位','2 位','3 位','4 位','5 位','6 位','7 位','8 位','9 位','10 位','11 位','12 位','13 位','14 位','15 位','16 位','17 位','18 位','19 位','20 位',],
         Moneyflow:['現金','線上刷','抵用券','其他'],
         onlineRound:['06:00~','07:00~','08:00~','09:00~','10:00~','11:00~','12:00~',
                '13:00~','14:00~','15:00~','16:00~','17:00~','18:00~',
                '19:00~','20:00~','21:00~','22:00~','其他'], 
+ 
+          nowPMS:[], 
+          pNote:[{
+            bus_1W:[],
+            bus_2W:[],
+            bus_iNcm:[],
+            bus_payW:[],
+            tool_1:[],
+            tool_2:[],
+            tool_3:[],
+            tool_4:[],
+            tool_prd1:[],
+            tool_prd2:[],
+            tool_iNcm:[],
+            tool_payW:[],
+            room_prd1:[],
+            room_prd1:[],
+            room_iNcm:[],
+            room_payW:[],
+            addTm_prd1:[],
+            addTm_prd2:[],
+            addTm_prd3:[],
+            addTm_prd99:[],
+            addTm_iNcm:[],
+            addTm_payW:[],
+            oth_des:[],
+            oth_iNcm:[],
+            oth_payW:[],
+            // tool:[{ t1,t2,OneWay_P,DubWay_P,}],
+
+
+            total_income:[], 
+
+            status:[]
+          }], 
 
         PMN:{
             name:"",
-            input_money:0,  
-            Payment_Type:"",
+            input_money:"",  
+            Payment_Type:"", 
+            PM_note:[],
             status: false
           }, 
  
@@ -413,7 +519,8 @@ export default {
 
         submitted: false,
         temp_PaySetting:[],
-        temp_ToolsBorrow:[], 
+        temp_toolsBorrow:[], 
+        temp_busType:[],
         temp_mbrType:[],
         temp_roomType:[],
         temp_payType:[],
@@ -516,31 +623,15 @@ export default {
       });
 console.log("=========");
 console.log(_tutorials);
+this.nowPMS = _tutorials;
+
     //  ::  調用 已建檔.資料  ::
         var temp_ary = 
            _tutorials.map(function(item, index, array){ 
-              if (item.name !== '') 
-              {
-                return item.name;
-              }  
+              if (item.name !== '') { return item.name; }  
             }); 
         this.temp_PaySetting = temp_ary ; 
-        console.log(temp_ary);
-
-        
-        
-    //  ::  調用 已建檔.資料  ::
-        var temp_ary2 = 
-           _tutorials.map(function(item, index, array){ 
-              if (item.type == '弓具費用') 
-              {
-                return item.name;
-              }  
-              else{ return null; }
-            }); 
-        this.temp_ToolsBorrow = temp_ary2.filter(e => e != null);  
-        console.log("==== 首次場地費 金額 ===");  
-
+        console.log(temp_ary); 
 
     //  ::  調用 已建檔.資料  ::
         this.temp_payType = 
@@ -552,38 +643,130 @@ console.log(_tutorials);
         this.temp_mbrType = 
             _tutorials.map(function(item, index, array){ 
               if (item.type == '會員類別')  { return item.name; }  else{ return null; } }).filter(e => e != null);  
-        console.log(this.temp_mbrType);  
+        console.log(this.temp_mbrType); 
+        
+   //  ::  調用 已建檔.資料  ::
+        this.temp_cxtmType = 
+            _tutorials.map(function(item, index, array){ 
+              if (item.type == '顧客輪廓')  { return item.name; }  else{ return null; } }).filter(e => e != null);  
+        console.log(this.temp_cxtmType);  
+
+
+
+    //  ::  調用 已建檔.資料  ::
+        this.temp_busType = 
+            _tutorials.map(function(item, index, array){ 
+              if (item.type == '接駁費用')  { return {name:item.name ,price:item.price}; }  else{ return null; } }).filter(e => e != null);  
+        console.log(this.temp_busType);
+        
+        
+    //  ::  調用 已建檔.資料  ::
+        var temp_ary2 = 
+           _tutorials.map(function(item, index, array){ 
+              if (item.type == '弓具費用') { return {name:item.name ,price:item.price};  }else{ return null; }
+            }); 
+        this.temp_toolsBorrow = temp_ary2.filter(e => e != null);  
+        console.log("==== 首次場地費 金額 ===");  
 
     //  ::  調用 已建檔.資料  ::
         this.temp_addTimeType = 
             _tutorials.map(function(item, index, array){ 
-              if (item.type == '加時費用')  { return item.name; }  else{ return null; } }).filter(e => e != null);  
+              if (item.type == '加時費用')  { return {name:item.name ,price:item.price}; }  else{ return null; } }).filter(e => e != null);  
         console.log(this.temp_addTimeType);  
 
 
     //  ::  調用 已建檔.資料  ::
         this.temp_roomType = 
             _tutorials.map(function(item, index, array){ 
-              if (item.type == '場地費用')  { return item.name; }  else{ return null; } }).filter(e => e != null);  
+              if (item.type == '場地費用')  { return {name:item.name ,price:item.price}; }  else{ return null; } }).filter(e => e != null);  
         console.log(this.temp_roomType);  
-
-
-    //  ::  調用 已建檔.資料  ::
-        this.temp_cxtmType = 
-            _tutorials.map(function(item, index, array){ 
-              if (item.type == '顧客輪廓')  { return item.name; }  else{ return null; } }).filter(e => e != null);  
-        console.log(this.temp_roomType);  
-
-
-    //      var temp_ary3 = _tutorials.map(function(item, index, array){ if (item.type == '會員類別')  { return item.name; }else{ return null; } });  
-    //  this.temp_mbrType =temp_ary3;
-    //  console.log(temp_ary3);
-  
-// console.log("====con~~~~row);===");
-//     this.temp_mbrType = sparyPNSType(_tutorials,type,'弓具費用',name,'弓具費用');
-
+      },
+      sumRoom(nums){
+      let r = 0; 
+      let len = this.temp_roomType.length  
+        for (let i = 0; i < len; i++) { 
+          if(nums[i] == null){ nums[i]= 0 ;}
+          if(this.temp_roomType[i].price == null){ this.temp_roomType[i].price=1  ;}
+          r += nums[i]*this.temp_roomType[i].price
+        } 
+        this.pNote.room_iNcm = r ;
+        return r
+      },
+      sumAdd(nums){
+      let r = 0; 
+      let len = this.temp_addTimeType.length  
+        for (let i = 0; i < len; i++) { 
+          if(nums[i] == null){ nums[i]= 0 ;}
+          if(this.temp_addTimeType[i].price == null){ this.temp_addTimeType[i].price=1  ;}
+          r += nums[i]*this.temp_addTimeType[i].price
+        }  
+        this.pNote.addTm_iNcm  = r ;
+        return r
+      },
+      sumTools(nums){
+      let r  = 0; 
+      let len = this.temp_toolsBorrow.length  
+        for (let i = 0; i < len; i++) { 
+          if(nums[i] == null){ nums[i]= 0 ;}
+          if(this.temp_toolsBorrow[i].price == null){ this.temp_toolsBorrow[i].price=1  ;}
+          r += nums[i]*this.temp_toolsBorrow[i].price
+        }  
+        this.pNote.tool_iNcm= r ;
+        return r
+        
+      },
+      sumBus(nums){
+      let r = 0; 
+      let len = this.temp_busType.length
+        
+        for (let i = 0; i < len; i++) { 
+          if(nums[i] == null){ nums[i]= 0 ;}
+          if(this.temp_busType[i].price == null){ this.temp_busType[i].price=1  ;}
+          r += nums[i]*this.temp_busType[i].price
+        }
+        this.pNote.bus_iNcm = r ;
+        return r
+      }, 
+      sum(nums)
+      {
+        let result = 0;  
+        nums.forEach(function(n){ if(n == null){ n= 0 ;} result += n * 1; });
+        // if (result == null | result == "" ){ result=0; }
  
-      },   
+        return result
+      }, 
+//       cntiNcmm()
+//       {
+//         console.log("====console ==console =");
+//         console.log(selectObj)
+//         console.log(selectObj.src)
+//       }, 
+//       cntiNcm()
+//       {
+//         // let ttincome = this.pNote.bus_1W + this.pNote.bus_2W;
+//         // if( this.pNote.bus_1W == 'bus')
+// console.log("====con~~~~row);===");
+
+// let x = 0;
+//  x = this.pNote.bus_1W + this.pNote.bus_2W;
+// x = parseInt(this.pNote.bus_iNcm);
+        // this.pNote.bus_iNcm = ttincome;
+        //  console.log(">>>=  =<<<<" + parseInt(this.pNote.bus_1W));
+//         console.log(">>>=  =<<<<" + x);
+//  return x
+
+        // 
+        // console.log(">>>="+this.pNote.bus_1W[1]);
+        // console.log(">>>="+this.pNote.bus_2W[2]);
+
+        // if( z == 'bus') 
+
+        // console.log("====con~~~"+ttincome); 
+        // return this.pNote.bus_iNcm ;
+
+        
+           
+      // },
 
       ffd(arry,filter)
       {
@@ -627,7 +810,7 @@ console.log(_tutorials);
 
 <style>
 .submit-form {
-  max-width:  70%;
+  max-width:  90%;
   margin: auto;
 }
 </style>
@@ -770,3 +953,16 @@ console.log(_tutorials);
                         class="elevation-1"
                       ></v-data-table> 
                     </div>     -->
+
+
+
+                   <!-- 
+  // nums.forEach(function(n)
+  // { if(n == null){ n= 0 ;} 
+  //    result += nums[n]*this.temp_busType[n].price 
+  //   //  result += n * 1; 
+  
+  // });
+  // nums[0]*temp_busType[0].price +
+  // nums[1]*temp_busType[1].price 
+  -->

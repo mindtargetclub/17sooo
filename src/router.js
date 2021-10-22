@@ -24,8 +24,8 @@ export default new Router({
     },
     {
       path: "/",
-      name: "PMSAdd",
-      component: () => import("./components/PMSAdd")
+      name: "PMNAdd",
+      component: () => import("./components/PMNAdd")
     },
     {
       path: "/PMSAdd",
