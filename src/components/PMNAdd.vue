@@ -6,14 +6,14 @@
           <strong>基本資料：</strong>
             <div class="md:grid grid-cols-5 gap-4">
                 <div class="bg-gray-200 col-span-5 rounded-lg pt-3">
-                  <div class="md:grid grid-cols-4 gap-2">
+                  <div class="md:grid grid-cols-5 gap-2">
                     <div class=" md:p-2 ">
                         <v-text-field   
                           label="顧客姓名"
                           solo
                           clearable
                           prepend-inner-icon="mdi-creation"
-                          v-model="PMN.userName"
+                          v-model="pNote.bk_userName"
                         ></v-text-field>  
                     </div>  
                     <div class=" md:p-2 ">
@@ -22,7 +22,7 @@
                           solo
                           clearable
                           prepend-inner-icon="mdi-phone"
-                          v-model="PMN.userName"
+                          v-model="pNote.bk_phoneNum"
                         ></v-text-field>  
                     </div>  
                     <div class=" md:p-2 ">
@@ -37,7 +37,7 @@
 
                         <template v-slot:activator="{ on, attrs }">
                           <v-text-field
-                            v-model="date"
+                            v-model="pNote.bk_Date"
                             label="預約日期"
                             prepend-inner-icon="mdi-calendar"
                             readonly
@@ -47,7 +47,7 @@
                           ></v-text-field>
                         </template>
                         <v-date-picker
-                          v-model="date"
+                          v-model="pNote.bk_Date"
                           :active-picker.sync="activePicker"
                           :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
                           min="1950-01-01"
@@ -57,35 +57,58 @@
                     </div> 
                     <div class=" md:p-2">
                       <v-select 
+                        v-model="pNote.bk_Rd"
                         :items="onlineRound"
                         prepend-inner-icon="mdi-clipboard-check"
                         label="預約場次" 
                         solo
                         persistent-hint
-                      ></v-select> 
+                      ></v-select>
+                    </div>   
+                    <div class=" md:p-2 ">  
+                      <v-text-field   
+                        v-model="pNote.bk_memo"
+                        label="訂購註記"
+                        prepend-inner-icon=""
+                        solo
+                        clearable 
+                      ></v-text-field>
                     </div>   
                     <div class=" md:p-2 ">   
                       <v-select  
-                              v-model="PMN.Payment_Type"
-                              :items="temp_mbrType"
-                              prepend-inner-icon="mdi-account"
-                              label="會員類別"
-                              multiple
-                              solo
-                              persistent-hint
-                            ></v-select> 
+                        v-model="pNote.bk_cxtmType"
+                        :items="temp_mbrType"
+                        prepend-inner-icon="mdi-account"
+                        label="會員類別"
+                        multiple
+                        solo
+                        persistent-hint
+                      ></v-select> 
                     </div> 
                     <div class=" md:p-2 "> 
-                    <v-text-field   
-                            label="保險填註記"
-                            prepend-inner-icon="mdi-heart"
-                            solo
-                            clearable 
-                          ></v-text-field>
+                      <v-select  
+                        v-model="pNote.bk_gpType" 
+                        :items="temp_cxtmType"
+                        prepend-inner-icon="mdi-account"
+                        label="顧客輪廓"
+                        multiple
+                        solo
+                        persistent-hint
+                      ></v-select>
+                    </div> 
+                    <div class=" md:p-2 "> 
+                      <v-text-field   
+                        v-model="pNote.safeID_Note"
+                        label="保險填註記"
+                        prepend-inner-icon="mdi-heart"
+                        solo
+                        clearable 
+                      ></v-text-field>
                     </div> 
 
                     <div class=" md:p-2 col-span-1"> 
                         <v-select 
+                        v-model="pNote.bk_Amt"
                         :items="cntPeoepe"
                         prepend-inner-icon="mdi-widgets"
                         label="入場人數" 
@@ -97,14 +120,14 @@
                     <div class=" md:p-2  col-span-1">
                       <v-dialog
                         ref="dialog" 
-                        v-model="modal2"
+                        v-model="pNote.chkinTime"
                         :return-value.sync="time"
                         persistent
                         width="290px"
                         >
                         <template v-slot:activator="{ on, attrs }">
                           <v-text-field
-                            v-model="chkinTime"
+                            v-model="pNote.chkinTime"
                             label="報到時間"
                             prepend-inner-icon="mdi-clock-time-four-outline"
                             readonly
@@ -116,7 +139,7 @@
                         </template>
                         <v-time-picker
                           v-if="modal2"
-                          v-model="time"
+                          v-model="pNote.chkinTime"
                           full-width
                         >
                           <v-spacer></v-spacer>
@@ -284,7 +307,7 @@
                          </div>   
                          <div class=" md:p-2 col-span-2">
                           <v-select
-                            v-model="PMN.Payment_TypeDown"
+                            v-model="pNote.room_payW"
                             :items="temp_payType"  
                             label="支付方式" 
                             chips
@@ -360,7 +383,7 @@
                             clearable 
                           ></v-text-field> 
                         <v-select
-                            v-model='pNote.oth_iNcm'
+                            v-model='pNote.oth_payW'
                             :items="temp_payType"  
                             label="支付方式"  
                             chips
@@ -382,52 +405,51 @@
             label="經手人"
             solo
             clearable 
+            v-model="pNote.mdfEmpy"
           ></v-text-field> 
         </div>
+        <div class="md:p-2 pt-6 col-span-1  ">
+          <button 
+              @click="savePMN" 
+              class="btn btn-success my-2 md:p-2 col-span-1 text-2xl "  
+              > 儲存收費 紀錄
+            </button>  
+        </div>
+
+         
+
         <div class="md:p-2 col-span-1  ">
 
           <strong>應收金額：</strong>
-          {{  sum([pNote.bus_iNcm, pNote.tool_iNcm, pNote.room_iNcm, pNote.oth_iNcm]) }}
+          {{  sum([pNote.bus_iNcm, pNote.tool_iNcm, pNote.room_iNcm, pNote.addTm_iNcm, pNote.oth_iNcm]) }}
         <br>
           <!-- <strong>首次結算金額：</strong> -->
             <v-text-field
               label="首次結算金額"
               solo  
-              clearable
               v-model="PMN.input_money"
             ></v-text-field> 
         </div>
-        
         <div class="md:p-2 col-span-1  ">
-          <!-- <strong>續時結算金額：</strong> -->
-            <strong>應收金額：</strong>
-          {{  sum([ pNote.addTm_iNcm ]) }}
-            <br>
+          <strong>續時結算金額：</strong>
+          {{  sum([ pNote.addTm_iNcm, pNote.oth_iNcm]) }}
             <v-text-field
               label="續時結算金額"
               solo  
-              clearable
               v-model="PMN.input_money"
             ></v-text-field> 
         </div>
         <div class="md:p-2 col-span-1  ">
-          <!-- <strong>實收總金額：</strong> -->
-          <strong>應收金額：</strong>
-          {{  sum([pNote.bus_iNcm, pNote.tool_iNcm, pNote.room_iNcm, pNote.addTm_iNcm, pNote.oth_iNcm]) }}
+          <strong>總金額(實收)：</strong>
             <v-text-field
               label="實收總金額"
               solo  
-              clearable
               v-model="PMN.input_money"
             ></v-text-field>  
-        </div>
-        <button 
-              @click="savePMN" 
-              class="btn btn-success my-2 md:p-2 col-span-1 text-2xl "  
-              > 儲存收費 紀錄
-            </button>   
+        </div> 
         <a class="text-xs text-gray-300 col-span-5 " > 開始編輯時間：  {{ systime }} </a> 
       </div> 
+
       {{nowPMS}}
       <hr>
        {{temp_toolsBorrow}}
@@ -473,11 +495,24 @@ export default {
                '19:00~','20:00~','21:00~','22:00~','其他'], 
  
           nowPMS:[], 
-          pNote:[{
-            bus_1W:[],
-            bus_2W:[],
-            bus_iNcm:[],
-            bus_payW:[],
+          pNote:[{ 
+            bk_userName:"",
+            bk_phoneNum:"",
+            bk_Date:"",
+            bk_Rd:"",
+            bk_Amt:"",
+            
+            safeID_Note:"",
+            chkin_Time:"",
+
+            bk_memo:"",
+            bk_gpType:"",
+            bk_cxtmType:"",
+
+            bus_1W:"",
+            bus_2W:"",
+            bus_iNcm:"",
+            bus_payW:"",
             tool_1:[],
             tool_2:[],
             tool_3:[],
@@ -496,20 +531,25 @@ export default {
             addTm_prd99:[],
             addTm_iNcm:[],
             addTm_payW:[],
-            oth_des:[],
+            oth_des:"",
             oth_iNcm:[],
             oth_payW:[],
             // tool:[{ t1,t2,OneWay_P,DubWay_P,}],
 
+            fst_iNcm:[], 
+            scd_iNcm:[],  
+            all_iNcm:[], 
 
-            total_income:[], 
+            mdfEmpy:"",
 
+            crtDateTime:"",
+            mdfDateTime:"",
             status:[]
           }], 
 
         PMN:{
             name:"",
-            input_money:"",  
+            input_money:0,  
             Payment_Type:"", 
             PM_note:[],
             status: false
@@ -526,72 +566,7 @@ export default {
         temp_payType:[],
         temp_addTimeType:[],
         temp_cxtmType:[],
-
-// ...       ....
-        servdtl_hds: [
-          {
-            text: 'Dessert (100g serving)',
-            align: 'start',
-            sortable: false,
-            value: 'name',
-          },
-          { text: 'Calories', value: 'calories' },
-          { text: 'Fat (g)', value: 'fat' },
-          { text: 'Carbs (g)', value: 'carbs' },
-          { text: 'Protein (g)', value: 'protein' },
-          { text: 'Iron (%)', value: 'iron' },
-        ],
-        PMN_2: [
-          {
-            name: 'Frozen Yogurt',
-            calories: 159,
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            iron: '1%',
-          },
-          {
-            name: 'Ice cream sandwich',
-            calories: 237,
-            fat: 9.0,
-            carbs: 37,
-            protein: 4.3,
-            iron: '1%',
-          }, 
-          {
-            name: 'Lollipop',
-            calories: 392,
-            fat: 0.2,
-            carbs: 98,
-            protein: 0,
-            iron: '2%',
-          },
-          {
-            name: 'Honeycomb',
-            calories: 408,
-            fat: 3.2,
-            carbs: 87,
-            protein: 6.5,
-            iron: '45%',
-          },
-          {
-            name: 'Donut',
-            calories: 452,
-            fat: 25.0,
-            carbs: 51,
-            protein: 4.9,
-            iron: '22%',
-          },
-          {
-            name: 'KitKat',
-            calories: 518,
-            fat: 26.0,
-            carbs: 65,
-            protein: 7,
-            iron: '6%',
-          }, 
-      ]
-// ...       ....
+ 
 
     };
   }, 
@@ -734,55 +709,32 @@ this.nowPMS = _tutorials;
         // if (result == null | result == "" ){ result=0; }
  
         return result
-      }, 
-//       cntiNcmm()
-//       {
-//         console.log("====console ==console =");
-//         console.log(selectObj)
-//         console.log(selectObj.src)
-//       }, 
-//       cntiNcm()
-//       {
-//         // let ttincome = this.pNote.bus_1W + this.pNote.bus_2W;
-//         // if( this.pNote.bus_1W == 'bus')
-// console.log("====con~~~~row);===");
-
-// let x = 0;
-//  x = this.pNote.bus_1W + this.pNote.bus_2W;
-// x = parseInt(this.pNote.bus_iNcm);
-        // this.pNote.bus_iNcm = ttincome;
-        //  console.log(">>>=  =<<<<" + parseInt(this.pNote.bus_1W));
-//         console.log(">>>=  =<<<<" + x);
-//  return x
-
-        // 
-        // console.log(">>>="+this.pNote.bus_1W[1]);
-        // console.log(">>>="+this.pNote.bus_2W[2]);
-
-        // if( z == 'bus') 
-
-        // console.log("====con~~~"+ttincome); 
-        // return this.pNote.bus_iNcm ;
-
-        
-           
-      // },
-
-      ffd(arry,filter)
-      {
-        arry.map(e => {
-
-          if(  e.name == filter)
-                return e.price; 
-            });
-        return arry ;
-      },
+      },  
+      
 
       savePMN() {
         var data = {
-          userName: this.PMN.userName,
-          input_money: this.PMN.input_money, 
-          Payment_Type:this.PMN.Payment_Type,
+
+          // userName:"ff",
+          bk_userName : this.pNote.bk_userName, ///(ok)
+          bk_phoneNum : this.pNote.bk_phoneNum, ///(ok)
+          // bk_Date     : this.pNote.bk_Date,
+          bk_Rd       : this.pNote.bk_Rd,  ///(ok)
+          bk_Amt      : this.pNote.bk_Amt,  ///(ok)
+          safeID_Note : this.pNote.safeID_Note,   ///(ok)
+
+          bk_note     : this.pNote.bk_note,    ///(ok)
+          bk_gpType   : this.pNote.bk_gpType,  ///(ok)
+          bk_cxtmType : this.pNote.bk_cxtmType,///(ok)
+
+          // input_money : this.pNote.input_money, 
+          // Payment_Type: this.pNote.Payment_Type, 
+
+          mdfEmpy : this.pNote.mdfEmpy,///(ok)
+          // fst_iNcm: this.sum([pNote.bus_iNcm, pNote.tool_iNcm, pNote.room_iNcm, pNote.addTm_iNcm, pNote.oth_iNcm ]),
+          // scd_iNcm: this.sum([ pNote.addTm_iNcm, pNote.oth_iNcm]),
+          // all_iNcm: this.sum([pNote.bus_iNcm, pNote.tool_iNcm, pNote.room_iNcm, pNote.addTm_iNcm, pNote.oth_iNcm,pNote.addTm_iNcm, pNote.oth_iNcm ]), 
+          // mdfDateTime : moment().format('YYYY/MM/D hh:mm:ss SSS'),
           status: true
         };
 
