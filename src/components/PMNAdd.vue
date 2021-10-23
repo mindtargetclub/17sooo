@@ -450,9 +450,9 @@
         <a class="text-xs text-gray-300 col-span-5 " > 開始編輯時間：  {{ systime }} </a> 
       </div> 
 
-      {{nowPMS}}
+      <!-- {{nowPMS}} -->
       <hr>
-       {{temp_toolsBorrow}}
+       <!-- {{temp_toolsBorrow}} -->
       <!-- <hr>
         {{temp_toolsBorrow[0].price}} -->
    </v-container> 
