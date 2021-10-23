@@ -13,7 +13,7 @@ export default new Router({
     //   component: () => import("./components/TutorialsList")
     // },
     {
-      path: "/posGM",
+      path: "/posGM_0",
       name: "posGM",
       component: () => import("./components/posGM")
     }, 

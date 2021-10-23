@@ -6,472 +6,256 @@
 <v-form>
       <v-container > 
 
-
-<div class="md:grid grid-cols-2   ">
-   <div class=" md:px-2 col-span-1">
-    <strong> 北北東目前人數：</strong>
- 
-{{ pos_1ttP[0].cntPlayer + pos_1ttP[1].cntPlayer +
-   pos_1ttP[2].cntPlayer + pos_1ttP[3].cntPlayer +
-   pos_1ttP[4].cntPlayer + pos_1ttP[5].cntPlayer }}
-  <v-card class="my-2"> 
-    <div class="md:grid grid-cols-4 gapx-2 "> 
-      <div class=" md:px-2 col-span-1 ">
-          <v-text-field   
-            label="顧客代稱"
-            solos
-            clearable 
-          ></v-text-field>   
-        </div>
-
-        <div class=" md:px-2 col-span-1 ">
-          <v-select 
-            v-model="pos_1ttP[0].cntPlayer"
-            :items="cntPeoepe" 
-            label="使用人數" 
-            filled
-            persistent-hint  
-          ></v-select>   
-        </div>   
-
-        <v-select 
-          :items="onlineRound" 
-          label="入場次別" 
-          chips 
-          persistent-hint  
-        ></v-select>  
-
-        <v-select 
-          :items="onlineRound" 
-          label="加時狀況"  
-          chips 
-          multiple
-          persistent-hint  
-        ></v-select>   
-      </div>       
-    </v-card> 
-
-      <v-card class="my-2"> 
-    <div class="md:grid grid-cols-4 gapx-2 "> 
-      <div class=" md:px-2 col-span-1 ">
-          <v-text-field   
-            label="顧客代稱"
-            solos
-            clearable 
-          ></v-text-field>   
-        </div>
-
-        <div class=" md:px-2 col-span-1 ">
-          <v-select 
-            v-model="pos_1ttP[1].cntPlayer"
-            :items="cntPeoepe" 
-            label="使用人數" 
-            filled
-            persistent-hint  
-          ></v-select>   
-        </div>   
-
-        <v-select 
-          :items="onlineRound" 
-          label="入場次別" 
-          chips 
-          persistent-hint  
-        ></v-select>  
-
-        <v-select 
-          :items="onlineRound" 
-          label="加時狀況"  
-          chips 
-          multiple
-          persistent-hint  
-        ></v-select>   
-      </div>       
-    </v-card> 
-
-      <v-card class="my-2"> 
-    <div class="md:grid grid-cols-4 gapx-2 "> 
-      <div class=" md:px-2 col-span-1 ">
-          <v-text-field   
-            label="顧客代稱"
-            solos
-            clearable 
-          ></v-text-field>   
-        </div>
-
-        <div class=" md:px-2 col-span-1 ">
-          <v-select 
-            v-model="pos_1ttP[2].cntPlayer"
-            :items="cntPeoepe" 
-            label="使用人數" 
-            filled
-            persistent-hint  
-          ></v-select>   
-        </div>   
-
-        <v-select 
-          :items="onlineRound" 
-          label="入場次別" 
-          chips 
-          persistent-hint  
-        ></v-select>  
-
-        <v-select 
-          :items="onlineRound" 
-          label="加時狀況"  
-          chips 
-          multiple
-          persistent-hint  
-        ></v-select>   
-      </div>       
-    </v-card> 
-
-      <v-card class="my-2"> 
-    <div class="md:grid grid-cols-4 gapx-2 "> 
-      <div class=" md:px-2 col-span-1 ">
-          <v-text-field   
-            label="顧客代稱"
-            solos
-            clearable 
-          ></v-text-field>   
-        </div>
-
-        <div class=" md:px-2 col-span-1 ">
-          <v-select 
-            v-model="pos_1ttP[3].cntPlayer"
-            :items="cntPeoepe" 
-            label="使用人數" 
-            filled
-            persistent-hint  
-          ></v-select>   
-        </div>   
-
-        <v-select 
-          :items="onlineRound" 
-          label="入場次別" 
-          chips 
-          persistent-hint  
-        ></v-select>  
-
-        <v-select 
-          :items="onlineRound" 
-          label="加時狀況"  
-          chips 
-          multiple
-          persistent-hint  
-        ></v-select>   
-      </div>       
-    </v-card> 
-
-      <v-card class="my-2"> 
-    <div class="md:grid grid-cols-4 gapx-2 "> 
-      <div class=" md:px-2 col-span-1 ">
-          <v-text-field   
-            label="顧客代稱"
-            solos
-            clearable 
-          ></v-text-field>   
-        </div>
-
-        <div class=" md:px-2 col-span-1 ">
-          <v-select 
-            v-model="pos_1ttP[4].cntPlayer"
-            :items="cntPeoepe" 
-            label="使用人數" 
-            filled
-            persistent-hint  
-          ></v-select>   
-        </div>   
-
-        <v-select 
-          :items="onlineRound" 
-          label="入場次別" 
-          chips 
-          persistent-hint  
-        ></v-select>  
-
-        <v-select 
-          :items="onlineRound" 
-          label="加時狀況"  
-          chips 
-          multiple
-          persistent-hint  
-        ></v-select>   
-      </div>       
-    </v-card> 
-
-  <v-card class="my-2"> 
-    <div class="md:grid grid-cols-4 gapx-2 "> 
-      <div class=" md:px-2 col-span-1 ">
-          <v-text-field   
-            label="顧客代稱"
-            solos
-            clearable 
-          ></v-text-field>   
-        </div>
-
-        <div class=" md:px-2 col-span-1 ">
-          <v-select 
-            v-model="pos_1ttP[5].cntPlayer"
-            :items="cntPeoepe" 
-            label="使用人數" 
-            filled
-            persistent-hint  
-          ></v-select>   
-        </div>   
-
-        <v-select 
-          :items="onlineRound" 
-          label="入場次別" 
-          chips 
-          persistent-hint  
-        ></v-select>  
-
-        <v-select 
-          :items="onlineRound" 
-          label="加時狀況"  
-          chips 
-          multiple
-          persistent-hint  
-        ></v-select>   
-      </div>       
-    </v-card> 
-
- 
-   </div> 
-
-   <div class=" md:px-2 col-span-1"> 
-    <strong> 中央目前人數：</strong>
- 
-{{ pos_2ttP[0].cntPlayer + pos_2ttP[1].cntPlayer +
-   pos_2ttP[2].cntPlayer + pos_2ttP[3].cntPlayer +
-   pos_2ttP[4].cntPlayer + pos_2ttP[5].cntPlayer }}
-
-
-<v-card class="my-2"> 
-    <div class="md:grid grid-cols-4 gapx-2 "> 
-      <div class=" md:px-2 col-span-1 ">
-          <v-text-field   
-            label="顧客代稱"
-            solos
-            clearable 
-          ></v-text-field>   
-        </div>
-
-        <div class=" md:px-2 col-span-1 ">
-          <v-select 
-            v-model="pos_2ttP[0].cntPlayer"
-            :items="cntPeoepe" 
-            label="使用人數" 
-            filled
-            persistent-hint  
-          ></v-select>   
-        </div>   
-
-        <v-select 
-          :items="onlineRound" 
-          label="入場次別" 
-          chips 
-          persistent-hint  
-        ></v-select>  
-
-        <v-select 
-          :items="onlineRound" 
-          label="加時狀況"  
-          chips 
-          multiple
-          persistent-hint  
-        ></v-select>   
-      </div>       
-    </v-card> 
-
-      <v-card class="my-2"> 
-    <div class="md:grid grid-cols-4 gapx-2 "> 
-      <div class=" md:px-2 col-span-1 ">
-          <v-text-field   
-            label="顧客代稱"
-            solos
-            clearable 
-          ></v-text-field>   
-        </div>
-
-        <div class=" md:px-2 col-span-1 ">
-          <v-select 
-            v-model="pos_2ttP[1].cntPlayer"
-            :items="cntPeoepe" 
-            label="使用人數" 
-            filled
-            persistent-hint  
-          ></v-select>   
-        </div>   
-
-        <v-select 
-          :items="onlineRound" 
-          label="入場次別" 
-          chips 
-          persistent-hint  
-        ></v-select>  
-
-        <v-select 
-          :items="onlineRound" 
-          label="加時狀況"  
-          chips 
-          multiple
-          persistent-hint  
-        ></v-select>   
-      </div>       
-    </v-card> 
-
-      <v-card class="my-2"> 
-    <div class="md:grid grid-cols-4 gapx-2 "> 
-      <div class=" md:px-2 col-span-1 ">
-          <v-text-field   
-            label="顧客代稱"
-            solos
-            clearable 
-          ></v-text-field>   
-        </div>
-
-        <div class=" md:px-2 col-span-1 ">
-          <v-select 
-            v-model="pos_2ttP[2].cntPlayer"
-            :items="cntPeoepe" 
-            label="使用人數" 
-            filled
-            persistent-hint  
-          ></v-select>   
-        </div>   
-
-        <v-select 
-          :items="onlineRound" 
-          label="入場次別" 
-          chips 
-          persistent-hint  
-        ></v-select>  
-
-        <v-select 
-          :items="onlineRound" 
-          label="加時狀況"  
-          chips 
-          multiple
-          persistent-hint  
-        ></v-select>   
-      </div>       
-    </v-card> 
-
-      <v-card class="my-2"> 
-    <div class="md:grid grid-cols-4 gapx-2 "> 
-      <div class=" md:px-2 col-span-1 ">
-          <v-text-field   
-            label="顧客代稱"
-            solos
-            clearable 
-          ></v-text-field>   
-        </div>
-
-        <div class=" md:px-2 col-span-1 ">
-          <v-select 
-            v-model="pos_2ttP[3].cntPlayer"
-            :items="cntPeoepe" 
-            label="使用人數" 
-            filled
-            persistent-hint  
-          ></v-select>   
-        </div>   
-
-        <v-select 
-          :items="onlineRound" 
-          label="入場次別" 
-          chips 
-          persistent-hint  
-        ></v-select>  
-
-        <v-select 
-          :items="onlineRound" 
-          label="加時狀況"  
-          chips 
-          multiple
-          persistent-hint  
-        ></v-select>   
-      </div>       
-    </v-card> 
-
-      <v-card class="my-2"> 
-    <div class="md:grid grid-cols-4 gapx-2 "> 
-      <div class=" md:px-2 col-span-1 ">
-          <v-text-field   
-            label="顧客代稱"
-            solos
-            clearable 
-          ></v-text-field>   
-        </div>
-
-        <div class=" md:px-2 col-span-1 ">
-          <v-select 
-            v-model="pos_2ttP[4].cntPlayer"
-            :items="cntPeoepe" 
-            label="使用人數" 
-            filled
-            persistent-hint  
-          ></v-select>   
-        </div>   
-
-        <v-select 
-          :items="onlineRound" 
-          label="入場次別" 
-          chips 
-          persistent-hint  
-        ></v-select>  
-
-        <v-select 
-          :items="onlineRound" 
-          label="加時狀況"  
-          chips 
-          multiple
-          persistent-hint  
-        ></v-select>   
-      </div>       
-    </v-card> 
-
-  <v-card class="my-2"> 
-    <div class="md:grid grid-cols-4 gapx-2 "> 
-      <div class=" md:px-2 col-span-1 ">
-          <v-text-field   
-            label="顧客代稱"
-            solos
-            clearable 
-          ></v-text-field>   
-        </div>
-
-        <div class=" md:px-2 col-span-1 ">
-          <v-select 
-            v-model="pos_2ttP[5].cntPlayer"
-            :items="cntPeoepe" 
-            label="使用人數" 
-            filled
-            persistent-hint  
-          ></v-select>   
-        </div>   
-
-        <v-select 
-          :items="onlineRound" 
-          label="入場次別" 
-          chips 
-          persistent-hint  
-        ></v-select>  
-
-        <v-select 
-          :items="onlineRound" 
-          label="加時狀況"  
-          chips 
-          multiple
-          persistent-hint  
-        ></v-select>   
-      </div>       
-    </v-card> 
-
+ <div class=" md:p-2 col-span-1">
+    <strong> 北北東目前人數： {{  pos_1_ply.box2 + pos_1_ply.box3 + pos_1_ply.box4 + pos_1_ply.box5 }} / 24 </strong>
    </div>
-</div> 
+
+   <div class=" md:p-2 col-span-1">
+    <strong> 中央 目前人數： {{  pos_2_ply.box1 + pos_2_ply.box2 + pos_2_ply.box3 + pos_2_ply.box4 + pos_2_ply.box5 + pos_2_ply.box6}} / 36 </strong>
+   </div>
+
+   <div class=" md:p-2 col-span-1">
+    <strong> 南場 目前人數： {{  pos_3_ply.box1 + pos_3_ply.box2 + pos_3_ply.box3 + pos_3_ply.box4 + pos_3_ply.box5 }} / 22 </strong>
+   </div>
+
+  <v-card color="blue-grey lighten-5" solo class="p-2" elevation="11" >
+
+<p class=" text-center p-2  bg-gray-200 rounded-full "> 北北東-棚1: 安全講習 </p>
  
+          <div class=" py-4 pt-7  col-span-1 flex"> 
+            <a class="flex-1"> 北北東-棚2 </a>
+              <v-slider
+                v-model="pos_1_ply.box2 "
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=6
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div>
+
+          <div class=" py-4  col-span-1 flex"> 
+            <a class="flex-1"> 北北東-棚3 </a>
+              <v-slider
+                v-model="pos_1_ply.box3 "
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=6
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div>
+
+         <div class=" py-4  col-span-1 flex"> 
+            <a class="flex-1"> 北北東-棚4 </a>
+              <v-slider
+                v-model="pos_1_ply.box4 "
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=6
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div>
+
+          <div class=" py-4  col-span-1 flex"> 
+            <a class="flex-1"> 北北東-棚5 </a>
+              <v-slider
+                v-model="pos_1_ply.box5 "
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=6
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div> 
+
+          </v-card>
+
+<v-divider></v-divider>
+
+            <v-card solo class="p-2" elevation="11" >
+
+<!-- <p color="" class=" text-center p-2  bg-gray-200 rounded-full "> 北北東-棚1: 安全講習 </p> -->
+ 
+  <p class="text-center font-weight-bold">
+     中央棚區 </p>
+
+ 
+ <br>
+           <div class=" py-4 pt-4  col-span-1 flex"> 
+            <p class="flex-1 text-red-300 "> 中央棚 <1> </p>
+              <v-slider
+                v-model="pos_2_ply.box1 "
+                color=red
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=6
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div>
+
+          <div class=" py-4 pt-7  col-span-1 flex"> 
+           <p class="flex-1 text-red-300 "> 中央棚 <2> </p>
+              <v-slider
+                v-model="pos_2_ply.box2 "
+                color=red
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=6
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div>
+
+          <div class=" py-4  col-span-1 flex"> 
+            <p class="flex-1 text-red-300 "> 中央棚 <3> </p>
+              <v-slider
+                v-model="pos_2_ply.box3 "
+                color=red
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=6
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div>
+
+         <div class=" py-4  col-span-1 flex"> 
+            <p class="flex-1 text-red-300 "> 中央棚 <4> </p>
+              <v-slider
+                v-model="pos_2_ply.box4 "
+                color=red
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=6
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div>
+
+          <div class=" py-4  col-span-1 flex"> 
+            <p class="flex-1 text-red-300 "> 中央棚 <5> </p>
+              <v-slider
+                v-model="pos_2_ply.box5 "
+                color=red
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=6
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div> 
+
+          <div class=" py-4  col-span-1 flex"> 
+            <p class="flex-1 text-red-300 "> 中央棚 <6> </p>
+              <v-slider
+                v-model="pos_2_ply.box6 "
+                color=red
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=6
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div>
+
+          </v-card>
+
+            <v-card solo color="indigo lighten-5" class="p-2 bg-red-300">
+
+<!-- <p class=" text-center p-2  bg-gray-200 rounded-full "> 南場-棚1: 安全講習 </p> -->
+ 
+ <p class="text-center pt-7 font-weight-bold">
+     南場 </p>
+
+           <div class=" py-4 pt-7  col-span-1 flex"> 
+            <!-- <a class="flex-1"> 南場-棚1 </a> -->
+            <p class="flex-1 text-green-600 "> 南場-棚1 </p>
+              <v-slider
+               color=green
+                v-model="pos_3_ply.box1 "
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=6
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div>
+
+          <div class=" py-4 pt-7  col-span-1 flex"> 
+            <p class="flex-1 text-green-600 "> 南場-棚2 </p>
+              <v-slider
+              color=green
+                v-model="pos_3_ply.box2 "
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=4
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div>
+
+          <div class=" py-4  col-span-1 flex"> 
+            <p class="flex-1 text-green-600 "> 南場-棚3 </p>
+              <v-slider
+                color=green
+                v-model="pos_3_ply.box3 "
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=4
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div>
+
+         <div class=" py-4  col-span-1 flex"> 
+            <p class="flex-1 text-green-600 "> 南場-棚4 </p>
+              <v-slider
+                color=green
+                v-model="pos_3_ply.box4 "
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=6
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div>
+
+          <div class=" py-4  col-span-1 flex"> 
+            <p class="flex-1 text-green-600 "> 南場-棚5 </p>
+              <v-slider
+                color=green
+                v-model="pos_3_ply.box5 "
+                class="align-center  w-3/5 "
+                always-dirty
+                :max=6
+                :min=0
+                thumb-label="always"
+                step=1
+              ></v-slider>
+          </div> 
+
+          </v-card>
+
+           <!-- {{pos_3_ply.box5 + pos_3_ply.box4 + pos_3_ply.box3 + pos_3_ply.box2}} -->
+   
+   
 
                 </v-container> 
               </v-form>  
@@ -494,6 +278,35 @@ export default {
   name: "add-tutorial",
   data() {
     return {
+slider: 2,
+ttp: 0,
+      pos_1_ply:
+        [{ 
+          box1:0,
+          box2:0,
+          box3:0,
+          box4:0,
+          box5:0, 
+        }],
+      pos_2_ply:
+        [{ 
+          box1:0,
+          box2:0,
+          box3:0,
+          box4:0,
+          box5:0, 
+          box6:0,
+        }],
+      pos_3_ply:
+        [{ 
+          box1:0,
+          box2:0,
+          box3:0,
+          box4:0,
+          box5:0, 
+        }],
+
+
 
       pos_1ttP:[
         { 
@@ -623,7 +436,7 @@ onlineRound:['06:00~','07:00~','08:00~','09:00~','10:00~','11:00~','12:00~',
         Moneyflow:['現金','線上刷','抵用券','其他'],
         BasicType:['會員類別','顧客輪廓','接駁費用','弓具費用','加時費用','場地費用','會員類別','付款方式','會員點數','其他','特殊折價'],
           
-
+gg:0,
       PMS:{
           name:"",
           note:"", 
@@ -639,8 +452,20 @@ onlineRound:['06:00~','07:00~','08:00~','09:00~','10:00~','11:00~','12:00~',
       menu (val) {
         val && setTimeout(() => (this.activePicker = 'YEAR'))
       },
-  },
+  },  
   methods: { 
+ 
+    cnttp(){
+      let x = 0 ;
+      console.log(pos_1_ply.box2);
+      x = this.pos_1_ply.box2.length  +
+          this.pos_1_ply.box3.length  +
+          this.pos_1_ply.box4.length  +
+          this.pos_1_ply.box5.length 
+        this.ttp =x;
+
+        
+    },
 
       savePMS() { 
         var data = { 
@@ -682,3 +507,73 @@ onlineRound:['06:00~','07:00~','08:00~','09:00~','10:00~','11:00~','12:00~',
   margin: auto;
 }
 </style>
+
+<!--           
+          <div class=" py-2 col-span-1">
+            <a class="px-4"> 北北東-棚2 </a>
+              <v-btn-toggle
+                v-model="pos_3_ply.box2"
+                multiple
+                @click="cnttp"
+              >
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn> 
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn> 
+                
+              </v-btn-toggle>
+          </div>
+
+          <div class=" py-2 col-span-1">
+            <a class="px-4"> 北北東-棚3 </a>
+              <v-btn-toggle
+                v-model="pos_3_ply.box3"
+                multiple
+                v
+              >
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn> 
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn> 
+                
+              </v-btn-toggle>
+          </div>
+
+          <div class=" py-2 col-span-1">
+            <a class="px-4"> 北北東-棚4 </a>
+              <v-btn-toggle
+                v-model="pos_3_ply.box4"
+                multiple 
+                @click="savePMN"
+              >
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn> 
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn> 
+                
+              </v-btn-toggle>
+          </div>
+
+          <div class=" py-2 col-span-1">
+            <a class=" px-4"> 北北東-棚5 </a>
+              <v-btn-toggle
+                v-model="pos_3_ply.box5"
+                multiple
+                @click="cnttp"
+              >
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn> 
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn>
+                <v-btn> <v-icon>mdi-flag-variant</v-icon> </v-btn> 
+                
+              </v-btn-toggle>
+          </div> -->
+ 
