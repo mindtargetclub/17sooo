@@ -11,7 +11,27 @@
       </v-toolbar>
 
       </v-card >
-        <v-toolbar flat>
+        <v-toolbar flat> 
+
+          <v-btn color="green" flat class="xl:mx-9 flex ">
+              <v-icon color="white" >mdi-plus-circle</v-icon> 
+            <router-link to="/posGM" class="text-white">  靶位管理 </router-link>
+          </v-btn>  
+
+
+          <v-btn href="https://hackmd.io/@SoonZ/empysop"
+                 class=" text-red-100 bg-gary-900 xl:mx-2 "
+                 color="secondary"
+                 elevation="6"
+
+                 >SOP 指南手冊 </v-btn>
+          <v-btn href="http://havetofun.com:8080/fill_bas4.aspx?st_no=ST001&st_name=%E8%A5%BF%E6%B9%96%E4%B8%80" 
+                 class=" text-red-100 bg-gary-900"
+                 color="secondary"
+                 elevation="6"
+                 > 投影互動(預約) </v-btn > 
+          </v-toolbar>
+          <v-toolbar flat> 
 <!--
           射箭場.當日收支報表
            <v-toolbar-title class="text-gray-600 text-base">
@@ -24,10 +44,14 @@
             <router-link to="/PMNAdd" class="text-white">  新增收費 </router-link>
           </v-btn> 
 
+
+
           <v-btn flat class="xl:mx-2 flex ">
              <router-link to="/PMNList">  當班收費 紀錄 </router-link>
           </v-btn> 
           
+          
+
           <v-btn flat  class="xl:mx-2 flex ">
               <router-link to="/PMSList"> 
                 <v-icon>mdi-dots-vertical</v-icon>

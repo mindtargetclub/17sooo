@@ -13,6 +13,11 @@ export default new Router({
     //   component: () => import("./components/TutorialsList")
     // },
     {
+      path: "/posGM",
+      name: "posGM",
+      component: () => import("./components/posGM")
+    }, 
+    {
       path: "/add",
       name: "add",
       component: () => import("./components/TutorialAdd")

@@ -42,6 +42,7 @@
                             prepend-inner-icon="mdi-calendar"
                             readonly
                             solo
+                            disabled
                             v-bind="attrs"
                             v-on="on"
                           ></v-text-field>
@@ -118,15 +119,16 @@
                     </div>  
 
                     <div class=" md:p-2  col-span-1">
-                      <v-dialog
+                      <v-dialog 
                         ref="dialog" 
-                        v-model="pNote.chkinTime"
+                        v-model="model"
                         :return-value.sync="time"
                         persistent
                         width="290px"
                         >
                         <template v-slot:activator="{ on, attrs }">
                           <v-text-field
+                          disabled
                             v-model="pNote.chkinTime"
                             label="報到時間"
                             prepend-inner-icon="mdi-clock-time-four-outline"
@@ -411,8 +413,8 @@
         <div class="md:p-2 pt-6 col-span-1  ">
           <button 
               @click="savePMN" 
-              class="btn btn-success my-2 md:p-2 col-span-1 text-2xl "  
-              > 儲存收費 紀錄
+              class="btn btn-success my-2 md:p-2 col-span-1 text-xl "  
+              > 儲存收費紀錄
             </button>  
         </div>
 
@@ -487,9 +489,10 @@ export default {
         date: null,
         menu: false,
         picker: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10), 
-        cntPeoepe:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+        
         cntPeoepeP:['0 位','1 位','2 位','3 位','4 位','5 位','6 位','7 位','8 位','9 位','10 位','11 位','12 位','13 位','14 位','15 位','16 位','17 位','18 位','19 位','20 位',],
         Moneyflow:['現金','線上刷','抵用券','其他'],
+        cntPeoepe:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
         onlineRound:['06:00~','07:00~','08:00~','09:00~','10:00~','11:00~','12:00~',
                '13:00~','14:00~','15:00~','16:00~','17:00~','18:00~',
                '19:00~','20:00~','21:00~','22:00~','其他'], 
@@ -731,7 +734,9 @@ this.nowPMS = _tutorials;
           // Payment_Type: this.pNote.Payment_Type, 
 
           mdfEmpy : this.pNote.mdfEmpy,///(ok)
-          // fst_iNcm: this.sum([pNote.bus_iNcm, pNote.tool_iNcm, pNote.room_iNcm, pNote.addTm_iNcm, pNote.oth_iNcm ]),
+          fst_iNcm: this.pNote.fst_iNcm,
+          scd_iNcm: this.pNote.scd_iNcm,
+          all_iNcm: this.pNote.all_iNcm,
           // scd_iNcm: this.sum([ pNote.addTm_iNcm, pNote.oth_iNcm]),
           // all_iNcm: this.sum([pNote.bus_iNcm, pNote.tool_iNcm, pNote.room_iNcm, pNote.addTm_iNcm, pNote.oth_iNcm,pNote.addTm_iNcm, pNote.oth_iNcm ]), 
           // mdfDateTime : moment().format('YYYY/MM/D hh:mm:ss SSS'),
