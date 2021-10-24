@@ -6,28 +6,41 @@
               
 <v-form>
       <v-container > 
- 
-<v-card sos>
+ <div class=" grid grid-cols-3 gap-2  ">
+<v-card solo>
 
-  <v-card-title>北北東 目前人數：</v-card-title>
+  <v-card-title>北北東</v-card-title>
   <v-divider></v-divider>
  <a class=" text-3xl "> {{  pos_1_ply.box2 + pos_1_ply.box3 + pos_1_ply.box4 + pos_1_ply.box5  - pos_1_plyadTed}} / 24 
    </a>
 </v-card>
 
- <div class=" md:p-2 col-span-1   ">
+ 
       
+   
+<v-card solo>
+<v-card-title>中央 </v-card-title>
+  <v-divider></v-divider>
+   <div class=" md:p-2 col-span-1">
+    <strong> 
+      <a class=" text-3xl "> {{  pos_2_ply.box1 + pos_2_ply.box2 + pos_2_ply.box3 + pos_2_ply.box4 + pos_2_ply.box5 + pos_2_ply.box6 - pos_2_plyadTed}} / 36 
+      </a></strong> 
    </div>
+   </v-card>
+
+<v-card solo>
+<v-card-title>南場 </v-card-title>
+  <v-divider></v-divider>
 
    <div class=" md:p-2 col-span-1">
-    <strong> 中央 目前人數： {{  pos_2_ply.box1 + pos_2_ply.box2 + pos_2_ply.box3 + pos_2_ply.box4 + pos_2_ply.box5 + pos_2_ply.box6 - pos_2_plyadTed}} / 36 </strong> 
+    <strong> 
+      <a class=" text-3xl "> {{  pos_3_ply.box1 + pos_3_ply.box2 + pos_3_ply.box3 + pos_3_ply.box4 + pos_3_ply.box5 - pos_3_plyadTed}} / 22  
+      </a></strong> 
    </div>
 
-   <div class=" md:p-2 col-span-1">
-    <strong> 南場 目前人數： {{  pos_3_ply.box1 + pos_3_ply.box2 + pos_3_ply.box3 + pos_3_ply.box4 + pos_3_ply.box5 - pos_3_plyadTed}} / 22 </strong>
-   </div>
+  </v-card>
 
-  <v-card>
+  </div> 
       <v-tabs
         v-model="tab"
         background-color="primary"
@@ -107,9 +120,13 @@
 
 <!-- <p color="" class=" text-center p-2  bg-gray-200 rounded-full "> 北北東-棚1: 安全講習 </p> -->
  
+  <div class=" grid grid-cols- gap-2  ">
+    <div class=" col-span-1  ">
   <p class="text-center font-weight-bold">
      中央棚區 ： {{  pos_2_ply.box1 + pos_2_ply.box2 + pos_2_ply.box3 + pos_2_ply.box4 + pos_2_ply.box5 + pos_2_ply.box6 - pos_1_plyadTed}} / 36 
-   
+   </p>
+   </div>
+   <div class=" col-span-1  ">
     <v-text-field
       v-model="pos_1_plyadTed"
       type="number"
@@ -120,8 +137,9 @@
       hint="請巡場註記"
       solo
     </v-text-field>
-    
- </p>
+    </div>
+ 
+ </div>
  <br>
            <div class=" py-4 pt-4  col-span-1 flex"> 
             <p class="flex-1 text-red-300 "> 中央棚 <1> </p>
