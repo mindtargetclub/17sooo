@@ -14,11 +14,11 @@
         <v-toolbar flat> 
 
           <v-btn color="green" flat class="mx-3 ">
-              <v-icon color="white" >mdi-gavel</v-icon> 
-            <router-link to="/posGM_0" class="text-white">  北場管理 </router-link>
+              <v-icon color="white" >mdi-sword-cross</v-icon> 
+            <router-link to="/posGM_0" class="text-white">  靶位管理 </router-link>
           </v-btn>  
 
-          <v-btn color="green" flat class="mx-3 ">
+          <!-- <v-btn color="green" flat class="mx-3 ">
               <v-icon color="white" >mdi-sword-cross</v-icon> 
             <router-link to="/posGM_1" class="text-white">  中央靶位 </router-link>
           </v-btn>
@@ -26,11 +26,11 @@
           <v-btn color="green" flat class="mx-3   ">
               <v-icon color="white " >mdi-heart-pulse</v-icon> 
             <router-link to="/posGM_2" class="text-white">  南場管理 </router-link>
-          </v-btn>
+          </v-btn> 
 
 
 </v-toolbar >
-<v-toolbar flat>
+<v-toolbar flat>-->
 
           <v-btn href="https://hackmd.io/@SoonZ/empysop"
                  class=" text-red-100 bg-gary-900 xl:mx-2 "

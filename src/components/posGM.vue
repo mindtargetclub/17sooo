@@ -1,3 +1,4 @@
+
 <template>
     
           <div class="submit-form">
@@ -5,19 +6,41 @@
               
 <v-form>
       <v-container > 
+ 
+<v-card>
 
- <div class=" md:p-2 col-span-1">
-    <strong> 北北東目前人數： {{  pos_1_ply.box2 + pos_1_ply.box3 + pos_1_ply.box4 + pos_1_ply.box5 }} / 24 </strong>
+  <v-card-title>北北東 目前人數：</v-card-title>
+  <v-divider></v-divider>
+ <a class=" text-3xl "> {{  pos_1_ply.box2 + pos_1_ply.box3 + pos_1_ply.box4 + pos_1_ply.box5  - pos_1_plyadTed}} / 24 
+   </a>
+</v-card>
+
+ <div class=" md:p-2 col-span-1   ">
+      
    </div>
 
    <div class=" md:p-2 col-span-1">
-    <strong> 中央 目前人數： {{  pos_2_ply.box1 + pos_2_ply.box2 + pos_2_ply.box3 + pos_2_ply.box4 + pos_2_ply.box5 + pos_2_ply.box6}} / 36 </strong>
+    <strong> 中央 目前人數： {{  pos_2_ply.box1 + pos_2_ply.box2 + pos_2_ply.box3 + pos_2_ply.box4 + pos_2_ply.box5 + pos_2_ply.box6 - pos_2_plyadTed}} / 36 </strong> 
    </div>
 
    <div class=" md:p-2 col-span-1">
-    <strong> 南場 目前人數： {{  pos_3_ply.box1 + pos_3_ply.box2 + pos_3_ply.box3 + pos_3_ply.box4 + pos_3_ply.box5 }} / 22 </strong>
+    <strong> 南場 目前人數： {{  pos_3_ply.box1 + pos_3_ply.box2 + pos_3_ply.box3 + pos_3_ply.box4 + pos_3_ply.box5 - pos_3_plyadTed}} / 22 </strong>
    </div>
 
+  <v-card>
+      <v-tabs
+        v-model="tab"
+        background-color="primary"
+        dark
+      >
+        <v-tab key='k1' href='#k1' v-if="!hide"> <v-icon color="white" >mdi-sword-cross  </v-icon>  <a> 北北東 </a></v-tab>
+        <v-tab key='k2' href='#k2'><v-icon color="white" >mdi-gavel  </v-icon>  <a> 中央 </a></v-tab>
+        <v-tab key='k3' href='#k3'><v-icon color="white" >mdi-heart-pulse  </v-icon>  <a> 南場 </a></v-tab>
+      </v-tabs>
+  
+      <v-tabs-items v-model="tab">
+        <v-tab-item key='k1' value='k1'>
+          
   <v-card color="blue-grey lighten-5" solo class="p-2" elevation="11" >
 
 <p class=" text-center p-2  bg-gray-200 rounded-full "> 北北東-棚1: 安全講習 </p>
@@ -75,17 +98,30 @@
           </div> 
 
           </v-card>
-
-<v-divider></v-divider>
-
+          
+        </v-tab-item>
+        <v-tab-item key='k2' value='k2'>
+          
+          
             <v-card solo class="p-2" elevation="11" >
 
 <!-- <p color="" class=" text-center p-2  bg-gray-200 rounded-full "> 北北東-棚1: 安全講習 </p> -->
  
   <p class="text-center font-weight-bold">
-     中央棚區 </p>
-
- 
+     中央棚區 ： {{  pos_2_ply.box1 + pos_2_ply.box2 + pos_2_ply.box3 + pos_2_ply.box4 + pos_2_ply.box5 + pos_2_ply.box6 - pos_1_plyadTed}} / 36 
+   
+    <v-text-field
+      v-model="pos_1_plyadTed"
+      type="number"
+      min = 0
+      max = 60 
+      value= 0
+      label="(加時．預留數量)">
+      hint="請巡場註記"
+      solo
+    </v-text-field>
+    
+ </p>
  <br>
            <div class=" py-4 pt-4  col-span-1 flex"> 
             <p class="flex-1 text-red-300 "> 中央棚 <1> </p>
@@ -173,12 +209,18 @@
 
           </v-card>
 
+        </v-tab-item>
+        <v-tab-item key='k3' value='k3'>
+          
+          
             <v-card solo color="indigo lighten-5" class="p-2 bg-red-300">
 
 <!-- <p class=" text-center p-2  bg-gray-200 rounded-full "> 南場-棚1: 安全講習 </p> -->
  
  <p class="text-center pt-7 font-weight-bold">
      南場 </p>
+
+     
 
            <div class=" py-4 pt-7  col-span-1 flex"> 
             <!-- <a class="flex-1"> 南場-棚1 </a> -->
@@ -252,6 +294,11 @@
           </div> 
 
           </v-card>
+        </v-tab-item>
+      </v-tabs-items>
+    </v-card>
+
+        
 
            <!-- {{pos_3_ply.box5 + pos_3_ply.box4 + pos_3_ply.box3 + pos_3_ply.box2}} -->
    
@@ -280,13 +327,17 @@ export default {
     return {
 slider: 2,
 ttp: 0,
+pos_1_plyadTed:0,
+pos_2_plyadTed:0,
+pos_3_plyadTed:0,
       pos_1_ply:
         [{ 
           box1:0,
           box2:0,
           box3:0,
           box4:0,
-          box5:0, 
+          box5:0,
+          adTed:0, 
         }],
       pos_2_ply:
         [{ 
@@ -411,7 +462,7 @@ ttp: 0,
         },
       ],
       pos_3ttP:[],
-      
+      show: '1',
 
 
 posType:['北北東','中央','南場','南場(頭)','中央(尾)','其他'],  
@@ -436,6 +487,8 @@ onlineRound:['06:00~','07:00~','08:00~','09:00~','10:00~','11:00~','12:00~',
         Moneyflow:['現金','線上刷','抵用券','其他'],
         BasicType:['會員類別','顧客輪廓','接駁費用','弓具費用','加時費用','場地費用','會員類別','付款方式','會員點數','其他','特殊折價'],
           
+           tab: 'k3',
+      hide: false ,// You can hide tab1 by setting to true
 gg:0,
       PMS:{
           name:"",
@@ -454,7 +507,10 @@ gg:0,
       },
   },  
   methods: { 
- 
+ next () {
+      const active = parseInt(this.show);
+      this.show = (active < 2 ? active + 1 : 0).toString();
+    },
     cnttp(){
       let x = 0 ;
       console.log(pos_1_ply.box2);
