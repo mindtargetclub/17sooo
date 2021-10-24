@@ -15,8 +15,19 @@
 
           <v-btn color="green" flat class="mx-3 ">
               <v-icon color="white" >mdi-sword-cross</v-icon> 
-            <router-link to="/posGM_0" class="text-white">  靶位管理 </router-link>
+            <router-link to="/posGM_0" class="text-white">  靶位管理(2.0) </router-link>
           </v-btn>  
+
+          <v-btn color="green" flat class="mx-3 ">
+              <v-icon color="white" >mdi-numeric-2-box-multiple-outline</v-icon> 
+            <router-link to="/posGM" class="text-white">  靶位管理(1.0) </router-link>
+          </v-btn>  
+
+           <v-btn href="http://havetofun.com:8080/fill_bas4.aspx?st_no=ST001&st_name=%E8%A5%BF%E6%B9%96%E4%B8%80" 
+                 class=" text-red-100 bg-gary-900"
+                 color="secondary"
+                 elevation="6"
+                 > 投影互動(預約) </v-btn > 
 
           <!-- <v-btn color="green" flat class="mx-3 ">
               <v-icon color="white" >mdi-sword-cross</v-icon> 
@@ -35,14 +46,9 @@
           <v-btn href="https://hackmd.io/@SoonZ/empysop"
                  class=" text-red-100 bg-gary-900 xl:mx-2 "
                  color="secondary"
-                 elevation="6"
-
+                 elevation="6" 
                  >SOP 指南手冊 </v-btn>
-          <v-btn href="http://havetofun.com:8080/fill_bas4.aspx?st_no=ST001&st_name=%E8%A5%BF%E6%B9%96%E4%B8%80" 
-                 class=" text-red-100 bg-gary-900"
-                 color="secondary"
-                 elevation="6"
-                 > 投影互動(預約) </v-btn > 
+         
           </v-toolbar>
           <v-toolbar flat> 
 <!--
