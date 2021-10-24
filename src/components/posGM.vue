@@ -7,7 +7,7 @@
 <v-form>
       <v-container > 
  
-<v-card>
+<v-card sos>
 
   <v-card-title>北北東 目前人數：</v-card-title>
   <v-divider></v-divider>
