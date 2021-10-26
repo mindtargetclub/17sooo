@@ -4,7 +4,7 @@ import Router from "vue-router";
 Vue.use(Router);
 
 export default new Router({
-  mode: "history",
+  // mode: "history",
   routes: [
     // {
     //   path: "/",
@@ -12,11 +12,11 @@ export default new Router({
     //   name: "tutorials",
     //   component: () => import("./components/TutorialsList")
     // },
-    {
-      path: "/p",
-      name: "p",
-      component: () => import("./components/p")
-    }, 
+    // {
+    //   path: "/p",
+    //   name: "p",
+    //   component: () => import("./components/p")
+    // }, 
     {
       path: "/posGM_0",
       name: "posGM",
