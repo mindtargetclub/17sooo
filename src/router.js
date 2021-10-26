@@ -21,6 +21,12 @@ export default new Router({
       path: "/posGM_0",
       name: "posGM",
       component: () => import("./components/posGM")
+    },
+    
+    {
+      path: "/printa",
+      name: "printa",
+      component: () => import("./components/printa")
     }, 
     {
       path: "/add",

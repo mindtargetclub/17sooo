@@ -15,7 +15,7 @@
 
           <v-btn color="green" flat class="mx-3 ">
               <v-icon color="white" >mdi-numeric-2-box-multiple-outline</v-icon> 
-            <router-link to="/p" class="text-white">  列印測試(1.0) </router-link>
+            <router-link to="/print" class="text-white">  列印測試(1.0) </router-link>
           </v-btn>  
 
            <v-btn href="http://havetofun.com:8080/fill_bas4.aspx?st_no=ST001&st_name=%E8%A5%BF%E6%B9%96%E4%B8%80" 
