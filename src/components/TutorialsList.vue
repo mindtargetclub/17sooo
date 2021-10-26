@@ -128,59 +128,8 @@ export default {
       }) ; 
     this.FVB = temp_ary ;
     console.log('- - - < temp_ary > - - -');  
-    console.log(temp_ary); 
-
-
-
-
-
-
-
-// // 這邊是   ::外加的新資料::
-//       var result = [];    
-
-//       items.forEach((item) => {
-//         let keey = item.key;
-//         let datae = item.val();
-//         _tu.push({ 
-//           description: datae.description, 
-//         });  
-        
-//       }); 
-
-//       this.tutorials = _tutorials; 
-//       this.tempp = JSON.stringify(_tu, ["description"], 0);
-       
-       
-
-
-//       console.log(_tutorials); 
-
-      
-//       console.log('- - - <tu> - - -');
-//       console.log(_tu);
-//       console.log('- - - < tu_dtl2 > - - -');
-//       console.log(_tu_dtl2);
-
-//       console.log('- - - < result__result > - - -');  
-      
-
-//       result = JSON.stringify(_tu, ["description"], 0)
-//       console.log(result );    
-
+    console.log(temp_ary);  
  
-
- 
-
-       
-       
-
-
-// var cloned_array = JSON.parse( JSON.stringify(_tu, ["description"], 0),(2,'description') );
-// console.log(cloned_array);
-      // const animals = ['pigsss', 'goasts', 'sheep']
-      //  console.log(animals);
-      //  console.log(this.tempp);
     },
 
     refreshList() {

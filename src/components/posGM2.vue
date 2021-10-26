@@ -79,7 +79,7 @@
       </v-card> 
       <v-card class="my-2">
         
-    <div class="md:grid grid-cols-3 gapx-2 ">
+    <div class="md:grid grid-cols-3 gap-2 ">
       <div class=" md:px-2 col-span-1 ">
           <v-text-field   
             label="顧客代稱"

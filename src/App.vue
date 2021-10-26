@@ -1,16 +1,6 @@
 <template>
   <v-app>
-    <v-card flat>
-      <v-toolbar
-        color="primary"
-        dark
-        extended
-        flat
-      >
-         <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon>   -->
-      </v-toolbar>
-
-      </v-card >
+     
         <v-toolbar flat> 
 
           <v-btn color="green" flat class="mx-3 ">
@@ -28,21 +18,7 @@
                  color="secondary"
                  elevation="6"
                  > 投影互動(預約) </v-btn > 
-
-          <!-- <v-btn color="green" flat class="mx-3 ">
-              <v-icon color="white" >mdi-sword-cross</v-icon> 
-            <router-link to="/posGM_1" class="text-white">  中央靶位 </router-link>
-          </v-btn>
-
-          <v-btn color="green" flat class="mx-3   ">
-              <v-icon color="white " >mdi-heart-pulse</v-icon> 
-            <router-link to="/posGM_2" class="text-white">  南場管理 </router-link>
-          </v-btn> 
-
-
-</v-toolbar >
-<v-toolbar flat>-->
-
+ 
           <v-btn href="https://hackmd.io/@SoonZ/empysop"
                  class=" text-red-100 bg-gary-900 xl:mx-2 "
                  color="secondary"
@@ -50,14 +26,8 @@
                  >SOP 指南手冊 </v-btn>
          
           </v-toolbar>
-          <v-toolbar flat> 
-<!--
-          射箭場.當日收支報表
-           <v-toolbar-title class="text-gray-600 text-base">
-            
-          </v-toolbar-title >
-<br> -->
-          <!-- <v-spacer></v-spacer>   -->
+          <v-toolbar flat>  
+
           <v-btn color="red" flat class="xl:mx-9 flex ">
               <v-icon color="white" >mdi-plus-circle</v-icon> 
             <router-link to="/PMNAdd" class="text-white">  新增收費 </router-link>
@@ -91,12 +61,8 @@
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn> -->
         </v-toolbar> 
+            
          
-        <br>
-           
-        
-      </v-card>
-    </v-card> 
 
       <v-content class="mt-6"> 
          <router-view/> 

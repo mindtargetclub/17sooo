@@ -12,7 +12,9 @@
     "firebase": "^7.23.0",
     "vue": "^2.6.11",
     "vue-devtools": "^5.1.4",
+    "vue-print-nb": "^1.7.5",
     "vue-router": "^3.4.6",
+    "vue3-print-nb": "^0.1.4",
     "vuetify": "^2.4.0"
   },
   "devDependencies": {
