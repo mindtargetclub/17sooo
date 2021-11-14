@@ -18,10 +18,56 @@ export default new Router({
     //   component: () => import("./components/p")
     // }, 
     {
+      path: "/bkadd",
+      name: "bkadd",
+      component: () => import("./components/bkAdd")
+    },
+    {
+      path: "/",
+      name: "bkadd",
+      component: () => import("./components/bkAdd")
+    },
+    
+    {
       path: "/posGM_0",
       name: "posGM",
       component: () => import("./components/posGM")
     },
+    {
+      path: "/bkList",
+      name: "WordList",
+      component: () => import("./components/WordList")
+    },
+    {
+      path: "/WordList",
+      name: "WordList",
+      component: () => import("./components/WordList")
+    },
+    // {
+    //   path: "/drag",
+    //   name: "drag",
+    //   component: () => import("./components/drag")
+    // },
+    // {
+    //   path: "/pd3",
+    //   name: "pd3",
+    //   component: () => import("./components/pd3")
+    // },
+    {
+      path: "/pd",
+      name: "pd",
+      component: () => import("./components/posGMdrop")
+    },
+    {
+      path: "/vvv",
+      name: "vvv",
+      component: () => import("./components/vvv")
+    }, 
+    {
+      path: "/ppp",
+      name: "ppp",
+      component: () => import("./components/ppp")
+    }, 
     
     {
       path: "/printa",
@@ -39,7 +85,7 @@ export default new Router({
       component: () => import("./components/v3")
     },
     {
-      path: "/",
+      path: "/PMNAdd",
       name: "PMNAdd",
       component: () => import("./components/PMNAdd")
     },
@@ -57,6 +103,11 @@ export default new Router({
       path: "/PMNAdd",
       name: "PMNAdd",
       component: () => import("./components/PMNAdd")
+    }, 
+    {
+      path: "/TutorialsList",
+      name: "TutorialsList",
+      component: () => import("./components/TutorialsList")
     },
     {
       path: "/PMNList",

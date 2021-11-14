@@ -1,0 +1,172 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+</head>
+
+<body> 
+<div id="app">
+  
+{{ h }}
+  <!-- {{ userData.id  }} -->
+  <hr>
+  <!-- {{ hkk[1] }} -->
+  <hr> 
+  <!-- {{ hkk._ragicId }} -->
+  <hr>
+  <!-- {{ nowArywith(json) }} -->
+  <hr> 
+  
+{{ userData }}
+  
+   
+</div>    
+<script>
+// var dataURL = 'https://api.rezio.io/v1/config';
+let dataURL = 'https://www.ragic.com/xihu/forms13/50?api&APIKey=cHB2WURReGNHLzNaU1JyZ2h0YlVwbW5DM1JmN2VzRDV5ZUtQNVlrcXJtZWVhYjZoUHl6UmVWbmkvRkI5Zi82cw==&listing';
+
+// 讓urlRooms等於串接網址
+let urlRooms = "https://api.rezio.io/v1/config";
+//根據主辦方提供的方法所獲取的Token值
+let key = "abcd123efghi";
+
+let UUID = "001e81f1-3111-485e-8c22-6644cb2df11c";
+let reziokey ="0b4ae1cc6859fc3a47b06d27677eb07c";
+
+var App = new Vue({
+  el: '#app',
+  data: {
+    d:[],
+    h:"",
+    nowAry:[],
+    hkk: [{ "_ragicId": 8428, "來賓姓名(真實姓名)": "劉賢", "建立日期": "2021/09/09 13:31:15", "_seq": 1000 }, { "_ragicId": 8428, "來賓姓名(真實姓名)": "劉污", "建立日期": "2021/09/29 13:31:15", "_seq": 1001 }],
+    userData: [  ] // initialize empty array
+  },
+
+
+  methods: { 
+
+    // gg(){
+    //      $.ajax({
+    //       type: 'GET',          //使用方法get，從指定的資源請求資料
+    //       url: urlRooms,        //指定的資源路徑
+
+    //       headers: {'Content-Type': 'application/json' ,
+    //                 'X-Auth-StoreUuid': UUID,
+    //                 'X-Auth-Key': reziokey , 
+    //                },
+
+    //       // headers: {
+    //       //   // Content-Type: "application/json"
+    //       //   // X-Auth-StoreUuid: UUID,
+    //       //   // X-Auth-Key: reziokey ,
+            
+    //       //     authorization: reziokey,         //授權方式 Bearer Token
+    //       //     accept: "application/json",               //希望獲得的指定格式
+    //       // },
+    //       //若連結錯誤回傳『連線異常』提示	
+    //       error: function (err) {
+    //           console.log('連線異常');
+    //       },
+    //       //若連結正常回傳連結資料
+    //       success: function (returnData) {
+    //           if (returnData.success == true) {
+    //               console.log(returnData.items);
+                  
+    //               this.d = returnData.items;
+
+    //           }
+    //       }
+      
+    //     });
+    // },
+
+
+  },
+  
+  mounted() { 
+    console.log( "= = =< START >  = = = ="); 
+
+    // when the Vue app is booted up, this is run automatically. 
+    var self = this // create a closure to access component in the callback below
+    $.getJSON(dataURL, function(data) {
+      self.userData = data;
+
+      console.log("uuuKK");
+      
+      // self.nowAry = JSON.Parse([{ "_ragicId": 28, "來賓姓名(真實姓名)": "劉賢", "建立日期": "2021/09/09 13:31:15", "_seq": 1000 }, { "_ragicId": 8428, "來賓姓名(真實姓名)": "劉污", "建立日期": "2021/09/29 13:31:15", "_seq": 1001 }])
+    
+      // self.nowAry = JSON.stringify(data); 
+    });
+    var base = 'https://api.rezio.io/v1/config'
+    var kk = 'https://randomuser.me/api/'
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('get',kk,true);
+    xhr.send(null);
+
+    //狀態碼:200代表成功。我們利用此狀態碼去做判斷，做到錯誤處理
+    xhr.onload = () => {
+        if(xhr.status === 200){
+            self.h = xhr.responseText;
+            console.log(JSON.parse(xhr.responseText)); 
+            console.log('請求成功!');
+        }else{
+            console.log('請求失敗!')
+        }
+    }
+
+    fetch('https://randomuser.me/api/')
+    .then((response) => {
+        return response.json();
+    })
+    .then( (response) => {
+        console.log(response);
+        console.log('- - - 確認成功 - - -!');
+    })
+    .catch((error) => {
+        console.log(`Error: ${error}`);
+    })
+
+    // var urlRooms = "https://api.rezio.io/v1/config";
+    // //根據主辦方提供的方法所獲取的Token值
+    // var key = "abcd123efghi";
+
+    // var UUID = "001e81f1-3111-485e-8c22-6644cb2df11c";
+    // var reziokey ="0b4ae1cc6859fc3a47b06d27677eb07c";
+
+    // $.ajax({
+    //       type: 'GET',          //使用方法get，從指定的資源請求資料
+    //       url: urlRooms,        //指定的資源路徑
+
+    //       headers: {'Content-Type': 'application/json' ,
+    //                 'X-Auth-StoreUuid': UUID,
+    //                 'X-Auth-Key': reziokey , 
+    //                },  
+    //       //若連結錯誤回傳『連線異常』提示	
+    //       error: function (err) {
+    //           console.log('連線異常');
+    //       },
+    //       //若連結正常回傳連結資料
+    //       success: function (returnData) {
+    //           if (returnData.success == true) {
+    //               console.log(returnData.items);
+                  
+    //               this.d = returnData.items;
+
+    //           },
+    //       }),
+ 
+    
+ 
+    console.log(self.nowAry);
+    console.log("- -- - -- - -");
+  }
+})       
+</script>  
+         
+</body>
+</html>        
