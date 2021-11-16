@@ -27,7 +27,11 @@ export default new Router({
       name: "bkadd",
       component: () => import("./components/bkAdd")
     },
-    
+    {
+      path: "/bkadd2",
+      name: "bkadd2",
+      component: () => import("./components/bkAdd2")
+    },
     {
       path: "/posGM_0",
       name: "posGM",
