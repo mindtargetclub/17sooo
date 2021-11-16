@@ -59,10 +59,10 @@
         <v-tab-item key='k1' value='k1'>  
 
     <div> 
-      <div class ="flex justify-center bg-gray-200 py-2 ">
-        <div class= "flex  border-1 border-blue-400 text-gray-900 rounded-2xl text-ms px-3 px-0.5 mx-2" >北北東 棚 1</div>
-        <div class= "flex  border-2 bg-red-200 border-red-600 text-gray-900 font-semibold rounded-2xl  px-3 mx-2" >剩餘 : {{ 6-bk_pos0_1.length  }} / 6 </div>
-        <div class= "flex  border-2 bg-green-200 border-green-400 text-gray-900 font-semibold rounded-2xl  px-3 mx-2" >預留 : {{ 6-ntadd_pos0_1.length  }} / 6 </div>
+      <div class ="flex justify-center bg-gray-200 py-2 items-start w-auto">
+        <div class= "flex text-xs border-1 py-1 border-blue-400 text-gray-900 rounded-2xl text-ms px-3 px-0.5 mx-2" >北北東 棚 1</div>
+        <div class= "flex text-xs border-2 py-1 bg-red-200 border-red-600 text-gray-900 font-semibold rounded-2xl  px-3 mx-2" >剩餘 : {{ 6-bk_pos0_1.length  }} / 6 </div>
+        <div class= "flex text-xs border-2 py-1 bg-green-200 border-green-400 text-gray-900 font-semibold rounded-2xl  px-3 mx-2" >預留 : {{ 6-ntadd_pos0_1.length  }} / 6 </div>
         <!-- <span class="text-ms"> 北北東 棚 1  </span> 
         <v-chip   >  / 6 </v-chip>  -->
       </div>
