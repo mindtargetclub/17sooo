@@ -24,7 +24,7 @@
       </div>
       </v-card> 
     <v-card solo>
-    <v-card-title>南場 </v-card-title>
+    <v-card-title  >南場 </v-card-title>
       <v-divider></v-divider>
 
       <div class=" md:p-2 col-span-1">
@@ -34,22 +34,23 @@
       </div> 
       </v-card>
   </div>
-   
-
+    
+    
   <v-tabs
     v-model="tab"
     background-color="primary" 
-    dark 
+    fixed-tabs
+      
   >
     <v-tab key='k1' href='#k1' v-if="!hide"  >    
         北北東 
         <!-- <br>【 {{ 24-bk_pos0_1.length-bk_pos0_2.length -bk_pos0_3.length -bk_pos0_4.length   }} / 24 】  -->  
     </v-tab>
-    <v-tab key='k2' href='#k2' v-if="!hide"> 
+    <v-tab key='k2' href='#k2' > 
         北場  
         <!-- <br> 【 {{ 36-bk_pos1_1.length-bk_pos1_2.length -bk_pos1_3.length -bk_pos1_4.length -bk_pos1_5.length -bk_pos1_6.length }} / 36 】  -->
     </v-tab>
-    <v-tab key='k3' href='#k3' v-if="!hide"> 
+    <v-tab key='k3' href='#k3'  > 
         南場  
         <!-- <br> 【 {{ 22-bk_pos2_1.length-bk_pos2_2.length -bk_pos2_3.length -bk_pos2_4.length  }} / 22   -->
     </v-tab> 
@@ -93,8 +94,8 @@
 
       <div class="flex justify-center w-full ">
           <div  small  
-                class="rounded-r-lg text-xs red darken-2 text-white text-center p-2 my-2 mr-1 w-20">
-                  當時棚1  </div >   
+                class="rounded-r-lg text-xs red darken-2 text-white text-center p-1 py-2 my-2 mr-1 w-20">
+                  當時 棚B1  </div >   
             <v-chip-group v-model="bk_pos0_1"   multiple 
                   active-class="bg-red-600 text-white text-xs  "
                   class="w-5/6 " >  
@@ -108,8 +109,8 @@
       </div>
       <div class="flex justify-center w-full ">
           <div  small  
-                class="rounded-r-lg text-xs red darken-2 text-white text-center p-2 my-2 mr-1 w-20">
-                  當時棚2  </div >   
+                class="rounded-r-lg text-xs red darken-2 text-white text-center p-1 py-2 my-2 mr-1 w-20">
+                  當時 棚2  </div >   
             <v-chip-group v-model="bk_pos0_2"   multiple 
                   active-class="bg-red-600 text-white text-xs  "
                   class="w-5/6 " >  
@@ -123,8 +124,8 @@
       </div>
       <div class="flex justify-center w-full ">
           <div  small  
-                class="rounded-r-lg text-xs red darken-2 text-white text-center p-2 my-2 mr-1 w-20">
-                  當時棚3  </div >   
+                class="rounded-r-lg text-xs red darken-2 text-white text-center p-1 py-2 my-2 mr-1 w-20">
+                  當時 棚3  </div >   
             <v-chip-group v-model="bk_pos0_3"   multiple 
                   active-class="bg-red-600 text-white text-xs  "
                   class="w-5/6 " >  
@@ -138,8 +139,8 @@
       </div>
       <div class="flex justify-center w-full ">
           <div  small  
-                class="rounded-r-lg text-xs red darken-2 text-white text-center p-2 my-2 mr-1 w-20">
-                  當時棚4  </div >   
+                class="rounded-r-lg text-xs red darken-2 text-white text-center p-1 py-2 my-2 mr-1 w-20">
+                  當時 棚4  </div >   
             <v-chip-group v-model="bk_pos0_4"   multiple 
                   active-class="bg-red-600 text-white text-xs  "
                   class="w-5/6 " >  
@@ -155,8 +156,8 @@
 
       <div class="flex justify-center w-full ">
           <div  small  
-                class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-2 my-2 mr-1 w-1/6">
-                  預排  </div >   
+                class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
+                  預排 棚1  </div >   
             <v-chip-group v-model="ntadd_pos0_1"   multiple 
                   active-class="light-green darken-3 text-white text-xs  "
                   class="w-5/6 " >  
@@ -170,8 +171,8 @@
       </div> 
       <div class="flex justify-center w-full ">
           <div  small  
-                class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-2 my-2 mr-1 w-1/6">
-                  預排  </div >   
+                class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
+                  預排 棚2  </div >   
             <v-chip-group v-model="ntadd_pos0_2"   multiple 
                   active-class="light-green darken-3 text-white text-xs  "
                   class="w-5/6 " >  
@@ -185,8 +186,8 @@
       </div> 
       <div class="flex justify-center w-full ">
           <div  small  
-                class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-2 my-2 mr-1 w-1/6">
-                  預排  </div >   
+                class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
+                  預排 棚3   </div >   
             <v-chip-group v-model="ntadd_pos0_3"   multiple 
                   active-class="light-green darken-3 text-white text-xs  "
                   class="w-5/6 " >  
@@ -200,8 +201,8 @@
       </div> 
             <div class="flex justify-center w-full ">
           <div  small  
-                class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-2 my-2 mr-1 w-1/6">
-                  預排  </div >   
+                class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
+                  預排 棚4  </div >   
             <v-chip-group v-model="ntadd_pos0_4"   multiple 
                   active-class="light-green darken-3 text-white text-xs  "
                   class="w-5/6 " >  
@@ -213,46 +214,7 @@
                   <v-chip  class="text-xs" > 1 </v-chip> 
             </v-chip-group>  
       </div> 
-    </div> 
-
-<!-- 
-
-     <v-card-text>
-      <span class="text-ms"> 北北東 棚 2  </span> <v-chip   >  剩餘 : {{ 6-bk_pos0_2.length  }} / 6 </v-chip>
-      <v-chip-group v-model="bk_pos0_2" column multiple active-class="bg-red-600 text-white" >
-        <v-chip   class="text-ms" > 靶 1 </v-chip>
-        <v-chip   class="text-ms" > 靶 2 </v-chip>
-        <v-chip  class="text-ms" > 靶 3 </v-chip>
-        <v-chip   class="text-ms" > 靶 4 </v-chip>
-        <v-chip   class="text-ms" > 靶 5 </v-chip>
-        <v-chip  class="text-ms" > 靶 6 </v-chip> 
-      </v-chip-group>
-    </v-card-text>
-
-     <v-card-text>
-      <span class="text-ms"> 北北東 棚 3  </span> <v-chip   >  剩餘 : {{ 6-bk_pos0_3.length  }} / 6 </v-chip>
-      <v-chip-group v-model="bk_pos0_3" column multiple active-class="bg-red-600 text-white" >
-        <v-chip   class="text-ms" > 靶 1 </v-chip>
-        <v-chip   class="text-ms" > 靶 2 </v-chip>
-        <v-chip  class="text-ms" > 靶 3 </v-chip>
-        <v-chip   class="text-ms" > 靶 4 </v-chip>
-        <v-chip   class="text-ms" > 靶 5 </v-chip>
-        <v-chip  class="text-ms" > 靶 6 </v-chip> 
-      </v-chip-group>
-    </v-card-text>
-
-    <v-card-text>
-      <span class="text-ms"> 北北東 棚 4  </span> <v-chip   >  剩餘 : {{ 6-bk_pos0_4.length  }} / 6 </v-chip>
-            <v-chip-group v-model="bk_pos0_4" column multiple active-class="bg-red-600 text-white" >
-        <v-chip   class="text-ms" > 靶 1 </v-chip>
-        <v-chip   class="text-ms" > 靶 2 </v-chip>
-        <v-chip  class="text-ms" > 靶 3 </v-chip>
-        <v-chip   class="text-ms" > 靶 4 </v-chip>
-        <v-chip   class="text-ms" > 靶 5 </v-chip>
-        <v-chip  class="text-ms" > 靶 6 </v-chip> 
-      </v-chip-group>
-    </v-card-text> -->
-
+    </div>  
         </v-tab-item>
         <v-tab-item key='k2' value='k2'> 
    
