@@ -1,67 +1,50 @@
+
 <template>
   <div class="list row">
-    
-    
-    <div class="col-md-2">
-      <h4>旅途 列表</h4>
+    <div class="col-md-1">
+      <!-- <h4> 列表 </h4> -->
+      <a class="text-3xl py-2 "> 詞彙 ...列表 </a> 
+
       <ul class="list-group">
-
-
         <li
-          class="list-group-item"
-          :class="{ active: index == currentIndex }"
+          class="list-group-item text-xs"
+          :class="{ active: index == currentIndex } "
           v-for="(tutorial, index) in tutorials"
           :key="index"
           @click="setActiveTutorial(tutorial, index)"
         >
-          {{ tutorial.title }}
- 
-        <!-- <v-date-picker
-              v-model="tutorial.date_mor"
-              multiple
-              no-title
-              scrollable
-            > 
-        </v-date-picker> -->
-             
+          {{ tutorial.od_date }}  
+          <!-- {{ tutorial.description }} -->
+
+          <!-- {{ tutorial }} ,   -->
+
           
-        </li> 
+        </li>
       </ul>
 
-        
+      
 
-         <v-container fluid> 
-                <v-select 
-                  :items="season_states"
-                  label="請選擇"
-                  multiple
-                  chips
-                  hint="這是一個測試選項"
-                  persistent-hint
-                ></v-select> 
-          </v-container> 
+<!-- <template v-slot:activator="{ on, attrs }">
+              <v-combobox
+                v-model="tutorial.date_mor"
+                multiple
+                chips
+                small-chips
+                label="Multiple picker in menu"
+                prepend-icon="mdi-calendar"
+                readonly
+                v-bind="attrs"
+                v-on="on"
+              ></v-combobox>
+            </template> -->
 
- 
-        <v-container fluid> 
-                <v-select 
-                  :items="FVB"
-                  label="HashTag"
-                  multiple
-                  chips
-                  hint="請選一個 基本設置"
-                  persistent-hint
-                ></v-select> 
-          </v-container>  
 
-<button class="m-3 btn btn-sm btn-danger" @click="removeAllTutorials">
-        增加一個數
-      </button>
 
       <button class="m-3 btn btn-sm btn-danger" @click="removeAllTutorials">
-        移除所有資料
+        Remove All
       </button>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-4">
       <div v-if="currentTutorial">
         <tutorial-details
           :tutorial="currentTutorial"
@@ -70,102 +53,83 @@
       </div>
       <div v-else>
         <br />
-        <p>Please 確認 on a Tutorial...</p>
+        <p>Please click on a Tutorial...</p>
       </div>
     </div>
-<hr>
- 
-
   </div>
 </template>
 
 <script>
-import TutorialDataService from "../services/TutorialDataService";
-import TutorialDetails from "./TutorialMdf";
+import WordDataService from "../services/odDataService"; 
+import TutorialDetails from "./WordMdf"; // 連接至 Mdf 的部分
 
 export default {
   name: "tutorials-list",
   components: { TutorialDetails },
-  
-
   data() {
-    return { 
-      FVB:[],
-      tempp: [], 
-      season_states2:[{"description":"我都不知道"},{"description":"這是測試 3"}],
-      season_states:['s1', 's2', 's3', 's4',],
+    return {
       tutorials: [],
       currentTutorial: null,
       currentIndex: -1
     };
-  }, 
-  methods: { 
-    onDataChange(items) {
-       
-      let _tutorials = [];
-      let _tu = [];
-      let _tu_dtl2 = [];
+  },
+  methods: {
+      onDataChange(items) {
+        let _tutorials = [];
+
+        items.forEach((item) => {
+          let key = item.key;
+          let data = item.val();
+          _tutorials.push({
+            key: key, 
+            od_date  : data.od_date,
+
+            // spell_zh_tw  : data.spell_zh_tw, 
+            // description : data.description,
+            // season      : data.season,
+            // topic       : data.topic,
+
+          // {{ tutorial.spell_tayal }}
+          // {{ tutorial.spell_zh_tw }}  
+          // <!-- {{ tutorial.description }} -->
+          // {{ tutorial.season }}
+          // {{ tutorial.topic }}
 
 
-      items.forEach((item) => {
-        let key = item.key;
-        let data = item.val();
-        _tutorials.push({
-          key: key,
-          title: data.title,
-          description: data.description,
-          published: data.published,
-          date_s:data.date_s,
-          date_mor:data.date_mor,
+            // title: data.title,
+            // published: data.published,
+          });
         });
-      });
 
-    //  ::  藉由使用  ::
-    var temp_ary = _tutorials.map(function(item, index, array){ 
-        if (item.description !== '') {
-              return item.description;
-            }  
-      }) ; 
-    this.FVB = temp_ary ;
-    console.log('- - - < temp_ary > - - -');  
-    console.log(temp_ary);  
- 
-    },
+        this.tutorials = _tutorials;
+      },
 
-    refreshList() {
-      this.currentTutorial = null;
-      this.currentIndex = -1;
-    },
+      refreshList() {
+        this.currentTutorial = null;
+        this.currentIndex = -1;
+      },
 
-    setActiveTutorial(tutorial, index) {
-      this.currentTutorial = tutorial;
-      this.currentIndex = index;
-    },
+      setActiveTutorial(tutorial, index) {
+        this.currentTutorial = tutorial;
+        this.currentIndex = index;
+      },
 
-    removeAllTutorials() {
-      TutorialDataService.deleteAll()
-        .then(() => {
-          this.refreshList();
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    },
-
-    
+      removeAllTutorials() {
+        WordDataService.deleteAll()
+          .then(() => {
+            this.refreshList();
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+      },
   },
   mounted() {
-    // console.log(_tutorials.title);  
-    TutorialDataService.getAll().on("value", this.onDataChange);
-    
-
-    
+    WordDataService.getAll().on("value", this.onDataChange);
   },
   beforeDestroy() {
-    TutorialDataService.getAll().off("value", this.onDataChange);
-  }, 
-
-    
+    WordDataService.getAll().off("value", this.onDataChange);
+  }
 };
 </script>
 
@@ -176,3 +140,5 @@ export default {
   margin: auto;
 }
 </style>
+ 
+  

@@ -33,6 +33,11 @@ export default new Router({
       component: () => import("./components/bkAdd2")
     },
     {
+      path: "/bkList",
+      name: "bkList",
+      component: () => import("./components/bkList")
+    },
+    {
       path: "/posGM_0",
       name: "posGM",
       component: () => import("./components/posGM")
