@@ -63,40 +63,53 @@
         <div class= "flex text-xs border-1 py-1 border-blue-400 text-gray-900 rounded-2xl text-ms px-3 px-0.5 mx-2" >北北東 棚 1</div>
         <div class= "flex text-xs border-2 py-1 bg-red-200 border-red-600 text-gray-900 font-semibold rounded-2xl  px-3 mx-2" >剩餘 : {{ 6-bk_pos0_1.length  }} / 6 </div>
         <div class= "flex text-xs border-2 py-1 bg-green-200 border-green-400 text-gray-900 font-semibold rounded-2xl  px-3 mx-2" >預留 : {{ 6-ntadd_pos0_1.length  }} / 6 </div>
-        <!-- <span class="text-ms"> 北北東 棚 1  </span> 
-        <v-chip   >  / 6 </v-chip>  -->
+        <div class= "flex text-xs border-2 py-1 bg-gray-600  border-gray-400  text-gray-200 font-semibold rounded-2xl  px-3 mx-2" > 換 </div>      
       </div>
+
       <div class="flex justify-center w-full ">
           <div  small  
-                class="rounded-r-lg text-xs red darken-2 text-white text-center p-1 my-2 mr-1 w-12">
-                  當時  </div >  
-           
-            <v-chip-group v-model="bk_pos0_1"  multiple 
+                class="rounded-r-lg text-xs red darken-2 text-white text-center p-2 my-2 mr-1 w-1/6">
+                  當時  </div >   
+            <v-chip-group v-model="bk_pos0_1"   multiple 
                   active-class="bg-red-600 text-white text-xs  "
-                  class="w-90" >  
-                  <v-chip small  class="text-xs" > 6 </v-chip>
-                  <v-chip small  class="text-xs" > 5 </v-chip>
-                  <v-chip small  class="text-xs" > 4 </v-chip>
-                  <v-chip small  class="text-xs" > 3 </v-chip>
-                  <v-chip small  class="text-xs" > 2 </v-chip>
-                  <v-chip small  class="text-xs" > 1 </v-chip> 
-            </v-chip-group> 
-           
+                  class="w-5/6 " >  
+                  <v-chip    class="text-xs" > 6 </v-chip>
+                  <v-chip   class="text-xs" > 5 </v-chip>
+                  <v-chip   class="text-xs" > 4 </v-chip>
+                  <v-chip  class="text-xs" > 3 </v-chip>
+                  <v-chip   class="text-xs" > 2 </v-chip>
+                  <v-chip  class="text-xs" > 1 </v-chip> 
+            </v-chip-group>  
       </div>
       <div class="flex justify-center w-full ">
           <div  small  
-                class="flex rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 my-2 mr-1">
+                class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-2 my-2 mr-1 w-1/6">
+                  續時  </div >   
+            <v-chip-group v-model="ntadd_pos0_1"   multiple 
+                  active-class="light-green darken-3 text-white text-xs  "
+                  class="w-5/6 " >  
+                  <v-chip    class="text-xs" > 6 </v-chip>
+                  <v-chip   class="text-xs" > 5 </v-chip>
+                  <v-chip   class="text-xs" > 4 </v-chip>
+                  <v-chip  class="text-xs" > 3 </v-chip>
+                  <v-chip   class="text-xs" > 2 </v-chip>
+                  <v-chip  class="text-xs" > 1 </v-chip> 
+            </v-chip-group>  
+      </div>
+      <!-- <div class="flex justify-center w-full ">
+          <div  small  
+                class="flex rounded-lg text-xs light-green darken-3 text-white text-center p-2 my-2 mr-1">
                   續時  </div >  
           <v-chip-group v-model="ntadd_pos0_1" column multiple 
                 active-class="light-green darken-3 text-white text-xs flex justify-around " >  
-                <v-chip small  class="text-xs" > 1 </v-chip>
-                <v-chip small  class="text-xs" > 2 </v-chip>
-                <v-chip small  class="text-xs" > 3 </v-chip>
-                <v-chip small  class="text-xs" > 4 </v-chip>
-                <v-chip small  class="text-xs" > 5 </v-chip>
-                <v-chip small  class="text-xs" > 6 </v-chip> 
+                <v-chip    class="text-xs" > 1 </v-chip>
+                <v-chip  class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip    class="text-xs" > 4 </v-chip>
+                <v-chip  class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 6 </v-chip> 
           </v-chip-group> 
-      </div> 
+      </div>  -->
     </div>
 
      <v-card-text>
