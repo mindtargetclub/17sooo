@@ -68,17 +68,20 @@
       </div>
       <div class="flex justify-center w-full ">
           <div  small  
-                class="flex rounded-r-lg text-xs red darken-2 text-white text-center p-1 my-2 mr-1">
+                class="rounded-r-lg text-xs red darken-2 text-white text-center p-1 my-2 mr-1 w-1/6">
                   當時  </div >  
-          <v-chip-group v-model="bk_pos0_1" column multiple 
-                active-class="bg-red-600 text-white text-xs flex justify-around " >  
-                <v-chip small  class="text-xs" > 靶 1 </v-chip>
-                <v-chip small  class="text-xs" > 靶 2 </v-chip>
-                <v-chip small  class="text-xs" > 靶 3 </v-chip>
-                <v-chip small  class="text-xs" > 靶 4 </v-chip>
-                <v-chip small  class="text-xs" > 靶 5 </v-chip>
-                <v-chip small  class="text-xs" > 靶 6 </v-chip> 
-          </v-chip-group> 
+           
+            <v-chip-group v-model="bk_pos0_1" column multiple 
+                  active-class="bg-red-600 text-white text-xs  "
+                  class="w-5/6" >  
+                  <v-chip small  class="text-xs" > 靶 A </v-chip>
+                  <v-chip small  class="text-xs" > 靶 2 </v-chip>
+                  <v-chip small  class="text-xs" > 靶 3 </v-chip>
+                  <v-chip small  class="text-xs" > 靶 4 </v-chip>
+                  <v-chip small  class="text-xs" > 靶 5 </v-chip>
+                  <v-chip small  class="text-xs" > 靶 6 </v-chip> 
+            </v-chip-group> 
+           
       </div>
       <div class="flex justify-center w-full ">
           <div  small  
