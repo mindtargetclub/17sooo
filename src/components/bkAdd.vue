@@ -73,13 +73,13 @@
            
             <v-chip-group v-model="bk_pos0_1"  multiple 
                   active-class="bg-red-600 text-white text-xs  "
-                  class="w-auto" >  
-                  <v-chip small  class="text-xs" > 靶 6 </v-chip>
-                  <v-chip small  class="text-xs" > 靶 5 </v-chip>
-                  <v-chip small  class="text-xs" > 靶 4 </v-chip>
-                  <v-chip small  class="text-xs" > 靶 3 </v-chip>
-                  <v-chip small  class="text-xs" > 靶 2 </v-chip>
-                  <v-chip small  class="text-xs" > 靶 1 </v-chip> 
+                  class="w-90" >  
+                  <v-chip small  class="text-xs" > 6 </v-chip>
+                  <v-chip small  class="text-xs" > 5 </v-chip>
+                  <v-chip small  class="text-xs" > 4 </v-chip>
+                  <v-chip small  class="text-xs" > 3 </v-chip>
+                  <v-chip small  class="text-xs" > 2 </v-chip>
+                  <v-chip small  class="text-xs" > 1 </v-chip> 
             </v-chip-group> 
            
       </div>
@@ -89,12 +89,12 @@
                   續時  </div >  
           <v-chip-group v-model="ntadd_pos0_1" column multiple 
                 active-class="light-green darken-3 text-white text-xs flex justify-around " >  
-                <v-chip small  class="text-xs" > 靶 1 </v-chip>
-                <v-chip small  class="text-xs" > 靶 2 </v-chip>
-                <v-chip small  class="text-xs" > 靶 3 </v-chip>
-                <v-chip small  class="text-xs" > 靶 4 </v-chip>
-                <v-chip small  class="text-xs" > 靶 5 </v-chip>
-                <v-chip small  class="text-xs" > 靶 6 </v-chip> 
+                <v-chip small  class="text-xs" > 1 </v-chip>
+                <v-chip small  class="text-xs" > 2 </v-chip>
+                <v-chip small  class="text-xs" > 3 </v-chip>
+                <v-chip small  class="text-xs" > 4 </v-chip>
+                <v-chip small  class="text-xs" > 5 </v-chip>
+                <v-chip small  class="text-xs" > 6 </v-chip> 
           </v-chip-group> 
       </div> 
     </div>
