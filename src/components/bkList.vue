@@ -13,6 +13,7 @@
           :key="index"
           @click="setActiveTutorial(tutorial, index)"
         >
+          {{ tutorial.bk_pos0_1 }}  |
           {{ tutorial.od_date }}  
           <!-- {{ tutorial.description }} -->
 
@@ -61,7 +62,7 @@
 
 <script>
 import WordDataService from "../services/odDataService"; 
-import TutorialDetails from "./WordMdf"; // 連接至 Mdf 的部分
+import TutorialDetails from "./bkMdf"; // 連接至 Mdf 的部分
 
 export default {
   name: "tutorials-list",
@@ -82,7 +83,39 @@ export default {
           let data = item.val();
           _tutorials.push({
             key: key, 
+             
             od_date  : data.od_date,
+
+            bk_pos0_1: data.bk_pos0_1,
+            bk_pos0_2: data.bk_pos0_2,
+            bk_pos0_3: data.bk_pos0_3,
+            bk_pos0_4: data.bk_pos0_4,
+            ntadd_pos0_1: data.ntadd_pos0_1,
+            ntadd_pos0_2: data.ntadd_pos0_2,
+            ntadd_pos0_3: data.ntadd_pos0_3,
+            ntadd_pos0_4: data.ntadd_pos0_4,
+
+            bk_pos1_1: data.bk_pos1_1,
+            bk_pos1_2: data.bk_pos1_2,
+            bk_pos1_3: data.bk_pos1_3,
+            bk_pos1_4: data.bk_pos1_4,
+            bk_pos1_5: data.bk_pos1_5,
+            bk_pos1_6: data.bk_pos1_6,
+            ntadd_pos1_1: data.ntadd_pos1_1,
+            ntadd_pos1_2: data.ntadd_pos1_2,
+            ntadd_pos1_3: data.ntadd_pos1_3,
+            ntadd_pos1_4: data.ntadd_pos1_4,
+            ntadd_pos1_5: data.ntadd_pos1_5,
+            ntadd_pos1_6: data.ntadd_pos1_6,
+            
+            bk_pos2_1: data.bk_pos2_1,
+            bk_pos2_2: data.bk_pos2_2,
+            bk_pos2_3: data.bk_pos2_3,
+            bk_pos2_4: data.bk_pos2_4,
+            ntadd_pos2_1: data.ntadd_pos2_1,
+            ntadd_pos2_2: data.ntadd_pos2_2,
+            ntadd_pos2_3: data.ntadd_pos2_3,
+            ntadd_pos2_4: data.ntadd_pos2_4,
 
             // spell_zh_tw  : data.spell_zh_tw, 
             // description : data.description,
