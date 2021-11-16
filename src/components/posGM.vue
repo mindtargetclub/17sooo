@@ -6,33 +6,39 @@
               
 <v-form>
       <v-container > 
-        <div class=" grid grid-cols-3 gap-2  ">
-        <v-card solo> 
-          <v-card-title>北北東</v-card-title>
-          <v-divider></v-divider>
-        <a class=" text-3xl "> {{  pos_1_ply.box2 + pos_1_ply.box3 + pos_1_ply.box4 + pos_1_ply.box5  - pos_1_plyadTed}} / 24 
-          </a>
-        </v-card> 
-   
-        <v-card solo>
-        <v-card-title>中央 </v-card-title>
-          <v-divider></v-divider>
-          <div class=" md:p-2 col-span-1">
-            <strong> 
-              <a class=" text-3xl "> {{  pos_2_ply.box1 + pos_2_ply.box2 + pos_2_ply.box3 + pos_2_ply.box4 + pos_2_ply.box5 + pos_2_ply.box6 - pos_2_plyadTed}} / 36 
-              </a></strong> 
-          </div>
-          </v-card>
+ <div class=" grid grid-cols-3 gap-2  ">
+<v-card solo>
 
-        <v-card solo>
-        <v-card-title>南場 </v-card-title>
-          <v-divider></v-divider> 
-          <div class=" md:p-2 col-span-1">
-            <strong> 
-              <a class=" text-3xl "> {{  pos_3_ply.box1 + pos_3_ply.box2 + pos_3_ply.box3 + pos_3_ply.box4 + pos_3_ply.box5 - pos_3_plyadTed}} / 22  
-              </a></strong> 
-          </div>
-          </v-card>
+  <v-card-title>北北東</v-card-title>
+  <v-divider></v-divider>
+ <a class=" text-3xl "> {{  pos_1_ply.box2 + pos_1_ply.box3 + pos_1_ply.box4 + pos_1_ply.box5  - pos_1_plyadTed}} / 24 
+   </a>
+</v-card>
+
+ 
+      
+   
+<v-card solo>
+<v-card-title>中央 </v-card-title>
+  <v-divider></v-divider>
+   <div class=" md:p-2 col-span-1">
+    <strong> 
+      <a class=" text-3xl "> {{  pos_2_ply.box1 + pos_2_ply.box2 + pos_2_ply.box3 + pos_2_ply.box4 + pos_2_ply.box5 + pos_2_ply.box6 - pos_2_plyadTed}} / 36 
+      </a></strong> 
+   </div>
+   </v-card>
+
+<v-card solo>
+<v-card-title>南場 </v-card-title>
+  <v-divider></v-divider>
+
+   <div class=" md:p-2 col-span-1">
+    <strong> 
+      <a class=" text-3xl "> {{  pos_3_ply.box1 + pos_3_ply.box2 + pos_3_ply.box3 + pos_3_ply.box4 + pos_3_ply.box5 - pos_3_plyadTed}} / 22  
+      </a></strong> 
+   </div>
+
+  </v-card>
 
   </div> 
       <v-tabs
