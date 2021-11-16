@@ -66,7 +66,7 @@
         <div class= " text-xs border-b-4 py-1 bg-green-200 border-green-400 text-gray-900 font-semibold rounded-2xl px-2 mx-1" >預 : {{ 6-ntadd_pos0_1.length  }} </div>
         <div class= " text-xs border-2 py-1 bg-gray-600  border-gray-400  text-gray-200 font-semibold rounded-2xl px-2 mx-1" 
         v-on:click="ckary('11')"
-         >換</div>  
+         >換</div> 
       </div>
 
     <div> 
@@ -103,16 +103,16 @@
       <div class="flex justify-center w-full ">
           <div  small  
                 class="rounded-r-lg text-xs red darken-2 text-white text-center p-1 py-2 my-2 mr-1 w-20">
-                  當時 棚1  </div >   
+                  當時 棚1  </div >  
             <v-chip-group v-model="bk_pos0_1"   multiple 
-                  active-class="bg-red-600 text-white text-xs  "
-                  class="w-5/6 " >  
-                  <v-chip class="text-xs" > 6 </v-chip>
-                  <v-chip class="text-xs" > 5 </v-chip>
-                  <v-chip class="text-xs" > 4 </v-chip>
-                  <v-chip class="text-xs" > 3 </v-chip>
-                  <v-chip class="text-xs" > 2 </v-chip>
-                  <v-chip class="text-xs" > 1 </v-chip>  
+                  active-class="bg-red-600 text-white text-xs "
+                  class="w-5/6 " > 
+                  <v-chip class="text-xs " > <div v-if='ck(ntadd_pos0_1,0) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 6 </div> <div v-if='ck(ntadd_pos0_1,0) == false' class=""> 6 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_1,1) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 5 </div> <div v-if='ck(ntadd_pos0_1,1) == false' class=""> 5 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_1,2) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 4 </div> <div v-if='ck(ntadd_pos0_1,2) == false' class=""> 4 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_1,3) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 3 </div> <div v-if='ck(ntadd_pos0_1,3) == false' class=""> 3 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_1,4) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 2 </div> <div v-if='ck(ntadd_pos0_1,4) == false' class=""> 2 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_1,5) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 1 </div> <div v-if='ck(ntadd_pos0_1,5) == false' class=""> 1 </div> </v-chip>  
             </v-chip-group>  
       </div>
       <div class="flex justify-center w-full ">
@@ -520,7 +520,9 @@
         <div class= " text-xs border-2 py-1 bg-green-200 border-green-400 text-gray-900 font-semibold rounded-2xl px-2 mx-1" >預 : {{ 6-ntadd_pos0_4.length  }} </div>
         <div class= " text-xs border-2 py-1 bg-gray-600  border-gray-400  text-gray-200 font-semibold rounded-2xl px-2 mx-1" 
         v-on:click="ckary('34')"
-         >換</div>     
+         >換</div>  
+
+          
       </div>  
     </div>
 
@@ -530,8 +532,8 @@
                   當時 棚1  </div >   
             <v-chip-group v-model="bk_pos2_1"   multiple 
                   active-class="bg-red-600 text-white text-xs  "
-                  class="w-5/6 " >  
-                  <v-chip class="text-xs" > 6 </v-chip>
+                  class="w-5/6 " >   
+                  <v-chip class="text-x " >  6  </v-chip>
                   <v-chip class="text-xs" > 5 </v-chip>
                   <v-chip class="text-xs" > 4 </v-chip>
                   <v-chip class="text-xs" > 3 </v-chip>
@@ -593,11 +595,11 @@
             <v-chip-group v-model="ntadd_pos2_1"   multiple 
                   active-class="light-green darken-3 text-white text-xs  " 
                   class="w-5/6 " >  
-                  <v-chip  class="text-xs  " > 6 </v-chip>
+                  <v-chip  class="text-xs" > 6 </v-chip>
                   <v-chip  class="text-xs" > 5 </v-chip>
                   <v-chip  class="text-xs" > 4 </v-chip>
                   <v-chip  class="text-xs" > 3 </v-chip>
-                  <v-chip   class="text-xs" > 2 </v-chip>
+                  <v-chip  class="text-xs" > 2 </v-chip>
                   <v-chip  class="text-xs" > 1 </v-chip> 
             </v-chip-group>  
       </div> 
@@ -605,15 +607,15 @@
 
 
       <div class="grid grid-cols-5 " >  
-        <div class="col-span-2 rounded-2xl  black
-                    text-base text-white text-center p-2 my-2 mr-1 "
+        <div class="col-span-2 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+                    text-base text-center py-1 px-2 my-2 mr-1 "
                     v-on:click="ckary('32')"
                     >
                     
                 換</div>
-        <div class="col-span-3 rounded-lg text-xs light-green darken-3 
+        <div class="col-span-3 rounded-lg text-xs bg-green-600
                     text-white text-center py-2 my-2 mr-1 ">
-                預 棚2  </div >   
+                預排 棚2  </div >   
       </div >  
       <!-- <div class="w-120 "> -->
       <v-chip-group v-model="ntadd_pos2_2"   multiple 
@@ -731,8 +733,17 @@ export default {
     };
   },
   methods: {
+ 
+     ck(aryy,cdtion){  
+       var ans = aryy.some(function(item, index, array)
+                {
+                  return item == cdtion // 當全部 age 大於 10 才能回傳 true
+                });
+                console.log("ans = " + ans);  // true: 只要有部分符合，則為 true 
+           return  ans 
+     },
+ 
 
-     
 
     ckary(ary_gp) {
            
