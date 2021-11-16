@@ -602,28 +602,13 @@
                   <v-chip  class="text-xs" > 2 </v-chip>
                   <v-chip  class="text-xs" > 1 </v-chip> 
             </v-chip-group>  
-      </div>
+      </div> 
       <div class="flex justify-center w-full "> 
 
 
       <div class="grid grid-cols-5 " >  
         <div class="col-span-2 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
                     text-xs text-center py-1 px-2 my-2 mr-1 "
-                    v-on:click="ckary('32')"
-                    >
-                    
-                換</div>
-        <div class="col-span-3 rounded-lg text-xs bg-green-600
-                    text-white text-center py-2 my-2 mr-1 ">
-                預 棚2  </div >   
-      </div >  
-
-      <div class="flex justify-center w-full "> 
-
-
-      <div class="grid grid-cols-5 " >  
-        <div class="col-span-2 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
-                    text-base text-center py-1 px-2 my-2 mr-1 "
                     v-on:click="ckary('32')"
                     >
                     
