@@ -60,13 +60,13 @@
 
     <div> 
       <div class ="flex justify-center bg-gray-200 py-2 ">
-        <div class= "flex  border-1 border-blue-400 text-gray-900 rounded-2xl text-ms px-3 py-0.5 mx-2" >北北東 棚 1</div>
+        <div class= "flex  border-1 border-blue-400 text-gray-900 rounded-2xl text-ms px-3 px-0.5 mx-2" >北北東 棚 1</div>
         <div class= "flex  border-2 bg-red-200 border-red-600 text-gray-900 font-semibold rounded-2xl  px-3 mx-2" >剩餘 : {{ 6-bk_pos0_1.length  }} / 6 </div>
         <div class= "flex  border-2 bg-green-200 border-green-400 text-gray-900 font-semibold rounded-2xl  px-3 mx-2" >預留 : {{ 6-ntadd_pos0_1.length  }} / 6 </div>
         <!-- <span class="text-ms"> 北北東 棚 1  </span> 
         <v-chip   >  / 6 </v-chip>  -->
       </div>
-      <div class="flex justify-center">
+      <div class="flex justify-center w-full ">
           <div  small  
                 class="flex rounded-r-lg text-xs red darken-2 text-white text-center p-1 my-2 mr-1">
                   當時  </div >  
@@ -80,7 +80,7 @@
                 <v-chip small  class="text-xs" > 靶 6 </v-chip> 
           </v-chip-group> 
       </div>
-      <div class="flex justify-center">
+      <div class="flex justify-center w-full ">
           <div  small  
                 class="flex rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 my-2 mr-1">
                   續時  </div >  
