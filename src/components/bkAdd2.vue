@@ -122,12 +122,12 @@
             <v-chip-group v-model="bk_pos0_2"   multiple 
                   active-class="bg-red-600 text-white text-xs  "
                   class="w-5/6 " >  
-                  <v-chip class="text-xs" > 6 </v-chip>
-                  <v-chip class="text-xs" > 5 </v-chip>
-                  <v-chip class="text-xs" > 4 </v-chip>
-                  <v-chip class="text-xs" > 3 </v-chip>
-                  <v-chip class="text-xs" > 2 </v-chip>
-                  <v-chip class="text-xs" > 1 </v-chip> 
+                  <v-chip class="text-xs " > <div v-if='ck(ntadd_pos0_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 6 </div> <div v-if='ck(ntadd_pos0_2,0) == false' class=""> 6 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 5 </div> <div v-if='ck(ntadd_pos0_2,1) == false' class=""> 5 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 4 </div> <div v-if='ck(ntadd_pos0_2,2) == false' class=""> 4 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_2,3) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 3 </div> <div v-if='ck(ntadd_pos0_2,3) == false' class=""> 3 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_2,4) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 2 </div> <div v-if='ck(ntadd_pos0_2,4) == false' class=""> 2 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_2,5) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 1 </div> <div v-if='ck(ntadd_pos0_2,5) == false' class=""> 1 </div> </v-chip> 
             </v-chip-group>  
       </div>
       <div class="flex justify-center w-full ">
@@ -137,12 +137,12 @@
             <v-chip-group v-model="bk_pos0_3"   multiple 
                   active-class="bg-red-600 text-white text-xs  "
                   class="w-5/6 " >  
-                  <v-chip class="text-xs" > 6 </v-chip>
-                  <v-chip class="text-xs" > 5 </v-chip>
-                  <v-chip class="text-xs" > 4 </v-chip>
-                  <v-chip class="text-xs" > 3 </v-chip>
-                  <v-chip class="text-xs" > 2 </v-chip>
-                  <v-chip class="text-xs" > 1 </v-chip>  
+                  <v-chip class="text-xs " > <div v-if='ck(ntadd_pos0_3,0) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 6 </div> <div v-if='ck(ntadd_pos0_3,0) == false' class=""> 6 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_3,1) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 5 </div> <div v-if='ck(ntadd_pos0_3,1) == false' class=""> 5 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_3,2) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 4 </div> <div v-if='ck(ntadd_pos0_3,2) == false' class=""> 4 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_3,3) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 3 </div> <div v-if='ck(ntadd_pos0_3,3) == false' class=""> 3 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_3,4) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 2 </div> <div v-if='ck(ntadd_pos0_3,4) == false' class=""> 2 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_3,5) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 1 </div> <div v-if='ck(ntadd_pos0_3,5) == false' class=""> 1 </div> </v-chip>   
             </v-chip-group>  
       </div>
       <div class="flex justify-center w-full ">
@@ -152,37 +152,134 @@
             <v-chip-group v-model="bk_pos0_4"   multiple 
                   active-class="bg-red-600 text-white text-xs  "
                   class="w-5/6 " >  
-                  <v-chip class="text-xs" > 6 </v-chip>
-                  <v-chip class="text-xs" > 5 </v-chip>
-                  <v-chip class="text-xs" > 4 </v-chip>
-                  <v-chip class="text-xs" > 3 </v-chip>
-                  <v-chip class="text-xs" > 2 </v-chip>
-                  <v-chip class="text-xs" > 1 </v-chip> 
+                  <v-chip class="text-xs " > <div v-if='ck(ntadd_pos0_4,0) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 6 </div> <div v-if='ck(ntadd_pos0_4,0) == false' class=""> 6 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_4,1) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 5 </div> <div v-if='ck(ntadd_pos0_4,1) == false' class=""> 5 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_4,2) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 4 </div> <div v-if='ck(ntadd_pos0_4,2) == false' class=""> 4 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_4,3) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 3 </div> <div v-if='ck(ntadd_pos0_4,3) == false' class=""> 3 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_4,4) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 2 </div> <div v-if='ck(ntadd_pos0_4,4) == false' class=""> 2 </div> </v-chip>
+                  <v-chip class="text-xs" >  <div v-if='ck(ntadd_pos0_4,5) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 1 </div> <div v-if='ck(ntadd_pos0_4,5) == false' class=""> 1 </div> </v-chip> 
             </v-chip-group>  
       </div>
 <hr>
     <div class="bg-green-50">
+            <div class="flex justify-center w-full "> 
+      <div class="grid grid-cols-5 " >  
+        <div class="col-span-2 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+                    text-xs text-center py-1.5 px-2 my-2 mr-1 "
+                    v-on:click="ckary('32')"
+                    > 
+                換</div>
+        <div class="col-span-3 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                預 棚1  </div >   
+        </div >   
+      <v-chip-group v-model="ntadd_pos0_1"   multiple 
+            active-class="bg-green-600 text-white text-xs  "
+             >  
+            <v-chip   class="text-xs" > 6 </v-chip>
+            <v-chip   class="text-xs" > 5 </v-chip>
+            <v-chip   class="text-xs" > 4 </v-chip>
+            <v-chip   class="text-xs" > 3 </v-chip>
+            <v-chip   class="text-xs" > 2 </v-chip>
+            <v-chip   class="text-xs" > 1 </v-chip> 
+      </v-chip-group>  
+      </div> 
+      <!-- ..... -->
+
+            <div class="flex justify-center w-full "> 
+      <div class="grid grid-cols-5 " >  
+        <div class="col-span-2 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+                    text-xs text-center py-1.5 px-2 my-2 mr-1 "
+                    v-on:click="ckary('32')"
+                    > 
+                換</div>
+        <div class="col-span-3 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                預 棚2  </div >   
+        </div >   
+      <v-chip-group v-model="ntadd_pos0_2"   multiple 
+            active-class="bg-green-600 text-white text-xs  "
+             >  
+            <v-chip   class="text-xs" > 6 </v-chip>
+            <v-chip   class="text-xs" > 5 </v-chip>
+            <v-chip   class="text-xs" > 4 </v-chip>
+            <v-chip   class="text-xs" > 3 </v-chip>
+            <v-chip   class="text-xs" > 2 </v-chip>
+            <v-chip   class="text-xs" > 1 </v-chip> 
+      </v-chip-group>  
+      </div> 
+      <!-- ..... -->
+
+                  <div class="flex justify-center w-full "> 
+      <div class="grid grid-cols-5 " >  
+        <div class="col-span-2 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+                    text-xs text-center py-1.5 px-2 my-2 mr-1 "
+                    v-on:click="ckary('32')"
+                    > 
+                換</div>
+        <div class="col-span-3 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                預 棚3  </div >   
+        </div >   
+      <v-chip-group v-model="ntadd_pos0_3"   multiple 
+            active-class="bg-green-600 text-white text-xs  "
+             >  
+            <v-chip   class="text-xs" > 6 </v-chip>
+            <v-chip   class="text-xs" > 5 </v-chip>
+            <v-chip   class="text-xs" > 4 </v-chip>
+            <v-chip   class="text-xs" > 3 </v-chip>
+            <v-chip   class="text-xs" > 2 </v-chip>
+            <v-chip   class="text-xs" > 1 </v-chip> 
+      </v-chip-group>  
+      </div> 
+      <!-- ..... -->
+
+                  <div class="flex justify-center w-full "> 
+      <div class="grid grid-cols-5 " >  
+        <div class="col-span-2 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+                    text-xs text-center py-1.5 px-2 my-2 mr-1 "
+                    v-on:click="ckary('32')"
+                    > 
+                換</div>
+        <div class="col-span-3 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                預 棚4  </div >   
+        </div >   
+      <v-chip-group v-model="ntadd_pos0_4"   multiple 
+            active-class="bg-green-600 text-white text-xs  "
+             >  
+            <v-chip   class="text-xs" > 6 </v-chip>
+            <v-chip   class="text-xs" > 5 </v-chip>
+            <v-chip   class="text-xs" > 4 </v-chip>
+            <v-chip   class="text-xs" > 3 </v-chip>
+            <v-chip   class="text-xs" > 2 </v-chip>
+            <v-chip   class="text-xs" > 1 </v-chip> 
+      </v-chip-group>  
+      </div> 
+      <!-- ..... -->
+
+<!--
       <div class="flex justify-center w-full  ">
           <div  small  
-                class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
+                class="rounded-r-lg text-xs bg-green-800 text-white text-center p-1 py-2 my-2 mr-1 w-20">
                   預排 棚1  </div >   
             <v-chip-group v-model="ntadd_pos0_1"   multiple 
-                  active-class="light-green darken-3 text-white text-xs  " 
+                  active-class="bg-green-600 text-white text-xs  " 
                   class="w-5/6 " >  
-                  <v-chip  class="text-xs  " > 6 </v-chip>
-                  <v-chip  class="text-xs" > 5 </v-chip>
-                  <v-chip  class="text-xs" > 4 </v-chip>
-                  <v-chip  class="text-xs" > 3 </v-chip>
+                  <v-chip   class="text-xs" > 6 </v-chip>
+                  <v-chip   class="text-xs" > 5 </v-chip>
+                  <v-chip   class="text-xs" > 4 </v-chip>
+                  <v-chip   class="text-xs" > 3 </v-chip>
                   <v-chip   class="text-xs" > 2 </v-chip>
-                  <v-chip  class="text-xs" > 1 </v-chip> 
+                  <v-chip   class="text-xs" > 1 </v-chip>
             </v-chip-group>  
       </div> 
       <div class="flex justify-center w-full ">
           <div  small  
-                class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
+                class="rounded-r-lg text-xs bg-green-800 text-white text-center p-1 py-2 my-2 mr-1 w-20">
                   預排 棚2  </div >   
             <v-chip-group v-model="ntadd_pos0_2"   multiple 
-                  active-class="light-green darken-3 text-white text-xs  "
+                  active-class="bg-green-600 text-white text-xs  "
                   class="w-5/6 " >  
                   <v-chip   class="text-xs" > 6 </v-chip>
                   <v-chip   class="text-xs" > 5 </v-chip>
@@ -194,10 +291,10 @@
       </div> 
       <div class="flex justify-center w-full ">
           <div  small  
-                class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
+                class="rounded-r-lg text-xs bg-green-800 text-white text-center p-1 py-2 my-2 mr-1 w-20">
                   預排 棚3   </div >   
             <v-chip-group v-model="ntadd_pos0_3"   multiple 
-                  active-class="light-green darken-3 text-white text-xs  "
+                  active-class="bg-green-600 text-white text-xs  "
                   class="w-5/6 " >  
                   <v-chip    class="text-xs" > 6 </v-chip>
                   <v-chip   class="text-xs" > 5 </v-chip>
@@ -209,10 +306,10 @@
       </div> 
             <div class="flex justify-center w-full ">
           <div  small  
-                class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
+                class="rounded-r-lg text-xs bg-green-800 text-white text-center p-1 py-2 my-2 mr-1 w-20">
                   預排 棚4  </div >   
             <v-chip-group v-model="ntadd_pos0_4"   multiple 
-                  active-class="light-green darken-3 text-white text-xs  "
+                  active-class="bg-green-600 text-white text-xs  "
                   class="w-5/6 " >  
                   <v-chip    class="text-xs" > 6 </v-chip>
                   <v-chip   class="text-xs" > 5 </v-chip>
@@ -222,6 +319,7 @@
                   <v-chip  class="text-xs" > 1 </v-chip> 
             </v-chip-group>  
       </div> 
+      -->
     </div> 
     </div> 
         </v-tab-item>
@@ -390,7 +488,7 @@
                 class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
                   預排 棚1  </div >   
             <v-chip-group v-model="ntadd_pos1_1"   multiple 
-                  active-class="light-green darken-3 text-white text-xs  " 
+                  active-class="bg-green-600 text-white text-xs  " 
                   class="w-5/6 " >  
                   <v-chip  class="text-xs  " > 6 </v-chip>
                   <v-chip  class="text-xs" > 5 </v-chip>
@@ -405,7 +503,7 @@
                 class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
                   預排 棚2  </div >   
             <v-chip-group v-model="ntadd_pos1_2"   multiple 
-                  active-class="light-green darken-3 text-white text-xs  "
+                  active-class="bg-green-600 text-white text-xs  "
                   class="w-5/6 " >  
                   <v-chip   class="text-xs" > 6 </v-chip>
                   <v-chip   class="text-xs" > 5 </v-chip>
@@ -420,7 +518,7 @@
                 class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
                   預排 棚3   </div >   
             <v-chip-group v-model="ntadd_pos1_3"   multiple 
-                  active-class="light-green darken-3 text-white text-xs  "
+                  active-class="bg-green-600 text-white text-xs  "
                   class="w-5/6 " >  
                   <v-chip    class="text-xs" > 6 </v-chip>
                   <v-chip   class="text-xs" > 5 </v-chip>
@@ -435,7 +533,7 @@
                 class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
                   預排 棚4  </div >   
             <v-chip-group v-model="ntadd_pos1_4"   multiple 
-                  active-class="light-green darken-3 text-white text-xs  "
+                  active-class="bg-green-600 text-white text-xs  "
                   class="w-5/6 " >  
                   <v-chip    class="text-xs" > 6 </v-chip>
                   <v-chip   class="text-xs" > 5 </v-chip>
@@ -450,7 +548,7 @@
                 class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
                   預排 棚5  </div >   
             <v-chip-group v-model="ntadd_pos1_5"   multiple 
-                  active-class="light-green darken-3 text-white text-xs  "
+                  active-class="bg-green-600 text-white text-xs  "
                   class="w-5/6 " >  
                   <v-chip class="text-xs" > 6 </v-chip>
                   <v-chip class="text-xs" > 5 </v-chip>
@@ -465,7 +563,7 @@
                 class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
                   預排 棚6  </div >   
             <v-chip-group v-model="ntadd_pos1_6"   multiple 
-                  active-class="light-green darken-3 text-white text-xs  "
+                  active-class="bg-green-600 text-white text-xs  "
                   class="w-5/6 " >  
                   <v-chip class="text-xs" > 6 </v-chip>
                   <v-chip class="text-xs" > 5 </v-chip>
@@ -593,7 +691,7 @@
                 class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
                   預排 棚1  </div >   
             <v-chip-group v-model="ntadd_pos2_1"   multiple 
-                  active-class="light-green darken-3 text-white text-xs  " 
+                  active-class="bg-green-600 text-white text-xs  " 
                   class="w-5/6 " >  
                   <v-chip  class="text-xs" > 6 </v-chip>
                   <v-chip  class="text-xs" > 5 </v-chip>
@@ -604,22 +702,18 @@
             </v-chip-group>  
       </div> 
       <div class="flex justify-center w-full "> 
-
-
       <div class="grid grid-cols-5 " >  
         <div class="col-span-2 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
-                    text-xs text-center py-1 px-2 my-2 mr-1 "
+                    text-xs text-center py-1.5 px-2 my-2 mr-1 "
                     v-on:click="ckary('32')"
-                    >
-                    
+                    > 
                 換</div>
         <div class="col-span-3 rounded-lg text-xs bg-green-600
                     text-white text-center py-2 my-2 mr-1 ">
                 預 棚2  </div >   
-      </div >  
-      <!-- <div class="w-120 "> -->
+        </div >   
       <v-chip-group v-model="ntadd_pos2_2"   multiple 
-            active-class="light-green darken-3 text-white text-xs  "
+            active-class="bg-green-600 text-white text-xs  "
              >  
             <v-chip   class="text-xs" > 6 </v-chip>
             <v-chip   class="text-xs" > 5 </v-chip>
@@ -636,7 +730,7 @@
                 class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
                   預排 棚3   </div >   
             <v-chip-group v-model="ntadd_pos2_3"   multiple 
-                  active-class="light-green darken-3 text-white text-xs  "
+                  active-class="bg-green-600 text-white text-xs  "
                   class="w-5/6 " >  
                   <v-chip    class="text-xs" > 6 </v-chip>
                   <v-chip   class="text-xs" > 5 </v-chip>
@@ -651,7 +745,7 @@
                 class="rounded-r-lg text-xs light-green darken-3 text-white text-center p-1 py-2 my-2 mr-1 w-20">
                   預排 棚4  </div >   
             <v-chip-group v-model="ntadd_pos2_4"   multiple 
-                  active-class="light-green darken-3 text-white text-xs  "
+                  active-class="bg-green-600 text-white text-xs  "
                   class="w-5/6 " >  
                   <v-chip    class="text-xs" > 6 </v-chip>
                   <v-chip   class="text-xs" > 5 </v-chip>
