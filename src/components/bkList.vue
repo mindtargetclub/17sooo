@@ -3,7 +3,7 @@
   <div class="list row">
     <div class="col-md-1">
       <!-- <h4> 列表 </h4> -->
-      <a class="text-3xl py-2 "> 詞彙 ...列表 </a> 
+      <a class="text-3xl py-2 "> 訂單列表 </a> 
 
       <ul class="list-group">
         <li
@@ -41,11 +41,12 @@
 
 
 
-      <button class="m-3 btn btn-sm btn-danger" @click="removeAllTutorials">
+      <!-- <button class="m-3 btn btn-sm btn-danger" @click="removeAllTutorials">
         Remove All
-      </button>
+      </button> -->
     </div>
-    <div class="col-md-4">
+
+    <div class="col-md-12">
       <div v-if="currentTutorial">
         <tutorial-details
           :tutorial="currentTutorial"

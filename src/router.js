@@ -17,18 +17,23 @@ export default new Router({
     //   name: "p",
     //   component: () => import("./components/p")
     // }, 
+    // {
+    //   path: "/bkadd",
+    //   name: "bkadd",
+    //   component: () => import("./components/bkAdd")
+    // },
+    // {
+    //   path: "/",
+    //   name: "bkadd",
+    //   component: () => import("./components/bkAdd")
+    // },
     {
-      path: "/bkadd",
-      name: "bkadd",
-      component: () => import("./components/bkAdd")
+      path: "/bkadd2",
+      name: "bkadd2",
+      component: () => import("./components/bkAdd2")
     },
     {
       path: "/",
-      name: "bkadd",
-      component: () => import("./components/bkAdd")
-    },
-    {
-      path: "/bkadd2",
       name: "bkadd2",
       component: () => import("./components/bkAdd2")
     },
@@ -43,7 +48,7 @@ export default new Router({
       component: () => import("./components/posGM")
     },
     {
-      path: "/bkList",
+      path: "/WordList",
       name: "WordList",
       component: () => import("./components/WordList")
     },

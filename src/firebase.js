@@ -42,13 +42,13 @@ let config = {
 };
 
 let config2 = { 
-  apiKey: "AIzaSyA8R9TjllSRp_VD8EUa6vvyItyfjpzjsYE",
-  authDomain: "h2fnote-backup.firebaseapp.com",
-  databaseURL: "https://h2fnote-backup-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "h2fnote-backup",
-  storageBucket: "h2fnote-backup.appspot.com",
-  messagingSenderId: "728696220760",
-  appId: "1:728696220760:web:8be651f1f921ea7d48ae2d"
+  // apiKey: "AIzaSyA8R9TjllSRp_VD8EUa6vvyItyfjpzjsYE",
+  // authDomain: "h2fnote-backup.firebaseapp.com",
+  // databaseURL: "https://h2fnote-backup-default-rtdb.asia-southeast1.firebasedatabase.app",
+  // projectId: "h2fnote-backup",
+  // storageBucket: "h2fnote-backup.appspot.com",
+  // messagingSenderId: "728696220760",
+  // appId: "1:728696220760:web:8be651f1f921ea7d48ae2d"
 };
 
   

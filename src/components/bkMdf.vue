@@ -1,54 +1,262 @@
 <template>
   <div v-if="currentTutorial" class="edit-form">
-    <h4> 詞彙說明 </h4>
+    <!-- <h4> 詞彙說明 </h4> -->
     <form>
-      <div class="form-group">
-        <label for="title">泰雅文</label>
+      <div class="">
+
+        <!-- <label for="title">泰雅文</label> -->
         <!-- <input
           type="text"
           class="form-control"
           id="title"
           v-model="currentTutorial.title"
         /> -->
-        {{ currentTutorial }}
+{{ currentTutorial }}
 
+<hr>
+<br>
+      <div class="flex items-start w-auto row"> 
+        <div class=" grid grid-cols-3 gap-2  ">
+
+          <div class= "col-span-2">
+
+        <v-menu
+              ref="menu"
+              v-model="menu"
+              :close-on-content-click="false"
+              :return-value.sync="date"
+              transition="scale-transition"
+              offset-y
+              min-width="auto"
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <v-text-field
+                  v-model="currentTutorial.od_date"
+                  label="請設定日期" 
+                  readonly
+                  v-bind="attrs"
+                  v-on="on"
+                ></v-text-field>
+              </template>
+
+              
+              <v-date-picker
+                v-model="currentTutorial.od_date"
+                no-title
+                scrollable
+              >
+                <v-spacer></v-spacer>
+                <v-btn
+                  text
+                  color="primary"
+                  @click="menu = false"
+                >
+                  Cancel
+                </v-btn>
+                <v-btn
+                  text
+                  color="primary"
+                  @click="$refs.menu.save(date)"
+                >
+                  OK
+                </v-btn>
+              </v-date-picker> 
+      </v-menu>
+          </div>  
+      
+          <div class= "col-span-1">
+            <div class= "flex flex-auto">
+            <!-- <button @click="saveODR" class="btn btn-success"> 儲存記錄 </button> -->
+            <button class="border-2 border-solid flex-1 mx-1" @click="deleteTutorial">
+              刪除
+            </button>
+
+            <button  class="bg-red-500 hover:bg-red-700 flex-1 mx-1" @click="updateTutorial">
+              更新
+            </button> 
+            <p>{{ message }}</p>
+          </div> 
+          </div> 
+
+        </div>
+      </div>
+        
+
+<v-tabs
+    v-model="tab"
+    background-color="primary" 
+    fixed-tabs
+      
+  >
+    <v-tab key='k1' href='#k1' v-if="!hide"  >    
+        北北東 
+        <!-- <br>【 {{ 24-bk_pos0_1.length-bk_pos0_2.length -bk_pos0_3.length -bk_pos0_4.length   }} / 24 】  -->  
+    </v-tab>
+    <v-tab key='k2' href='#k2' > 
+        北場  
+        <!-- <br> 【 {{ 36-bk_pos1_1.length-bk_pos1_2.length -bk_pos1_3.length -bk_pos1_4.length -bk_pos1_5.length -bk_pos1_6.length }} / 36 】  -->
+    </v-tab>
+    <v-tab key='k3' href='#k3'  > 
+        南場  
+        <!-- <br> 【 {{ 22-bk_pos2_1.length-bk_pos2_2.length -bk_pos2_3.length -bk_pos2_4.length  }} / 22   -->
+    </v-tab> 
+  </v-tabs> 
+
+  <v-tabs-items v-model="tab">
+    <v-tab-item key='k1' value='k1'>  
+ 
+        
         <v-chip-group v-model="currentTutorial.bk_pos0_1"   multiple 
-            active-class="bg-green-600 text-white text-xs  "
-            
-            >  
-            <v-chip @click="updateTutorial"  class="text-xs" > 6 </v-chip>
-            <v-chip @click="updateTutorial"  class="text-xs" > 5 </v-chip>
-            <v-chip @click="updateTutorial"  class="text-xs" > 4 </v-chip>
-            <v-chip @click="updateTutorial"  class="text-xs" > 3 </v-chip>
-            <v-chip @click="updateTutorial"  class="text-xs" > 2 </v-chip>
-            <v-chip @click="updateTutorial"  class="text-xs" > 1 </v-chip> 
-      </v-chip-group>  
+            active-class="bg-green-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+
+        <v-chip-group v-model="currentTutorial.bk_pos0_2"   multiple 
+            active-class="bg-green-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+
+        <v-chip-group v-model="currentTutorial.bk_pos0_3"   multiple 
+            active-class="bg-green-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+
+        <v-chip-group v-model="currentTutorial.bk_pos0_4"   multiple 
+            active-class="bg-green-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+
+        <hr>
+
+         <v-chip-group v-model="currentTutorial.ntadd_pos0_1"   multiple 
+            active-class="bg-green-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+
+        <v-chip-group v-model="currentTutorial.ntadd_pos0_2"   multiple 
+            active-class="bg-green-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+
+        <v-chip-group v-model="currentTutorial.ntadd_pos0_3"   multiple 
+            active-class="bg-green-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+
+        <v-chip-group v-model="currentTutorial.ntadd_pos0_4"   multiple 
+            active-class="bg-green-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>
+        
+    <div class ="flex justify-center "> 當時</div>
+      
+    </v-tab-item>
+    <v-tab-item key='k2' value='k2'> 
+ 
+
+    </v-tab-item>
+    <v-tab-item key='k3' value='k3'>  
+ 
+    </v-tab-item>
+  </v-tabs-items> 
+        
+
+        <!-- <v-chip-group v-model="currentTutorial.bk_pos0_1"   multiple 
+            active-class="bg-green-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+        <v-chip-group v-model="currentTutorial.bk_pos0_2"   multiple 
+            active-class="bg-green-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group> 
+        <v-chip-group v-model="currentTutorial.bk_pos0_3"   multiple 
+            active-class="bg-green-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group> 
+        <v-chip-group v-model="currentTutorial.bk_pos0_4"   multiple 
+            active-class="bg-green-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  -->
+          
       </div> 
     </form>
 
-    <button
+    <!-- <button
       class="border-2 border-solid px-2 mr-2"
       v-if="currentTutorial.published"
       @click="updatePublished(false)"
     >
       未發佈
-    </button>
-    <button
+    </button> -->
+    <!-- <button
       v-else
       class="border-2 border-solid px-2 mr-2"
       @click="updatePublished(true)"
     >
       儲存
-    </button>
+    </button> -->
 
-    <button class="border-2 border-solid px-2 mr-2" @click="deleteTutorial">
-      刪除
-    </button>
-
-    <button  class="bg-red-500 hover:bg-red-700 px-2" @click="updateTutorial">
-      更新
-    </button>
-    <p>{{ message }}</p>
+    
   </div>
 
   <div v-else>
@@ -65,6 +273,10 @@ export default {
   props: ["tutorial"],
   data() {
     return {
+      tab:"",
+      menu: false,
+      modal: false,
+      menu2: false,
       currentTutorial: null,
       message: "",
     };
@@ -76,17 +288,98 @@ export default {
     },
   },
   methods: {
-    updatePublished(status) {
-      TutorialDataService.update(this.currentTutorial.key, {
-        published: status,
-      })
-        .then(() => {
-          this.currentTutorial.published = status;
-          this.message = "The status was updated successfully!";
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+    // updatePublished(status) {
+    //   TutorialDataService.update(this.currentTutorial.key, {
+    //     published: status,
+    //   })
+    //     .then(() => {
+    //       this.currentTutorial.published = status;
+    //       this.message = "The status was updated successfully!";
+    //     })
+    //     .catch((e) => {
+    //       console.log(e);
+    //     });
+    // },
+
+
+
+     ck(aryy,cdtion){  
+       var ans = aryy.some(function(item, index, array)
+                {
+                  return item == cdtion // 當全部 age 大於 10 才能回傳 true
+                });
+                // console.log("ans = " + ans);  // true: 只要有部分符合，則為 true 
+           return  ans 
+     }, 
+
+    ckary(ary_gp) {
+           
+          console.log("hh j 111 j kk")
+           
+          switch (ary_gp) {
+            case '11':
+              this.od.bk_pos0_1 = this.od.ntadd_pos0_1; this.od.ntadd_pos0_1 =[];
+              break;
+            case '12':
+              this.od.bk_pos0_2 = this.od.ntadd_pos0_2; this.od.ntadd_pos0_2 =[];
+              break;
+            case '13':
+              this.od.bk_pos0_3 = this.od.ntadd_pos0_3; this.od.ntadd_pos0_3 =[];
+              break;
+            case '14':
+              this.od.bk_pos0_4 = this.od.ntadd_pos0_4; this.od.ntadd_pos0_4 =[];
+              break;
+
+            case '21':
+              this.od.bk_pos1_1 = this.od.ntadd_pos1_1; this.od.ntadd_pos1_1 =[];
+              break;
+            case '22':
+              this.od.bk_pos1_2 = this.od.ntadd_pos1_2; this.od.ntadd_pos1_2 =[];
+              break;
+            case '23':
+              this.od.bk_pos1_3 = this.od.ntadd_pos1_3; this.od.ntadd_pos1_3 =[];
+              break;
+            case '24':
+              this.od.bk_pos1_4 = this.od.ntadd_pos1_4; this.od.ntadd_pos1_4 =[];
+              break;
+            case '25':
+              this.od.bk_pos1_3 = this.od.ntadd_pos1_5; this.od.ntadd_pos1_5 =[];
+              break;
+            case '26':
+              this.od.bk_pos1_4 = this.od.ntadd_pos1_6; this.od.ntadd_pos1_6 =[];
+              break;
+
+            case '31':
+              this.od.bk_pos2_1 = this.od.ntadd_pos2_1; this.od.ntadd_pos2_1 =[];
+              break;
+            case '32':
+              this.od.bk_pos2_2 = this.od.ntadd_pos2_2; this.od.ntadd_pos2_2 =[];
+              break;
+            case '33':
+              this.od.bk_pos2_3 = this.od.ntadd_pos2_3; this.od.ntadd_pos2_3 =[];
+              break;
+            case '34':
+              this.od.bk_pos2_4 = this.od.ntadd_pos2_4; this.od.ntadd_pos2_4 =[];
+              break;
+
+            default:
+              break;
+          }
+//        var temp_ary1 = this.ary1;
+       
+// bk_pos0_1
+          // temp_ary1 = temp_ary2;
+          // this.ary1 = temp_ary2;
+
+      var temp_ary2 = ary2;
+          ary1 = temp_ary2; 
+          ary2 = [];
+          
+      this.od.ntadd_pos0_1 = [];
+      console.log("hh j 2 j kk")
+      return  ary1,ary2;
+
+       
     },
 
     updateTutorial() {
@@ -94,6 +387,7 @@ export default {
         // title: this.currentTutorial.title,
         // description: this.currentTutorial.description,
 
+        od_date: this.currentTutorial.od_date,
         bk_pos0_1: this.currentTutorial.bk_pos0_1,
         // bk_pos0_2: this.currentTutorial.bk_pos0_2,
         // bk_pos0_3: this.currentTutorial.bk_pos0_3,
