@@ -13,7 +13,8 @@
           :key="index"
           @click="setActiveTutorial(tutorial, index)"
         >
-          {{ tutorial.bk_pos0_1 }}  |
+          {{ tutorial.bk_pos0_1 }}
+          {{ tutorial.ntadd_pos0_1 }}  |  |
           {{ tutorial.od_date }}  
           <!-- {{ tutorial.description }} -->
 

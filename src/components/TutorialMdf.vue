@@ -122,6 +122,42 @@ export default {
     return {
       currentTutorial: null,
       message: "",
+
+      currentTutorial: {
+        od_date:"",
+        bk_pos0_1:[],
+        bk_pos0_2:[],
+        bk_pos0_3:[],
+        bk_pos0_4:[],
+        ntadd_pos0_1:[],
+        ntadd_pos0_2:[],
+        ntadd_pos0_3:[],
+        ntadd_pos0_4:[],
+
+        bk_pos1_1:[],
+        bk_pos1_2:[],
+        bk_pos1_3:[],
+        bk_pos1_4:[],
+        bk_pos1_5:[],
+        bk_pos1_6:[], 
+
+        ntadd_pos1_1:[],
+        ntadd_pos1_2:[],
+        ntadd_pos1_3:[],
+        ntadd_pos1_4:[],
+        ntadd_pos1_5:[],
+        ntadd_pos1_6:[],
+
+        bk_pos2_1:[],
+        bk_pos2_2:[],
+        bk_pos2_3:[],
+        bk_pos2_4:[],
+
+        ntadd_pos2_1:[],
+        ntadd_pos2_2:[],
+        ntadd_pos2_3:[],
+        ntadd_pos2_4:[],
+      },
     };
   },
   watch: {
