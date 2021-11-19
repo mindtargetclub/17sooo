@@ -1,7 +1,7 @@
 
 <template>
-  <div class="list row">
-    <div class="col-md-1">
+  <div class="list ">
+    <div class="col-md-2">
       <!-- <h4> 列表 </h4> -->
       <a class="text-3xl py-2 "> 訂單列表 </a> 
 
@@ -46,7 +46,7 @@
       </button> -->
     </div>
 
-    <div class="col-md-12">
+    <div class="col-md-2">
       <div v-if="currentTutorial">
         <tutorial-details
           :tutorial="currentTutorial"

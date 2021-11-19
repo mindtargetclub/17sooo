@@ -1,5 +1,5 @@
 <template>
-  <div v-if="currentTutorial" class="edit-form">
+  <div v-if="currentTutorial" class="mx-2">
     <!-- <h4> 詞彙說明 </h4> -->
     <form>
       <div class="">
@@ -16,7 +16,7 @@
 <hr>
 <br>
       <div class="flex items-start w-auto row"> 
-        <div class=" grid grid-cols-3 gap-2  ">
+        <div class=" grid grid-cols-5 gap-2  ">
 
           <div class= "col-span-2">
 
@@ -64,7 +64,7 @@
       </v-menu>
           </div>  
       
-          <div class= "col-span-1">
+          <div class= "col-span-3 h-32">
             <div class= "flex flex-auto">
             <!-- <button @click="saveODR" class="btn btn-success"> 儲存記錄 </button> -->
             <button class="border-2 border-solid flex-1 mx-1" @click="deleteTutorial">
@@ -74,6 +74,7 @@
             <button  class="bg-red-500 hover:bg-red-700 flex-1 mx-1" @click="updateTutorial">
               更新
             </button> 
+<hr>
             <p>{{ message }}</p>
           </div> 
           </div> 
@@ -103,21 +104,35 @@
   </v-tabs> 
 
   <v-tabs-items v-model="tab">
-    <v-tab-item key='k1' value='k1'>  
- 
+    <v-tab-item key='k1' value='k1'>    
+      <!-- <div> 
+      <div class ="flex justify-center bg-gray-200 py-2 items-start w-auto"> -->
+        <div class="grid grid-cols-8 bg-red-50">
+          <div class ="col-span-8 flex justify-center "> 當時</div>
+
+          <div class="col-span-2 rounded-lg text-xs bg-red-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                當時 棚1  </div > 
+
+          <v-chip-group v-model="currentTutorial.bk_pos0_1"   multiple 
+          class="col-span-6"
+              active-class="bg-red-600 text-white text-xs  " >  
+              <v-chip class="text-xs" > 6 </v-chip>
+              <v-chip class="text-xs" > 5 </v-chip>
+              <v-chip class="text-xs" > 4 </v-chip>
+              <v-chip class="text-xs" > 3 </v-chip>
+              <v-chip class="text-xs" > 2 </v-chip>
+              <v-chip class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
         
-        <v-chip-group v-model="currentTutorial.bk_pos0_1"   multiple 
-            active-class="bg-green-600 text-white text-xs  " >  
-            <v-chip class="text-xs" > 6 </v-chip>
-            <v-chip class="text-xs" > 5 </v-chip>
-            <v-chip class="text-xs" > 4 </v-chip>
-            <v-chip class="text-xs" > 3 </v-chip>
-            <v-chip class="text-xs" > 2 </v-chip>
-            <v-chip class="text-xs" > 1 </v-chip> 
-        </v-chip-group>  
+
+        <div class="col-span-2 rounded-lg text-xs bg-red-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                當時 棚2  </div > 
 
         <v-chip-group v-model="currentTutorial.bk_pos0_2"   multiple 
-            active-class="bg-green-600 text-white text-xs  " >  
+        class="col-span-6"
+            active-class="bg-red-600 text-white text-xs  " >  
             <v-chip class="text-xs" > 6 </v-chip>
             <v-chip class="text-xs" > 5 </v-chip>
             <v-chip class="text-xs" > 4 </v-chip>
@@ -125,9 +140,14 @@
             <v-chip class="text-xs" > 2 </v-chip>
             <v-chip class="text-xs" > 1 </v-chip> 
         </v-chip-group>  
+
+        <div class="col-span-2 rounded-lg text-xs bg-red-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                當時 棚3  </div > 
 
         <v-chip-group v-model="currentTutorial.bk_pos0_3"   multiple 
-            active-class="bg-green-600 text-white text-xs  " >  
+        class="col-span-6"
+            active-class="bg-red-600 text-white text-xs  " >  
             <v-chip class="text-xs" > 6 </v-chip>
             <v-chip class="text-xs" > 5 </v-chip>
             <v-chip class="text-xs" > 4 </v-chip>
@@ -135,9 +155,14 @@
             <v-chip class="text-xs" > 2 </v-chip>
             <v-chip class="text-xs" > 1 </v-chip> 
         </v-chip-group>  
+ 
+        <div class="col-span-2 rounded-lg text-xs bg-red-600
+                    text-white text-center py-2 my-2 mr-1 ">
+              當時  棚4  </div > 
 
         <v-chip-group v-model="currentTutorial.bk_pos0_4"   multiple 
-            active-class="bg-green-600 text-white text-xs  " >  
+            class="col-span-6"
+            active-class="bg-red-600 text-white text-xs  " >  
             <v-chip class="text-xs" > 6 </v-chip>
             <v-chip class="text-xs" > 5 </v-chip>
             <v-chip class="text-xs" > 4 </v-chip>
@@ -145,58 +170,505 @@
             <v-chip class="text-xs" > 2 </v-chip>
             <v-chip class="text-xs" > 1 </v-chip> 
         </v-chip-group>  
+
+        </div>
 
         <hr>
+ 
+      <!-- </div>
+      </div> -->
 
-         <v-chip-group v-model="currentTutorial.ntadd_pos0_1"   multiple 
-            active-class="bg-green-600 text-white text-xs  " >  
-            <v-chip class="text-xs" > 6 </v-chip>
-            <v-chip class="text-xs" > 5 </v-chip>
-            <v-chip class="text-xs" > 4 </v-chip>
-            <v-chip class="text-xs" > 3 </v-chip>
-            <v-chip class="text-xs" > 2 </v-chip>
-            <v-chip class="text-xs" > 1 </v-chip> 
-        </v-chip-group>  
+    
+       
+        <div class="grid grid-cols-8 bg-green-50 " > 
 
-        <v-chip-group v-model="currentTutorial.ntadd_pos0_2"   multiple 
-            active-class="bg-green-600 text-white text-xs  " >  
-            <v-chip class="text-xs" > 6 </v-chip>
-            <v-chip class="text-xs" > 5 </v-chip>
-            <v-chip class="text-xs" > 4 </v-chip>
-            <v-chip class="text-xs" > 3 </v-chip>
-            <v-chip class="text-xs" > 2 </v-chip>
-            <v-chip class="text-xs" > 1 </v-chip> 
-        </v-chip-group>  
+<div class ="flex justify-center col-span-8"> 預排</div>
+ 
+        <div class="col-span-1 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+                    text-xs text-center py-1.5 px-2 my-2 mr-1 "
+                    v-on:click="ckary('11')" > 
+                換</div> 
 
-        <v-chip-group v-model="currentTutorial.ntadd_pos0_3"   multiple 
-            active-class="bg-green-600 text-white text-xs  " >  
-            <v-chip class="text-xs" > 6 </v-chip>
-            <v-chip class="text-xs" > 5 </v-chip>
-            <v-chip class="text-xs" > 4 </v-chip>
-            <v-chip class="text-xs" > 3 </v-chip>
-            <v-chip class="text-xs" > 2 </v-chip>
-            <v-chip class="text-xs" > 1 </v-chip> 
-        </v-chip-group>  
+        <div class="col-span-1 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                棚1  </div > 
 
-        <v-chip-group v-model="currentTutorial.ntadd_pos0_4"   multiple 
-            active-class="bg-green-600 text-white text-xs  " >  
-            <v-chip class="text-xs" > 6 </v-chip>
-            <v-chip class="text-xs" > 5 </v-chip>
-            <v-chip class="text-xs" > 4 </v-chip>
-            <v-chip class="text-xs" > 3 </v-chip>
-            <v-chip class="text-xs" > 2 </v-chip>
-            <v-chip class="text-xs" > 1 </v-chip> 
-        </v-chip-group>
+        <div class="col-span-6 " >   
+          <v-chip-group v-model="currentTutorial.ntadd_pos0_1" multiple 
+                active-class="bg-green-600 text-white text-xs">  
+                <v-chip   class="text-xs" > 6 </v-chip>
+                <v-chip   class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 4 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip   class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        </div> 
+
+        <div class="col-span-1 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+                    text-xs text-center py-1.5 px-2 my-2 mr-1 "
+                    v-on:click="ckary('12')" > 
+                換</div> 
+
+        <div class="col-span-1 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                棚2  </div > 
+
+        <div class="col-span-6 " >   
+          <v-chip-group v-model="currentTutorial.ntadd_pos0_2" multiple 
+                active-class="bg-green-600 text-white text-xs">  
+                <v-chip   class="text-xs" > 6 </v-chip>
+                <v-chip   class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 4 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip   class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        </div> 
+
+        <div class="col-span-1 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+                    text-xs text-center py-1.5 px-2 my-2 mr-1 "
+                    v-on:click="ckary('13')" > 
+                換</div> 
+
+        <div class="col-span-1 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                棚3  </div > 
+
+        <div class="col-span-6 " >   
+          <v-chip-group v-model="currentTutorial.ntadd_pos0_3" multiple 
+                active-class="bg-green-600 text-white text-xs">  
+                <v-chip   class="text-xs" > 6 </v-chip>
+                <v-chip   class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 4 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip   class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        </div> 
+
+        <div class="col-span-1 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+            text-xs text-center py-1.5 px-2 my-2 mr-1 "
+            v-on:click="ckary('14')" > 
+                 換</div> 
+
+        <div class="col-span-1 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                棚4  </div > 
+
+        <div class="col-span-6 " >   
+          <v-chip-group v-model="currentTutorial.ntadd_pos0_4" multiple 
+                active-class="bg-green-600 text-white text-xs">  
+                <v-chip   class="text-xs" > 6 </v-chip>
+                <v-chip   class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 4 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip   class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        </div> 
         
-    <div class ="flex justify-center "> 當時</div>
+
+        </div>
       
     </v-tab-item>
-    <v-tab-item key='k2' value='k2'> 
- 
+    <v-tab-item key='k2' value='k2'>   
+        <div class="grid grid-cols-8 bg-red-50">
+          <div class ="col-span-8 flex justify-center "> 當時</div>
 
-    </v-tab-item>
-    <v-tab-item key='k3' value='k3'>  
+          <div class="col-span-2 rounded-lg text-xs bg-red-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                當時 棚1  </div > 
+
+          <v-chip-group v-model="currentTutorial.bk_pos1_1"   multiple 
+          class="col-span-6"
+              active-class="bg-red-600 text-white text-xs  " >  
+              <v-chip class="text-xs" > 6 </v-chip>
+              <v-chip class="text-xs" > 5 </v-chip>
+              <v-chip class="text-xs" > 4 </v-chip>
+              <v-chip class="text-xs" > 3 </v-chip>
+              <v-chip class="text-xs" > 2 </v-chip>
+              <v-chip class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        
+
+        <div class="col-span-2 rounded-lg text-xs bg-red-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                當時 棚2  </div > 
+
+        <v-chip-group v-model="currentTutorial.bk_pos1_2"   multiple 
+        class="col-span-6"
+            active-class="bg-red-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+
+        <div class="col-span-2 rounded-lg text-xs bg-red-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                當時 棚3  </div > 
+
+        <v-chip-group v-model="currentTutorial.bk_pos1_3"   multiple 
+        class="col-span-6"
+            active-class="bg-red-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
  
+        <div class="col-span-2 rounded-lg text-xs bg-red-600
+                    text-white text-center py-2 my-2 mr-1 ">
+              當時  棚4  </div > 
+
+        <v-chip-group v-model="currentTutorial.bk_pos1_4"   multiple 
+            class="col-span-6"
+            active-class="bg-red-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+
+
+        <div class="col-span-2 rounded-lg text-xs bg-red-600
+                    text-white text-center py-2 my-2 mr-1 ">
+              當時  棚5  </div > 
+
+        <v-chip-group v-model="currentTutorial.bk_pos1_5"   multiple 
+            class="col-span-6"
+            active-class="bg-red-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+
+
+        <div class="col-span-2 rounded-lg text-xs bg-red-600
+                    text-white text-center py-2 my-2 mr-1 ">
+              當時  棚6  </div > 
+
+        <v-chip-group v-model="currentTutorial.bk_pos1_6"   multiple 
+            class="col-span-6"
+            active-class="bg-red-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+
+        </div>
+
+        <hr>
+        
+        <div class="grid grid-cols-8 bg-green-50 " > 
+
+<div class ="flex justify-center col-span-8"> 預排</div>
+ 
+        <div class="col-span-1 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+                    text-xs text-center py-1.5 px-2 my-2 mr-1 "
+                    v-on:click="ckary('21')" > 
+                換</div> 
+
+        <div class="col-span-1 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                棚1  </div > 
+
+        <div class="col-span-6 " >   
+          <v-chip-group v-model="currentTutorial.ntadd_pos1_1" multiple 
+                active-class="bg-green-600 text-white text-xs">  
+                <v-chip   class="text-xs" > 6 </v-chip>
+                <v-chip   class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 4 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip   class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        </div> 
+
+        <div class="col-span-1 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+                    text-xs text-center py-1.5 px-2 my-2 mr-1 "
+                    v-on:click="ckary('22')" > 
+                換</div> 
+
+        <div class="col-span-1 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                棚2  </div > 
+
+        <div class="col-span-6 " >   
+          <v-chip-group v-model="currentTutorial.ntadd_pos1_2" multiple 
+                active-class="bg-green-600 text-white text-xs">  
+                <v-chip   class="text-xs" > 6 </v-chip>
+                <v-chip   class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 4 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip   class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        </div> 
+
+        <div class="col-span-1 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+                    text-xs text-center py-1.5 px-2 my-2 mr-1 "
+                    v-on:click="ckary('23')" > 
+                換</div> 
+
+        <div class="col-span-1 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                棚3  </div > 
+
+        <div class="col-span-6 " >   
+          <v-chip-group v-model="currentTutorial.ntadd_pos1_3" multiple 
+                active-class="bg-green-600 text-white text-xs">  
+                <v-chip   class="text-xs" > 6 </v-chip>
+                <v-chip   class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 4 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip   class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        </div> 
+
+        <div class="col-span-1 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+            text-xs text-center py-1.5 px-2 my-2 mr-1 "
+            v-on:click="ckary('24')" > 
+                 換</div> 
+
+        <div class="col-span-1 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                棚4  </div > 
+
+        <div class="col-span-6 " >   
+          <v-chip-group v-model="currentTutorial.ntadd_pos1_4" multiple 
+                active-class="bg-green-600 text-white text-xs">  
+                <v-chip   class="text-xs" > 6 </v-chip>
+                <v-chip   class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 4 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip   class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        </div> 
+
+
+        <div class="col-span-1 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+            text-xs text-center py-1.5 px-2 my-2 mr-1 "
+            v-on:click="ckary('25')" > 
+                 換</div> 
+
+        <div class="col-span-1 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                棚5  </div > 
+
+        <div class="col-span-6 " >   
+          <v-chip-group v-model="currentTutorial.ntadd_pos1_5" multiple 
+                active-class="bg-green-600 text-white text-xs">  
+                <v-chip   class="text-xs" > 6 </v-chip>
+                <v-chip   class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 4 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip   class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        </div> 
+
+
+        <div class="col-span-1 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+            text-xs text-center py-1.5 px-2 my-2 mr-1 "
+            v-on:click="ckary('26')" > 
+                 換</div> 
+
+        <div class="col-span-1 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                棚6  </div > 
+
+        <div class="col-span-6 " >   
+          <v-chip-group v-model="currentTutorial.ntadd_pos1_6" multiple 
+                active-class="bg-green-600 text-white text-xs">  
+                <v-chip   class="text-xs" > 6 </v-chip>
+                <v-chip   class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 4 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip   class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        </div> 
+        
+
+        </div>
+      
+    </v-tab-item>
+    <v-tab-item key='k3' value='k3'>   
+        <div class="grid grid-cols-8 bg-red-50">
+          <div class ="col-span-8 flex justify-center "> 當時</div>
+
+          <div class="col-span-2 rounded-lg text-xs bg-red-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                當時 棚1  </div > 
+
+          <v-chip-group v-model="currentTutorial.bk_pos2_1"   multiple 
+          class="col-span-6"
+              active-class="bg-red-600 text-white text-xs  " >  
+              <v-chip class="text-xs" > 6 </v-chip>
+              <v-chip class="text-xs" > 5 </v-chip>
+              <v-chip class="text-xs" > 4 </v-chip>
+              <v-chip class="text-xs" > 3 </v-chip>
+              <v-chip class="text-xs" > 2 </v-chip>
+              <v-chip class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        
+
+        <div class="col-span-2 rounded-lg text-xs bg-red-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                當時 棚2  </div > 
+
+        <v-chip-group v-model="currentTutorial.bk_pos2_2"   multiple 
+        class="col-span-6"
+            active-class="bg-red-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+
+        <div class="col-span-2 rounded-lg text-xs bg-red-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                當時 棚3  </div > 
+
+        <v-chip-group v-model="currentTutorial.bk_pos2_3"   multiple 
+        class="col-span-6"
+            active-class="bg-red-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+ 
+        <div class="col-span-2 rounded-lg text-xs bg-red-600
+                    text-white text-center py-2 my-2 mr-1 ">
+              當時  棚4  </div > 
+
+        <v-chip-group v-model="currentTutorial.bk_pos2_4"   multiple 
+            class="col-span-6"
+            active-class="bg-red-600 text-white text-xs  " >  
+            <v-chip class="text-xs" > 6 </v-chip>
+            <v-chip class="text-xs" > 5 </v-chip>
+            <v-chip class="text-xs" > 4 </v-chip>
+            <v-chip class="text-xs" > 3 </v-chip>
+            <v-chip class="text-xs" > 2 </v-chip>
+            <v-chip class="text-xs" > 1 </v-chip> 
+        </v-chip-group>  
+
+        </div>
+
+        <hr>
+        
+        <div class="grid grid-cols-8 bg-green-50 " > 
+
+<div class ="flex justify-center col-span-8"> 預排</div>
+ 
+        <div class="col-span-1 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+                    text-xs text-center py-1.5 px-2 my-2 mr-1 "
+                    v-on:click="ckary('31')" > 
+                換</div> 
+
+        <div class="col-span-1 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                棚1  </div > 
+
+        <div class="col-span-6 " >   
+          <v-chip-group v-model="currentTutorial.ntadd_pos2_1" multiple 
+                active-class="bg-green-600 text-white text-xs">  
+                <v-chip   class="text-xs" > 6 </v-chip>
+                <v-chip   class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 4 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip   class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        </div> 
+
+        <div class="col-span-1 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+                    text-xs text-center py-1.5 px-2 my-2 mr-1 "
+                    v-on:click="ckary('32')" > 
+                換</div> 
+
+        <div class="col-span-1 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                棚2  </div > 
+
+        <div class="col-span-6 " >   
+          <v-chip-group v-model="currentTutorial.ntadd_pos2_2" multiple 
+                active-class="bg-green-600 text-white text-xs">  
+                <v-chip   class="text-xs" > 6 </v-chip>
+                <v-chip   class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 4 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip   class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        </div> 
+
+        <div class="col-span-1 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+                    text-xs text-center py-1.5 px-2 my-2 mr-1 "
+                    v-on:click="ckary('33')" > 
+                換</div> 
+
+        <div class="col-span-1 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                棚3  </div > 
+
+        <div class="col-span-6 " >   
+          <v-chip-group v-model="currentTutorial.ntadd_pos2_3" multiple 
+                active-class="bg-green-600 text-white text-xs">  
+                <v-chip   class="text-xs" > 6 </v-chip>
+                <v-chip   class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 4 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip   class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        </div> 
+
+        <div class="col-span-1 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
+            text-xs text-center py-1.5 px-2 my-2 mr-1 "
+            v-on:click="ckary('34')" > 
+                 換</div> 
+
+        <div class="col-span-1 rounded-lg text-xs bg-green-600
+                    text-white text-center py-2 my-2 mr-1 ">
+                棚4  </div > 
+
+        <div class="col-span-6 " >   
+          <v-chip-group v-model="currentTutorial.ntadd_pos2_4" multiple 
+                active-class="bg-green-600 text-white text-xs">  
+                <v-chip   class="text-xs" > 6 </v-chip>
+                <v-chip   class="text-xs" > 5 </v-chip>
+                <v-chip   class="text-xs" > 4 </v-chip>
+                <v-chip   class="text-xs" > 3 </v-chip>
+                <v-chip   class="text-xs" > 2 </v-chip>
+                <v-chip   class="text-xs" > 1 </v-chip> 
+          </v-chip-group>  
+        </div> 
+        
+
+        </div>
+      
     </v-tab-item>
   </v-tabs-items> 
         
@@ -318,16 +790,16 @@ export default {
            
           switch (ary_gp) {
             case '11':
-              this.od.bk_pos0_1 = this.od.ntadd_pos0_1; this.od.ntadd_pos0_1 =[];
+              this.currentTutorial.bk_pos0_1 = this.currentTutorial.ntadd_pos0_1; this.currentTutorial.ntadd_pos0_1 =[];
               break;
             case '12':
-              this.od.bk_pos0_2 = this.od.ntadd_pos0_2; this.od.ntadd_pos0_2 =[];
+              this.currentTutorial.bk_pos0_2 = this.currentTutorial.ntadd_pos0_2; this.currentTutorial.ntadd_pos0_2 =[];
               break;
             case '13':
-              this.od.bk_pos0_3 = this.od.ntadd_pos0_3; this.od.ntadd_pos0_3 =[];
+              this.currentTutorial.bk_pos0_3 = this.currentTutorial.ntadd_pos0_3; this.currentTutorial.ntadd_pos0_3 =[];
               break;
             case '14':
-              this.od.bk_pos0_4 = this.od.ntadd_pos0_4; this.od.ntadd_pos0_4 =[];
+              this.currentTutorial.bk_pos0_4 = this.currentTutorial.ntadd_pos0_4; this.currentTutorial.ntadd_pos0_4 =[];
               break;
 
             case '21':
@@ -389,33 +861,33 @@ export default {
 
         od_date: this.currentTutorial.od_date,
         bk_pos0_1: this.currentTutorial.bk_pos0_1,
-        // bk_pos0_2: this.currentTutorial.bk_pos0_2,
-        // bk_pos0_3: this.currentTutorial.bk_pos0_3,
-        // bk_pos0_4: this.currentTutorial.bk_pos0_4,
-        // ntadd_pos0_1: this.currentTutorial.ntadd_pos0_1,
-        // ntadd_pos0_2: this.currentTutorial.ntadd_pos0_2,
-        // ntadd_pos0_3: this.currentTutorial.ntadd_pos0_3,
-        // ntadd_pos0_4: this.currentTutorial.ntadd_pos0_4,
-        // bk_pos1_1: this.currentTutorial.bk_pos1_1,
-        // bk_pos1_2: this.currentTutorial.bk_pos1_2,
-        // bk_pos1_3: this.currentTutorial.bk_pos1_3,
-        // bk_pos1_4: this.currentTutorial.bk_pos1_4,
-        // bk_pos1_5: this.currentTutorial.bk_pos1_5,
-        // bk_pos1_6: this.currentTutorial.bk_pos1_6,
-        // ntadd_pos1_1: this.currentTutorial.ntadd_pos1_1,
-        // ntadd_pos1_2: this.currentTutorial.ntadd_pos1_2,
-        // ntadd_pos1_3: this.currentTutorial.ntadd_pos1_3,
-        // ntadd_pos1_4: this.currentTutorial.ntadd_pos1_4,
-        // ntadd_pos1_5: this.currentTutorial.ntadd_pos1_5,
-        // ntadd_pos1_6: this.currentTutorial.ntadd_pos1_6,
-        // bk_pos2_1: this.currentTutorial.bk_pos2_1,
-        // bk_pos2_2: this.currentTutorial.bk_pos2_2,
-        // bk_pos2_3: this.currentTutorial.bk_pos2_3,
-        // bk_pos2_4: this.currentTutorial.bk_pos2_4,
-        // ntadd_pos2_1: this.currentTutorial.ntadd_pos2_1,
-        // ntadd_pos2_2: this.currentTutorial.ntadd_pos2_2,
-        // ntadd_pos2_3: this.currentTutorial.ntadd_pos2_3,
-        // ntadd_pos2_4: this.currentTutorial.ntadd_pos2_4,
+        bk_pos0_2: this.currentTutorial.bk_pos0_2,
+        bk_pos0_3: this.currentTutorial.bk_pos0_3,
+        bk_pos0_4: this.currentTutorial.bk_pos0_4,
+        ntadd_pos0_1: this.currentTutorial.ntadd_pos0_1,
+        ntadd_pos0_2: this.currentTutorial.ntadd_pos0_2,
+        ntadd_pos0_3: this.currentTutorial.ntadd_pos0_3,
+        ntadd_pos0_4: this.currentTutorial.ntadd_pos0_4,
+        bk_pos1_1: this.currentTutorial.bk_pos1_1,
+        bk_pos1_2: this.currentTutorial.bk_pos1_2,
+        bk_pos1_3: this.currentTutorial.bk_pos1_3,
+        bk_pos1_4: this.currentTutorial.bk_pos1_4,
+        bk_pos1_5: this.currentTutorial.bk_pos1_5,
+        bk_pos1_6: this.currentTutorial.bk_pos1_6,
+        ntadd_pos1_1: this.currentTutorial.ntadd_pos1_1,
+        ntadd_pos1_2: this.currentTutorial.ntadd_pos1_2,
+        ntadd_pos1_3: this.currentTutorial.ntadd_pos1_3,
+        ntadd_pos1_4: this.currentTutorial.ntadd_pos1_4,
+        ntadd_pos1_5: this.currentTutorial.ntadd_pos1_5,
+        ntadd_pos1_6: this.currentTutorial.ntadd_pos1_6,
+        bk_pos2_1: this.currentTutorial.bk_pos2_1,
+        bk_pos2_2: this.currentTutorial.bk_pos2_2,
+        bk_pos2_3: this.currentTutorial.bk_pos2_3,
+        bk_pos2_4: this.currentTutorial.bk_pos2_4,
+        ntadd_pos2_1: this.currentTutorial.ntadd_pos2_1,
+        ntadd_pos2_2: this.currentTutorial.ntadd_pos2_2,
+        ntadd_pos2_3: this.currentTutorial.ntadd_pos2_3,
+        ntadd_pos2_4: this.currentTutorial.ntadd_pos2_4,
 
 
         
