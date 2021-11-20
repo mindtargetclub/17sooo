@@ -118,18 +118,161 @@ export default {
     // })
 
 
+// var request = new XMLHttpRequest();
 
-axios({
-  method: 'get',
-  baseURL: 'https://api.rezio.io/',
-  url: '/v1/config',
-  'Content-Type': 'application/json',
-  "X-Lang":"en",
-  "X-Auth-StoreUuid": '001e81f1-3111-485e-8c22-6644cb2df11c',
-  "X-Auth-Key": '0b4ae1cc6859fc3a47b06d27677eb07c',
-})
-  .then((result) => { console.log(result.data) })
-  .catch((err) => { console.error(err) })
+// request.open('GET', 'https://api.rezio.io/v1/config');
+
+// request.onreadystatechange = function () {
+//   if (this.readyState === 4) {
+//     console.log('Status:', this.status);
+//     console.log('Headers:', this.getAllResponseHeaders());
+//     console.log('Body:', this.responseText);
+//   }
+// };
+
+// request.send();
+
+
+
+// axios({
+//   method: 'get',
+//   baseURL: 'https://api.rezio.io/',
+//   url: '/v1/config',
+//   headers: {
+//            'Content-Type': 'application/json',
+//             "X-Lang":"en",
+//             "X-Auth-StoreUuid": '001e81f1-3111-485e-8c22-6644cb2df11c',
+//             "X-Auth-Key": '0b4ae1cc6859fc3a47b06d27677eb07c',
+//         }
+  
+// })
+//   .then((result) => { console.log(result.data) })
+//   .catch((err) => { console.error(err) })
+
+
+// fetch('https://randomuser.me/api/')
+//     .then((response) => {
+//         console.log(response); 
+//     })
+//     .catch((error) => {
+//         console.log(`Error: ${error}`);
+//     })
+
+
+// let responseee = fetch('https://randomuser.me/api/',{
+//     headers: {
+//         Authentication: 'secret'
+//     }
+// });
+
+// console.log("responseee = " + responseee)
+
+// const url = 'https://api.rezio.io//v1/config'
+
+// let headers = {
+//     "Content-Type": "application/json",
+//     "X-Lang":"en",
+//             "X-Auth-StoreUuid": '001e81f1-3111-485e-8c22-6644cb2df11c',
+//             "X-Auth-Key": '0b4ae1cc6859fc3a47b06d27677eb07c',
+// }
+
+// fetch(url, {
+//     method: "GET",
+//     headers: headers,
+// })
+//     .then( (response) => response.json())
+//     .then( (json) => console.log(json));
+
+// console.log("- -- - -- here")
+
+
+// var xhr = new XMLHttpRequest();
+// //需要告知要傳遞的資料格式
+// xhr.open("GET","/https://api.rezio.io//v1/config");
+// // xhr.setRequestHeader("Content-type","text/plain;charset=UTF-8"); 
+
+// xhr.onreadystatechange = function () {
+//   if (this.readyState === 4) {
+//     console.log('Status:', this.status);
+//     console.log('Headers:', this.getAllResponseHeaders());
+//     console.log('Body:', this.responseText);
+//   }
+// };
+
+
+// xhr.send();
+
+var request = new XMLHttpRequest();
+
+// request.open('GET', 'https://api.rezio.io/v1/config');
+request.open('GET', 'https://api.uat.rezio.io/v1/order/list');
+
+	
+request.setRequestHeader('Content-Type', 'application/json');
+request.setRequestHeader('X-Lang', 'en');
+request.setRequestHeader('X-Auth-StoreUuid', '001e81f1-3111-485e-8c22-6644cb2df11c');
+request.setRequestHeader('X-Auth-Key', '0b4ae1cc6859fc3a47b06d27677eb07c');
+
+request.onreadystatechange = function () {
+  if (this.readyState === 4) {
+    console.log('Status:', this.status);
+    console.log('Headers:', this.getAllResponseHeaders());
+    console.log('Body:', this.responseText);
+    console.log('Bodyd:', response);
+    
+  }
+};
+
+request.send();
+
+// fetch('https://api.rezio.io//v1/config', {
+// method: 'get',
+// headers: {
+//           "Content-Type": "application/json",
+//             "X-Lang":"en",
+//             "X-Auth-StoreUuid": '001e81f1-3111-485e-8c22-6644cb2df11c',
+//             "X-Auth-Key": '0b4ae1cc6859fc3a47b06d27677eb07c',
+// }})
+// .then((response) => {
+//         console.log(response); 
+//     })
+//     .catch((error) => {
+//         console.log(`Error: ${error}`);
+//     })
+
+
+console.log("- -- - -- here")
+
+// body: new URLSearchParams([
+// ["username", "Lan"],["password", "123456"]
+// ]).toString()
+// })
+// .then(res => {
+// console.log(res);
+// return res.text();
+// })
+// .then(data => {
+// console.log(data);
+// })
+
+
+// fetch('http://www.mozotech.cn/bangbang/index/user/login', {
+// method: 'post',
+// headers: {
+// 'Content-Type': 'application/x-www-form-urlencoded'
+// },
+// body: new URLSearchParams([
+// ["username", "Lan"],["password", "123456"]
+// ]).toString()
+// })
+// .then(res => {
+// console.log(res);
+// return res.text();
+// })
+// .then(data => {
+// console.log(data);
+// })
+
 
     // let headers = {
     //     "Content-Type": "application/json", 
