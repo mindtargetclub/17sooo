@@ -285,7 +285,7 @@
   
  
   
-  <div class ="flex justify-center "> 北場 現況  </div>
+  <div class ="flex justify-center "> 靶位現況  </div>
   <div class="flex justify-center w-full ">
       <div  small  
             class="rounded-r-lg text-xs red darken-2 text-white text-center p-1 py-2 my-2 mr-1 w-20">
@@ -378,7 +378,7 @@
   </div>
 
   <hr>
-  <div class ="flex justify-center mt-2 "> 南場 現況  </div>
+  <!-- <div class ="flex justify-center mt-2 "> 現況  </div> -->
   <div class="flex justify-center w-full ">
       <div  small  
             class="rounded-r-lg text-xs yellow darken-2 text-center p-1 py-2 my-2 mr-1 w-20">
@@ -442,7 +442,7 @@
   </div>
 <hr>
 
-<div class ="flex justify-center bg-gray-900 text-gray-100 "> 北場 下時段  </div>
+<div class ="flex justify-center bg-green-900 text-gray-100 py-2 "> 下個時段  </div>
 <div class="bg-green-50">
         <div class="flex justify-center w-full "> 
   <div class="grid grid-cols-5 " >  
@@ -587,7 +587,7 @@
   </div> 
 
   <hr>
-  <div class ="flex justify-center bg-gray-900 text-gray-100 "> 南場 下時段  </div>
+  <!-- <div class ="flex justify-center bg-gray-900 text-gray-100 "> 南場 下時段  </div> -->
   <!-- ..... -->  
   <div class="flex justify-center w-full "> 
   <div class="grid grid-cols-5 " >  
