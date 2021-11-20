@@ -10,6 +10,11 @@ import Print from 'vue-print-nb'
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
+
+import axios from 'axios'
+// import VueAxios from 'vue-axios'
+// Vue.use(VueAxios, axios)
+
 // import vuedraggable from 'vuedraggable'
 Vue.use(Print); //註冊 
 // Vue.use(vdnd); //註冊 
@@ -18,6 +23,7 @@ Vue.config.productionTip = false
 
 new Vue({
   // store,
+  axios,
   router,
   // draggable,
   vuetify, 

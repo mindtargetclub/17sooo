@@ -26,17 +26,25 @@ export default new Router({
     //   path: "/",
     //   name: "bkadd",
     //   component: () => import("./components/bkAdd")
-    // },
+    // }, 
     {
-      path: "/bkadd2",
-      name: "bkadd2",
-      component: () => import("./components/bkAdd2")
+      path: "/gd",
+      name: "getReDta",
+      component: () => import("./components/getReDta")
     },
+
+
     {
       path: "/",
       name: "bkadd2",
       component: () => import("./components/bkAdd2")
     },
+    {
+      path: "/bkadd2",
+      name: "bkadd2",
+      component: () => import("./components/bkAdd2")
+    },
+    
     {
       path: "/bkList",
       name: "bkList",
