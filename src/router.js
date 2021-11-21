@@ -32,7 +32,13 @@ export default new Router({
       name: "getReDta",
       component: () => import("./components/getReDta")
     },
-
+    
+    {
+      path: "/gd2",
+      name: "getReDta2",
+      component: () => import("./components/getReDta2")
+    },
+    
 
     {
       path: "/",

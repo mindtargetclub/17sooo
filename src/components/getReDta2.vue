@@ -1,116 +1,44 @@
 <template>
-  <div class="submit-form">
+  <div class="container">
+    <div class="min-h-screen bg-blue-500 p-20 text-blue-800">
+      <p class="text-9xl mt-64">Fixed Bottom Nav!</p>
+    </div>
 
-    <span class="result"></span>
-      <hr>  
-      check here ,
-      Exp_1:  
-      <br>
-      <!-- {{ temp  }} -->
+    <!-- fixed nav -->
+    <nav class="fixed bottom-0 inset-x-0 bg-blue-100 flex justify-between text-sm text-blue-900 uppercase font-mono">
 
-      <!-- <ul class="list-group">
-        <li
-          class="list-group-item"
-          :class="{ active: index == orderNo }"
-          v-for="( orderNo, index) in temp.data.list"
-          :key="index"
-          @click="setActiveTutorial(temp.data.list, index)"
-        >
-          
-          {{ temp.data.list.amount  }}
-        </li>
-      </ul> -->
+      <a href="#" class="w-full block py-5 px-3 text-center hover:bg-blue-200 hover:text-blue-800 transition duration-300">
+        <svg class="w-6 h-6 mb-2 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path fill="#fff" d="M12 14l9-5-9-5-9 5 9 5z" />
+          <path fill="#fff" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+        </svg>
+        Home
+      </a>
 
-<hr>
+      <a href="#" class="w-full block py-5 px-3 text-center hover:bg-blue-200 hover:text-blue-800">
+        <svg class="w-6 h-6 mb-2 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+        </svg>
+        Features
+      </a>
 
-指定為 本筆訂單的消費金額：
-{{ temp.data.list[0].amount  }}
+      <a href="#" class="w-full block py-5 px-3 text-center hover:bg-blue-200 hover:text-blue-800">
+        <svg class="w-6 h-6 mb-2 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+        </svg>
+        Profile
+      </a>
 
-<hr>
+      <a href="#" class="w-full block py-5 px-3 text-center hover:bg-blue-200 hover:text-blue-800">
+        <svg class="w-6 h-6 mb-2 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+        </svg>
+        Settings
+      </a>
 
-指定為 本筆訂單的詳細資料：
-{{ temp.data.list[0].orderNo  }}
-
-<hr>
-指定為 ：
-
-<!-- {{  temp.data.list }} -->
-<!-- {{  temp.data.list.index }} -->
-
- 
-  <div v-for="(item, index) in  temp.data.list" :key="index" class="my-2 "> 
-    <div class="
-                bg-white rounded-lg  
-
-                transform hover:translate-y-2 
-                hover:shadow-xl transition duration-300"> 
-
-        <div class="rounded-lg py-2 px-4 bg-purple-700 flex flex-col">
-          
-          <div>
-            
-            <span class="text-xs text-gray-400 leading-none mb-1"> 
-              {{ item.sessionStartDate }}  【 odNO. {{ item.orderNo }} </span>
-
-               <span class="text-xs broder-1 rounded-full bg-gray-900 text-gray-100 leading-none mb-1"> 
-              {{ item.productCode }} </span>
-
-
- <!-- <span class=" col-span-3 mx-2 text-xs text-white px-2 broder-1 rounded-full bg-gray-900 text-gray-100 " > 
-               {{ item.productCode }} -->
-            <!-- </spanv> -->
-
-
-
-            <h4 class="text-white text-2xl font-bold leading-none">
-              {{ item.sessionStartTime }} | {{ item.contactLastName  }}  {{ item.contactFirstName }} 
-            </h4>
-<!-- 
-            <span class="text-xs text-gray-400 leading-none">
-             的 </span> -->
-            
-          </div>
-
-          <div class="items-center">
-
-<div class= "grid grid-cols-6" >
-            <div class="text-lg text-white font-light col-span-2">
-              預約 {{ Math.floor(item.amount /400) }} 位 
-            </div>
-
-            <div class=" col-span-3 mx-2  text-lg text-white px-2 broder-1 rounded-full bg-gray-900 text-gray-100 " > 
-              須繳：{{ item.balance  }} 
-            </div>
-
-            
-
-            <button href="javascript:;" 
-            class="col-span-1
-            rounded-full bg-purple-900 text-white 
-            hover:bg-white hover:text-purple-900 hover:shadow-xl 
-            focus:outline-none w-6 h-6 flex ml-auto transition duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-
+    </nav>
 </div>
-
-          </div>
-          </div>
-          </div>
-
-           
-    
-  </div>
- 
-  
-<!-- {{ list.amount }} -->
-      <!-- {{ temp  }} -->
-
-      <hr>
-  </div>
 </template>
 
 <script>
