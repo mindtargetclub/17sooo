@@ -38,8 +38,11 @@ export default new Router({
       name: "getReDta2",
       component: () => import("./components/getReDta2")
     },
-    
-
+    {
+      path: "/supsetting",
+      name: "supsetting",
+      component: () => import("./components/supsetting")
+    }, 
     {
       path: "/",
       name: "bkadd2",
