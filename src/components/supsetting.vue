@@ -1,15 +1,14 @@
 <template>
 
 <div class=" w-full item-start  ">
- 
-
-  <v-btn 
-                  href="https://cors-anywhere.herokuapp.com/corsdemo"
-                  block
-                  class="mt-32"
-                  >
-                  外掛 工具
-                </v-btn>
+  
+    <v-btn 
+      href="https://cors-anywhere.herokuapp.com/corsdemo"
+      block
+      class="mt-32 m-auto"
+      >
+      外掛 工具
+    </v-btn>
 
   <!-- <div class=" grid grid-cols-3 gap-2 mt-20 ">  
 

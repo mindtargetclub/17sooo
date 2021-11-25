@@ -11,6 +11,9 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
 
+import JsonCSV from 'vue-json-csv'
+// Vue.use(JsonCSV) 
+
 import axios from 'axios'
 // import VueAxios from 'vue-axios'
 // Vue.use(VueAxios, axios)
@@ -25,6 +28,7 @@ new Vue({
   // store,
   axios,
   router,
+  JsonCSV,
   // draggable,
   vuetify, 
   print,

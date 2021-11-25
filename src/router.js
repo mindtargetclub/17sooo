@@ -28,6 +28,11 @@ export default new Router({
     //   component: () => import("./components/bkAdd")
     // }, 
     {
+      path: "/rg",
+      name: "setRgDta3",
+      component: () => import("./components/setRgDta3")
+    },
+    {
       path: "/gd",
       name: "getReDta",
       component: () => import("./components/getReDta")
