@@ -58,7 +58,11 @@ export default new Router({
       name: "bkadd2",
       component: () => import("./components/bkAdd2")
     },
-    
+    {
+      path: "/bkaddv2",
+      name: "bkaddv2",
+      component: () => import("./components/bkAddv2")
+    },
     {
       path: "/bkList",
       name: "bkList",
