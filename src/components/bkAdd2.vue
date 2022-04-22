@@ -86,7 +86,7 @@
       </div>  
       
       <div class= "col-span-1">
-        <button @click="saveODR" class="btn btn-success"> 儲存記錄 </button>
+        <button @click="saveODR" class="btn btn-success"> 儲存...記錄 </button>
 
       </div>   
 <!-- </div> -->
@@ -721,8 +721,7 @@ export default {
         ntadd_pos0_1:[],
         ntadd_pos0_2:[],
         ntadd_pos0_3:[],
-        ntadd_pos0_4:[],
-
+        ntadd_pos0_4:[], 
 
         bk_pos1_1:[],
         bk_pos1_2:[],
