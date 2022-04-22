@@ -669,337 +669,192 @@
  
   
   <div class ="flex justify-center "> 靶位現況  </div>
-  <div class="flex justify-center w-full ">
-      <div  small  
-            class="rounded-r-lg text-xs red darken-2 text-white text-center p-1 py-2 my-2 mr-1 w-20">
-              01-01  </div >   
-
- 
-  <v-card>
-    <v-card-text>
-      <v-row align="center">
- 
-        <v-col
-          cols="12"
-          sm="6"
-          md="4"
-        >
-           <v-checkbox
-            v-model="includeFiles"
-            hide-details
-            class="shrink mr-2 mt-0"
-            ></v-checkbox>
-
-        </v-col>
- 
-        <v-col
-          cols="12"
-          sm="6"
-          md="4"
-        >
-          <!-- <v-text-field
-            dense
-            label="Regular"
-          ></v-text-field> -->
-           <v-text-field label="離場時間"></v-text-field>
-        </v-col>
-
-       
-       
-      </v-row>
-
-      <!-- <v-row align="center">
-        <v-checkbox
-          v-model="enabled"
-          hide-details
-          class="shrink mr-2 mt-0"
-        ></v-checkbox>
-        <v-text-field
-          :disabled="!enabled"
-          label="場控詢問 續時"
-        ></v-text-field>
-      </v-row> -->
-
-    </v-card-text>
-  </v-card> 
-
-        <!-- <v-chip-group v-model="od.bk_pos1_1"   multiple 
-              active-class="bg-red-600 text-white text-xs  "
-              class=" " >  
-
-
-              <v-chip class="text-xs " > <div v-if='ck(od.ntadd_pos1_1,0) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 當下號碼 </div> <div v-if='ck(od.ntadd_pos1_1,0) == false' class=""> 6 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_1,1) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 續時狀況 </div> <div v-if='ck(od.ntadd_pos1_1,1) == false' class=""> 5 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_1,2) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 預排狀況 </div> <div v-if='ck(od.ntadd_pos1_1,2) == false' class=""> 4 </div> </v-chip>
-               
-        </v-chip-group>   -->
-  </div>
-  <div class="flex justify-center w-full ">
-      <div  small  
-            class="rounded-r-lg text-xs red darken-2 text-white text-center p-1 py-2 my-2 mr-1 w-20">
-              北棚-2  </div >   
-
-<v-container>
-      <v-row>
-        <v-col cols="12" sm="6" md="2" >
-          <v-text-field filled dense
-            label="號碼牌登記為"  
-            class="text-xs"
-          ></v-text-field>
-        </v-col>
-
-        <v-col cols="12" sm="6" md="4" > 
-          <v-text-field solo
-            label="離場時間"
-            class="text-xs"
-            placeholder="離場時間" 
-          ></v-text-field>  
-        </v-col>
-
-        <v-col cols="12" sm="6" md="2" >
-          <v-text-field solo
-            class="text-xs"
-            placeholder="續時註記" 
-          ></v-text-field> 
-        </v-col>
-
-        <v-col cols="12" sm="6" md="4" >
+  
+  <div class="flex justify-center w-full my-3"> 
+       <v-row> 
+          <v-chip class="my-3 w-12 mx-1 blue darken-2"> 05-1 </v-chip>  
+          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
+          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
           <v-chip-group v-model="od.bk_pos1_2"   
-                        active-class="bg-red-600 text-white text-xs  "
-                        class=" " >  
-              <v-chip class="text-xs " > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+                        active-class="bg-blue-600 text-white text-xs  "
+                        class="w-1/3 " >  
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
           </v-chip-group>  
-        </v-col> 
-      </v-row>
-    </v-container>
+      </v-row> 
+  </div>
 
+  <div class="flex justify-center w-full my-3"> 
+       <v-row> 
+          <v-chip class="my-3 w-12 mx-1 blue darken-2"> 05-2 </v-chip>  
+          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
+          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
+          <v-chip-group v-model="od.bk_pos1_2"   
+                        active-class="bg-blue-600 text-white text-xs  "
+                        class="w-1/3 " >  
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+          </v-chip-group>  
+      </v-row> 
+  </div>
 
-       
+  <div class="flex justify-center w-full my-3"> 
+       <v-row> 
+          <v-chip class="my-3 w-12 mx-1 blue darken-2"> 05-3 </v-chip>  
+          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
+          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
+          <v-chip-group v-model="od.bk_pos1_2"   
+                        active-class="bg-yellow-600 text-white text-xs  "
+                        class="w-1/3 " >  
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+          </v-chip-group>  
+      </v-row> 
+  </div> 
+
+  <div class="flex justify-center w-full my-3"> 
+       <v-row> 
+          <v-chip class="my-3 w-12 mx-1 blue darken-1"> 06-1 </v-chip>  
+          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
+          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
+          <v-chip-group v-model="od.bk_pos1_2"   
+                        active-class="bg-blue-600 text-white text-xs  "
+                        class="w-1/3 " >  
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+          </v-chip-group>  
+      </v-row> 
   </div>
-  <div class="flex justify-center w-full ">
-      <div  small  
-            class="rounded-r-lg text-xs red darken-2 text-white text-center p-1 py-2 my-2 mr-1 w-20">
-              北棚-3  </div >   
-        <v-chip-group v-model="od.bk_pos1_3"   multiple 
-              active-class="bg-red-600 text-white text-xs  "
-              class=" " >  
-              <v-chip class="text-xs " > <div v-if='ck(od.ntadd_pos1_3,0) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 6 </div> <div v-if='ck(od.ntadd_pos1_3,0) == false' class=""> 6 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_3,1) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 5 </div> <div v-if='ck(od.ntadd_pos1_3,1) == false' class=""> 5 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_3,2) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 4 </div> <div v-if='ck(od.ntadd_pos1_3,2) == false' class=""> 4 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_3,3) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 3 </div> <div v-if='ck(od.ntadd_pos1_3,3) == false' class=""> 3 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_3,4) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 2 </div> <div v-if='ck(od.ntadd_pos1_3,4) == false' class=""> 2 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_3,5) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 1 </div> <div v-if='ck(od.ntadd_pos1_3,5) == false' class=""> 1 </div> </v-chip>   
-        </v-chip-group>  
+
+  <div class="flex justify-center w-full my-3"> 
+       <v-row> 
+          <v-chip class="my-3 w-12 mx-1 blue darken-1"> 06-2 </v-chip>  
+          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
+          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
+          <v-chip-group v-model="od.bk_pos1_2"   
+                        active-class="bg-blue-600 text-white text-xs  "
+                        class="w-1/3 " >  
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+          </v-chip-group>  
+      </v-row> 
   </div>
-  <div class="flex justify-center w-full ">
-      <div  small  
-            class="rounded-r-lg text-xs red darken-2 text-white text-center p-1 py-2 my-2 mr-1 w-20">
-              北棚-4  </div >   
-        <v-chip-group v-model="od.bk_pos1_4"   multiple 
-              active-class="bg-red-600 text-white text-xs  "
-              class=" " >  
-              <v-chip class="text-xs " > <div v-if='ck(od.ntadd_pos1_4,0) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 6 </div> <div v-if='ck(od.ntadd_pos1_4,0) == false' class=""> 6 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_4,1) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 5 </div> <div v-if='ck(od.ntadd_pos1_4,1) == false' class=""> 5 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_4,2) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 4 </div> <div v-if='ck(od.ntadd_pos1_4,2) == false' class=""> 4 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_4,3) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 3 </div> <div v-if='ck(od.ntadd_pos1_4,3) == false' class=""> 3 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_4,4) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 2 </div> <div v-if='ck(od.ntadd_pos1_4,4) == false' class=""> 2 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_4,5) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 1 </div> <div v-if='ck(od.ntadd_pos1_4,5) == false' class=""> 1 </div> </v-chip> 
-        </v-chip-group>  
-  </div>
-  <div class="flex justify-center w-full ">
-      <div  small  
-            class="rounded-r-lg text-xs red darken-2 text-white text-center p-1 py-2 my-2 mr-1 w-20">
-              北棚-5  </div >   
-        <v-chip-group v-model="od.bk_pos1_5"   multiple 
-              active-class="bg-red-600 text-white text-xs  "
-              class=" " >  
-              <v-chip class="text-xs " > <div v-if='ck(od.ntadd_pos1_5,0) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 6 </div> <div v-if='ck(od.ntadd_pos1_5,0) == false' class=""> 6 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_5,1) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 5 </div> <div v-if='ck(od.ntadd_pos1_5,1) == false' class=""> 5 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_5,2) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 4 </div> <div v-if='ck(od.ntadd_pos1_5,2) == false' class=""> 4 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_5,3) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 3 </div> <div v-if='ck(od.ntadd_pos1_5,3) == false' class=""> 3 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_5,4) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 2 </div> <div v-if='ck(od.ntadd_pos1_5,4) == false' class=""> 2 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_5,5) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 1 </div> <div v-if='ck(od.ntadd_pos1_5,5) == false' class=""> 1 </div> </v-chip> 
-        </v-chip-group>  
-  </div>
-  <div class="flex justify-center w-full ">
-      <div  small  
-            class="rounded-r-lg text-xs red darken-2 text-white text-center p-1 py-2 my-2 mr-1 w-20">
-              北棚-6  </div >   
-        <v-chip-group v-model="od.bk_pos1_6"   multiple 
-              active-class="bg-red-600 text-white text-xs  "
-              class=" " >  
-              <v-chip class="text-xs " > <div v-if='ck(od.ntadd_pos1_6,0) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 6 </div> <div v-if='ck(od.ntadd_pos1_6,0) == false' class=""> 6 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_6,1) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 5 </div> <div v-if='ck(od.ntadd_pos1_6,1) == false' class=""> 5 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_6,2) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 4 </div> <div v-if='ck(od.ntadd_pos1_6,2) == false' class=""> 4 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_6,3) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 3 </div> <div v-if='ck(od.ntadd_pos1_6,3) == false' class=""> 3 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_6,4) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 2 </div> <div v-if='ck(od.ntadd_pos1_6,4) == false' class=""> 2 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_6,5) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 1 </div> <div v-if='ck(od.ntadd_pos1_6,5) == false' class=""> 1 </div> </v-chip> 
-        </v-chip-group>  
+
+  <div class="flex justify-center w-full my-3"> 
+       <v-row> 
+          <v-chip class="my-3 w-12 mx-1 blue darken-1"> 06-3 </v-chip>  
+          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
+          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
+          <v-chip-group v-model="od.bk_pos1_2"   
+                        active-class="bg-blue-600 text-white text-xs  "
+                        class="w-1/3 " >  
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+          </v-chip-group>  
+      </v-row> 
   </div>
 
   <hr>
   <!-- <div class ="flex justify-center mt-2 "> 現況  </div> -->
 
-  <div class="flex justify-center w-full "> 
-       <v-row>
-        <v-col cols="12" sm="6" md="1" >
-          <div  filled dense
-            label="號碼牌登記為"  
-            class="rounded-r-lg text-s yellow darken-2 text-center p-1 py-1 my-2 mr-1 w-20"
-          >07-1</div >
-        </v-col>
-
-        <v-col cols="12" sm="6" md="2" >
-          <v-text-field filled dense
-            label="號碼牌登記為"  
-            class="text-xs"
-          ></v-text-field>
-        </v-col>
-
-        <v-col cols="12" sm="6" md="4" > 
-          <v-text-field solo
-            label="離場時間"
-            class="text-xs"
-            placeholder="離場時間" 
-          ></v-text-field>  
-        </v-col>
-
-        <v-col cols="12" sm="6" md="2" >
-          <v-text-field solo
-            class="text-xs"
-            placeholder="續時註記" 
-          ></v-text-field> 
-        </v-col>
-
-        <v-col cols="12" sm="6" md="3" >
+   
+  <div class="flex justify-center w-full my-3"> 
+       <v-row> 
+          <v-chip class="my-3 w-12 mx-1 yellow darken-2"> 07-1 </v-chip>  
+          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
+          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
           <v-chip-group v-model="od.bk_pos1_2"   
-                        active-class="bg-red-600 text-white text-xs  "
-                        class=" " >  
-              <v-chip class="text-xs " > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+                        active-class="bg-yellow-600 text-white text-xs  "
+                        class="w-1/3 " >  
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
           </v-chip-group>  
-        </v-col> 
-      </v-row> 
-  </div>
-  <div class="flex justify-center w-full "> 
-       <v-row>
-        <v-col cols="12" sm="6" md="1" >
-          <div  filled dense
-            label="號碼牌登記為"  
-            class="rounded-r-lg text-s yellow darken-2 text-center p-1 py-1 my-2 mr-1 w-20"
-          >07-2</div >
-        </v-col>
-
-        <v-col cols="12" sm="6" md="2" >
-          <v-text-field filled dense
-            label="號碼牌登記為"  
-            class="text-xs"
-          ></v-text-field>
-        </v-col>
-
-        <v-col cols="12" sm="6" md="4" > 
-          <v-text-field solo
-            label="離場時間"
-            class="text-xs"
-            placeholder="離場時間" 
-          ></v-text-field>  
-        </v-col>
-
-        <v-col cols="12" sm="6" md="2" >
-          <v-text-field solo
-            class="text-xs"
-            placeholder="續時註記" 
-          ></v-text-field> 
-        </v-col>
-
-        <v-col cols="12" sm="6" md="3" >
-          <v-chip-group v-model="od.bk_pos1_2"   
-                        active-class="bg-red-600 text-white text-xs  "
-                        class=" " >  
-              <v-chip class="text-xs " > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
-          </v-chip-group>  
-        </v-col> 
-      </v-row> 
-  </div>
-  <div class="flex justify-center w-full "> 
-       <v-row>
-        <v-col cols="12" sm="6" md="1" >
-          <div  filled dense
-            label="號碼牌登記為"  
-            class="rounded-r-lg text-s yellow darken-2 text-center p-1 py-1 my-2 mr-1 w-20"
-          >07-3</div >
-        </v-col>
-
-        <v-col cols="12" sm="6" md="2" >
-          <v-text-field filled dense
-            label="號碼牌登記為"  
-            class="text-xs"
-          ></v-text-field>
-        </v-col>
-
-        <v-col cols="12" sm="6" md="4" > 
-          <v-text-field solo
-            label="離場時間"
-            class="text-xs"
-            placeholder="離場時間" 
-          ></v-text-field>  
-        </v-col>
-
-        <v-col cols="12" sm="6" md="2" >
-          <v-text-field solo
-            class="text-xs"
-            placeholder="續時註記" 
-          ></v-text-field> 
-        </v-col>
-
-        <v-col cols="12" sm="6" md="3" >
-          <v-chip-group v-model="od.bk_pos1_2"   
-                        active-class="bg-red-600 text-white text-xs  "
-                        class=" " >  
-              <v-chip class="text-xs " > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
-          </v-chip-group>  
-        </v-col> 
       </v-row> 
   </div>
 
+  <div class="flex justify-center w-full my-3"> 
+       <v-row> 
+          <v-chip class="my-3 w-12 mx-1 yellow darken-2"> 07-2 </v-chip>  
+          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
+          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
+          <v-chip-group v-model="od.bk_pos1_2"   
+                        active-class="bg-yellow-600 text-white text-xs  "
+                        class="w-1/3 " >  
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+          </v-chip-group>  
+      </v-row> 
+  </div>
 
-  <div class="flex justify-center w-full ">
-      <div  small  
-            class="rounded-r-lg text-xs  yellow darken-2 text-center p-1 py-2 my-2 mr-1 w-20">
-              南棚-9  </div >   
-        <v-chip-group v-model="od.bk_pos1_9"   multiple 
-              active-class="bg-yellow-600 text-white text-xs  "
-              class=" " >  
-              <v-chip class="text-xs " > <div v-if='ck(od.ntadd_pos1_9,0) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 6 </div> <div v-if='ck(od.ntadd_pos1_9,0) == false' class=""> 6 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_9,1) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 5 </div> <div v-if='ck(od.ntadd_pos1_9,1) == false' class=""> 5 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_9,2) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 4 </div> <div v-if='ck(od.ntadd_pos1_9,2) == false' class=""> 4 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_9,3) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 3 </div> <div v-if='ck(od.ntadd_pos1_9,3) == false' class=""> 3 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_9,4) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 2 </div> <div v-if='ck(od.ntadd_pos1_9,4) == false' class=""> 2 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_9,5) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 1 </div> <div v-if='ck(od.ntadd_pos1_9,5) == false' class=""> 1 </div> </v-chip> 
-        </v-chip-group>  
+  <div class="flex justify-center w-full my-3"> 
+       <v-row> 
+          <v-chip class="my-3 w-12 mx-1 yellow darken-2"> 07-3 </v-chip>  
+          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
+          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
+          <v-chip-group v-model="od.bk_pos1_2"   
+                        active-class="bg-yellow-600 text-white text-xs  "
+                        class="w-1/3 " >  
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+          </v-chip-group>  
+      </v-row> 
+  </div> 
+
+  <div class="flex justify-center w-full my-3"> 
+       <v-row> 
+          <v-chip class="my-3 w-12 mx-1 yellow darken-1"> 08-1 </v-chip>  
+          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
+          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
+          <v-chip-group v-model="od.bk_pos1_2"   
+                        active-class="bg-yellow-600 text-white text-xs  "
+                        class="w-1/3 " >  
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+          </v-chip-group>  
+      </v-row> 
   </div>
-  <div class="flex justify-center w-full ">
-      <div  small  
-            class="rounded-r-lg text-xs  yellow darken-2 text-center p-1 py-2 my-2 mr-1 w-20">
-              南棚-10  </div >   
-        <v-chip-group v-model="od.bk_pos1_10"   multiple 
-              active-class="bg-yellow-600 text-white text-xs  "
-              class=" " >  
-              <v-chip class="text-xs " > <div v-if='ck(od.ntadd_pos1_10,0) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 6 </div> <div v-if='ck(od.ntadd_pos1_10,0) == false' class=""> 6 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_10,1) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 5 </div> <div v-if='ck(od.ntadd_pos1_10,1) == false' class=""> 5 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_10,2) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 4 </div> <div v-if='ck(od.ntadd_pos1_10,2) == false' class=""> 4 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_10,3) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 3 </div> <div v-if='ck(od.ntadd_pos1_10,3) == false' class=""> 3 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_10,4) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 2 </div> <div v-if='ck(od.ntadd_pos1_10,4) == false' class=""> 2 </div> </v-chip>
-              <v-chip class="text-xs" >  <div v-if='ck(od.ntadd_pos1_10,5) == true' class="text-xl text-yellow-400 font-black animate-bounce "> 1 </div> <div v-if='ck(od.ntadd_pos1_10,5) == false' class=""> 1 </div> </v-chip> 
-        </v-chip-group>  
+
+  <div class="flex justify-center w-full my-3"> 
+       <v-row> 
+          <v-chip class="my-3 w-12 mx-1 yellow darken-1"> 08-2 </v-chip>  
+          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
+          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
+          <v-chip-group v-model="od.bk_pos1_2"   
+                        active-class="bg-yellow-600 text-white text-xs  "
+                        class="w-1/3 " >  
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+          </v-chip-group>  
+      </v-row> 
   </div>
+
+  <div class="flex justify-center w-full my-3"> 
+       <v-row> 
+          <v-chip class="my-3 w-12 mx-1 yellow darken-1"> 08-3 </v-chip>  
+          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
+          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
+          <v-chip-group v-model="od.bk_pos1_2"   
+                        active-class="bg-yellow-600 text-white text-xs  "
+                        class="w-1/3 " >  
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+          </v-chip-group>  
+      </v-row> 
+  </div>
+   
+ 
 <hr>
 
 <div class ="flex justify-center bg-green-900 text-gray-100 py-2 "> 下個時段  </div>
