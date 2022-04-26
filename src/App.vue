@@ -41,7 +41,7 @@
       </a>
 
       <a href="#" class="w-full block py-5 px-3 text-center hover:bg-blue-900 hover:text-blue-800">
-        <router-link to="/bkadd2" class="text-white text-xs"> 
+        <router-link to="/" class="text-white text-xs"> 
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4  mx-auto  " fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
           </svg>
@@ -49,17 +49,17 @@
         </router-link>
       </a> 
 
-      <a href="#" class="w-full block py-5 px-3 text-center hover:bg-blue-900 hover:text-blue-800">
+      <!-- <a href="#" class="w-full block py-5 px-3 text-center hover:bg-blue-900 hover:text-blue-800">
         <router-link to="/bkAddv2" class="text-white text-xs"> 
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4  mx-auto  " fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
           </svg>
            棚區使用清單
         </router-link>
-      </a>  
+      </a>   -->
   
        <a href="#" class="w-full block py-5 px-3 text-center hover:bg-blue-900 hover:text-blue-800">
-            <router-link to="/bkList" class="text-white text-xs ">  
+            <router-link to="/bk4" class="text-white text-xs ">  
              <svg class="w-5 h-5   mx-auto"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
               </svg>

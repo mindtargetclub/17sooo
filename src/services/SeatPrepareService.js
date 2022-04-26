@@ -1,8 +1,8 @@
 import firebase from "../firebase";
 
-const db = firebase.ref("/seats");
+const db = firebase.ref("/sts");
 
-class TutorialDataService {
+class StDataService {
   getAll() {
     return db;
   }
@@ -33,4 +33,4 @@ console.log(snapshot.val());
   }
 }
 
-export default new TutorialDataService();
+export default new StDataService();

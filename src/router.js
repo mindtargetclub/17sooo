@@ -54,6 +54,11 @@ export default new Router({
       component: () => import("./components/bkAdd4")
     },
     {
+      path: "/bk4",
+      name: "bkList",
+      component: () => import("./components/bdadd4_List")
+    },
+    {
       path: "/bkadd2",
       name: "bkadd2",
       component: () => import("./components/bkAdd2")
@@ -67,7 +72,7 @@ export default new Router({
       path: "/bkList",
       name: "bkList",
       component: () => import("./components/bkList")
-    },
+    }, 
     {
       path: "/posGM_0",
       name: "posGM",
@@ -77,12 +82,7 @@ export default new Router({
       path: "/WordList",
       name: "WordList",
       component: () => import("./components/WordList")
-    },
-    {
-      path: "/WordList",
-      name: "WordList",
-      component: () => import("./components/WordList")
-    },
+    }, 
     // {
     //   path: "/drag",
     //   name: "drag",
@@ -98,6 +98,7 @@ export default new Router({
       name: "pd",
       component: () => import("./components/posGMdrop")
     },
+     
     {
       path: "/vvv",
       name: "vvv",

@@ -1,7 +1,7 @@
 
 <template>
   <div class="list ">
-    <div class="col-md-2">
+    <div class="col-md-6">
       <!-- <h4> 列表 </h4> -->
       <a class="text-3xl py-2 "> 訂單列表 </a> 
 
