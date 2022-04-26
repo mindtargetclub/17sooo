@@ -18,8 +18,8 @@
             >
               <template v-slot:activator="{ on, attrs }">
                 <v-text-field
-                  v-model="od.od_date"
-                  label="請設定日期" 
+                  v-model="seat.od_date"
+                  label="日期設定" 
                   readonly
                   v-bind="attrs"
                   v-on="on"
@@ -28,7 +28,7 @@
 
               
               <v-date-picker
-                v-model="od.od_date"
+                v-model="seat.od_date"
                 no-title
                 scrollable
               >
@@ -52,8 +52,8 @@
       </div>  
       
       <div class= "col-span-1">
-        <button @click="saveODR" class="btn btn-success"> 儲存...記錄 </button>
-
+        <!-- <button @click="saveODR" class="btn btn-success"> 儲存...記錄 </button> -->
+        <button @click="saveSeat" class="btn btn-success">Submit</button>
       </div>   
 <!-- </div> -->
 
@@ -80,7 +80,16 @@
     </v-tab>
      
     <v-tab key='k1' href='#k1' v-if="!hide"  >    
-        北北東  {{ 24-bk_pos0_1.length-bk_pos0_2.length -bk_pos0_3.length -bk_pos0_4.length   }} 人   
+      13:00
+        <!-- 北北東  {{ 24-bk_pos0_1.length-bk_pos0_2.length -bk_pos0_3.length -bk_pos0_4.length   }} 人    -->
+    </v-tab>
+
+    <v-tab key='k4' href='#k4' v-if="!hide"  >    
+        14:00   
+    </v-tab>
+
+    <v-tab key='k5' href='#k5' v-if="!hide"  >    
+        15:00   
     </v-tab>
 
     
@@ -671,56 +680,299 @@
   <div class ="flex justify-center "> 靶位現況  </div>
   
   <div class="flex justify-center w-full my-3"> 
-       <v-row> 
-          <v-chip class="my-3 w-12 mx-1 blue darken-2"> 05-1 </v-chip>  
-          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
-          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
-          <v-chip-group v-model="od.bk_pos1_2"   
-                        active-class="bg-blue-600 text-white text-xs  "
-                        class="w-1/3 " >  
-              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
-              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
-              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
-          </v-chip-group>  
-      </v-row> 
-  </div>
+      
+      <!-- <v-card-text>{{ slted01_1 }}</v-card-text>  -->
+      <v-row> 
+          <v-chip class="my-3 px-2 w-12  blue lighten-5"> 01-1 </v-chip>  
+          <v-text-field solo v-model="statu01_1" class="text-xs w-1/12 px-1" label="牌號"  ></v-text-field>  
+          <v-text-field solo class="text-xs w-1/6 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>  
+          <v-text-field solo class="text-xs w-1/3 px-1" v-model="slted01_1" label="號碼牌"  ></v-text-field>  
+           
+ 
 
-  <div class="flex justify-center w-full my-3"> 
-       <v-row> 
-          <v-chip class="my-3 w-12 mx-1 blue darken-2"> 05-2 </v-chip>  
-          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
-          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
-          <v-chip-group v-model="od.bk_pos1_2"   
-                        active-class="bg-blue-600 text-white text-xs  "
-                        class="w-1/3 " >  
-              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
-              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
-              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
-          </v-chip-group>  
-      </v-row> 
-  </div>
+  
+  
+         
 
-  <div class="flex justify-center w-full my-3"> 
-       <v-row> 
-          <v-chip class="my-3 w-12 mx-1 blue darken-2"> 05-3 </v-chip>  
-          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
-          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
-          <v-chip-group v-model="od.bk_pos1_2"   
+<v-btn class="w-1/6"
+        icon
+        @click="show = !show"
+      >
+        <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+      </v-btn>
+
+
+      
+              <v-expand-transition class="" >
+              <div v-show="show" >
+              
+
+                <!-- <v-card-text>
+                  這邊是繳費記錄摘要....
+                </v-card-text>  -->
+                 <!-- <v-card-text>{{ slted01_1 }}</v-card-text>  -->
+                 
+                  <div class="flex ml-10 justify-center py-4 ">
+
+                    <v-row >
+                      <!-- <v-col 
+                        sm="4"
+                        md="4"
+                      >
+                        <v-checkbox
+                          v-model="slted01_1"
+                          label="成人男"
+                          value="蛇皮"
+                        ></v-checkbox>
+                        <v-checkbox
+                          v-model="slted01_1"
+                          label="成人女"
+                          value="大灰"
+                        ></v-checkbox>
+                        <v-checkbox
+                          v-model="slted01_1"
+                          label="兒童左"
+                          value="童(左)"
+                        ></v-checkbox>
+                        <v-checkbox
+                          v-model="slted01_1"
+                          label="兒童右"
+                          value="童(右)"
+                        ></v-checkbox>
+                      </v-col>
+
+                       <v-col 
+                        sm="4"
+                        md="4"
+                      >
+                        <v-checkbox
+                          v-model="slted01_1"
+                          label="成人男"
+                          value="蛇皮"
+                        ></v-checkbox>
+                        <v-checkbox
+                          v-model="slted01_1"
+                          label="成人女"
+                          value="大灰"
+                        ></v-checkbox>
+                        <v-checkbox
+                          v-model="slted01_1"
+                          label="兒童左"
+                          value="童(左)"
+                        ></v-checkbox>
+                        <v-checkbox
+                          v-model="slted01_1"
+                          label="兒童右"
+                          value="童(右)"
+                        ></v-checkbox>
+                      </v-col>
+
+                       <v-col 
+                        sm="4"
+                        md="4"
+                      >
+                        <v-checkbox
+                          v-model="slted01_1"
+                          label="成人男"
+                          value="蛇皮"
+                        ></v-checkbox>
+                        <v-checkbox
+                          v-model="slted01_1"
+                          label="成人女"
+                          value="大灰"
+                        ></v-checkbox>
+                        <v-checkbox
+                          v-model="slted01_1"
+                          label="兒童左"
+                          value="童(左)"
+                        ></v-checkbox>
+                        <v-checkbox
+                          v-model="slted01_1"
+                          label="兒童右"
+                          value="童(右)"
+                        ></v-checkbox>
+                      </v-col> -->
+<p>活動狀態</p> 
+                       <v-chip-group v-model="statu01_1" 
+                                     
+                                    class="md:w-1/3 " >  
+                          
+                          <v-chip active-class="bg-green-500   text-white text-x" value="第一次"    >   首 </v-chip>
+                          <v-chip active-class="bg-red-500     text-white text-x" value="有玩過"    >  有玩過 </v-chip>  
+                          <v-chip active-class="bg-blue-500    text-white text-x" value="續時中"    >   續 </v-chip>
+                          <v-chip active-class="bg-yellow-500  text-white text-x" value="缺席"    >  等報到 </v-chip>  
+                           <v-chip active-class="bg-red-500    text-white text-x" value="下時段保留"    >  已預約 </v-chip>
+                          
+                      </v-chip-group>  
+                      
+<p>客人類型</p> 
+
+                      <v-chip-group v-model="slted01_1"  
                         active-class="bg-yellow-600 text-white text-xs  "
+                        class="md:w-1/3 " multiple>   
+                          <v-chip active-class="bg-green-500   text-white text-x" value="散客" >  體驗 </v-chip>
+                          <v-chip active-class="bg-green-500   text-white text-x" value="學員" >  學員 </v-chip>
+                          <v-chip active-class="bg-green-500   text-white text-x" value="會員" >  月卡 </v-chip> 
+                          <v-chip active-class="bg-green-500   text-white text-x" value="選手" >  選手 </v-chip> 
+                      </v-chip-group>  
+<p>預備工具建議</p> 
+                      <v-chip-group v-model="slted01_1"  
+                        active-class="bg-yellow-600 text-white text-xs  "
+                        class="md:w-1/3 " multiple>   
+                          <v-chip active-class="bg-green-500   text-white text-x" value="女" >  成人女 </v-chip>
+                          <v-chip active-class="bg-green-500   text-white text-x" value="男" >  成人男 </v-chip>
+                          <v-chip active-class="bg-green-500   text-white text-x" value="右手兒童" >  R兒童 </v-chip> 
+                          <v-chip active-class="bg-green-500   text-white text-x" value="左手兒童" >  L兒童 </v-chip> 
+                      </v-chip-group>  
+
+<p>距離</p>
+                      <v-chip-group v-model="slted01_1"  
+                        active-class="bg-yellow-600 text-white text-xs  "
+                        class="md:w-1/3 " multiple >   
+                          <v-chip active-class="bg-green-500   text-white text-x" value="輕體驗"  >  體驗距離 </v-chip>
+                          <v-chip active-class="bg-green-500   text-white text-x" value="練反曲">  反曲弓練習 </v-chip>
+                          <v-chip active-class="bg-green-500   text-white text-x" value="長距離">  特殊長距離 </v-chip> 
+                      </v-chip-group>  
+                    </v-row>
+                    <v-divider></v-divider> 
+
+
+
+                  </div > 
+
+           
+                  <v-divider></v-divider> 
+
+              </div>
+            </v-expand-transition>
+  
+      </v-row> 
+      <!-- <v-row    >
+      <p class="text-xs text-red-500" >{{ slted01_1 }}</p> 
+      </v-row>  -->
+      <!-- <v-row> <p>{{ seat.pos01_1.slted }}</p> </v-row> -->
+  </div>
+
+<!-- <!> pos_01:[{ tempCardID: "", lftTm: "", nowstu: "" }], -->
+  <div class="flex justify-center w-full my-3"> 
+       <v-row> 
+          <v-chip class="my-3 w-12 mx-1 blue lighten-5"> 01-2 </v-chip>  
+          <v-text-field v-model="seat.pos_02.tempCardID" clearable   solo class="text-s w-8 px-1" label="號碼牌"   ></v-text-field>  
+          <v-text-field v-model="seat.pos_02.lftTm"   clearable      solo class="text-s w-24 px-2" label="離場時間" ></v-text-field>   
+          <!-- <v-text-field
+            v-model="message2"
+            solo
+            label="Solo"
+            clearable
+          ></v-text-field> -->
+
+          <!-- <v-checkbox
+             class="w-12 "
+              v-model="ex4"
+              label="兒"
+              color="red"
+              value="兒童"
+              hide-details
+            ></v-checkbox> -->
+
+           <!-- <v-chip  v-model="seat.pos_02.Kid" class="my-3 w-12 mx-1" active-class="bg-red-500 text-white text-x" > 兒童 </v-chip>   -->
+              <!-- <v-chip  v-model="seat.pos_02.Kid" active-class="bg-red-500 text-white text-x" class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 兒童 </div> </v-chip> -->
+          <v-chip-group v-model="seat.pos_02.nowstu"    
                         class="w-1/3 " >  
-              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
-              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
-              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+              <v-chip active-class="bg-red-500 text-white text-x" class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              
+              <v-chip active-class="bg-yellow-500 text-white text-x" class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              <v-chip active-class="bg-green-500  text-white text-x" class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
+              <v-chip active-class="bg-blue-500   text-white text-x" class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+            
           </v-chip-group>  
       </v-row> 
+  </div>
+
+  <div class="flex justify-center w-full my-1"> 
+        <v-row> 
+          <v-chip class="my-3 w-12  blue lighten-5"> 01-3 </v-chip>  
+          <v-text-field solo class="text-xs w-4 px-1" label="號碼牌"  ></v-text-field>  
+          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
+ 
+          <v-chip-group v-model="seat.pos01_3"  multiple
+                        active-class="bg-yellow-600 text-white text-xs  "
+                        class="w-1/3" >  
+              <v-chip active-class="bg-red-500     text-white text-x" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 兒 </div> </v-chip>
+              <v-chip active-class="bg-green-500   text-white text-x" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 首 </div> </v-chip>
+              <v-chip active-class="bg-blue-500    text-white text-x" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 續 </div> </v-chip>
+              <v-chip active-class="bg-yellow-500  text-white text-x" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+          </v-chip-group>  
+        </v-row> 
   </div> 
 
   <div class="flex justify-center w-full my-3"> 
-       <v-row> 
-          <v-chip class="my-3 w-12 mx-1 blue darken-1"> 06-1 </v-chip>  
+
+    <v-card
+    flat
+    class="py-12"
+  >
+    <v-card-text>
+      <v-row
+        align="center"
+        justify="center"
+      >
+        
+       <!-- Model: {{ toggle_exclusive }} -->
+<v-text-field solo v-model="toggle_exclusive" class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
+
+        <v-btn-toggle
+          v-model="toggle_exclusive"
+          multiple
+        >
+          <v-btn>
+            <!-- <v-icon>mdi-format-align-left</v-icon> -->
+            <span> 兒童 </span>
+          </v-btn>
+          <v-btn>
+            <!-- <v-icon>mdi-format-align-center</v-icon> -->
+            <span> 首次 </span>
+          </v-btn>
+          <v-btn>
+            <!-- <v-icon>mdi-format-align-right</v-icon> -->
+            <span> 續時 </span>
+          </v-btn>
+          <v-btn>
+            <span> 保留 </span>
+            <!-- <v-icon>保留</v-icon> -->
+          </v-btn>
+        </v-btn-toggle>
+
+        <!-- <v-col
+          cols="12"
+          class="text-center"
+        >
+         
+        </v-col> -->
+      </v-row>
+    </v-card-text>
+  </v-card>
+
+       <!-- <v-row> 
+          <v-chip class="my-3 w-12 mx-1 blue lighten-3"> 02-1 </v-chip>  
           <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
           <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
-          <v-chip-group v-model="od.bk_pos1_2"   
+          <v-chip-group v-model="seat.pos02_1"   
+                        active-class="bg-blue-600 text-white text-xs  "
+                        class="w-1/3 " >  
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
+              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
+          </v-chip-group>  
+      </v-row>  -->
+  </div>
+
+  <div class="flex justify-center w-full my-3"> 
+       <v-row> 
+          <v-chip class="my-3 w-12 mx-1 blue lighten-3"> 02-2 </v-chip>  
+          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
+          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
+          <v-chip-group v-model="seat.pos02_2"   
                         active-class="bg-blue-600 text-white text-xs  "
                         class="w-1/3 " >  
               <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
@@ -732,25 +984,10 @@
 
   <div class="flex justify-center w-full my-3"> 
        <v-row> 
-          <v-chip class="my-3 w-12 mx-1 blue darken-1"> 06-2 </v-chip>  
+          <v-chip class="my-3 w-12 mx-1 blue lighten-3"> 02-3 </v-chip>  
           <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
           <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
-          <v-chip-group v-model="od.bk_pos1_2"   
-                        active-class="bg-blue-600 text-white text-xs  "
-                        class="w-1/3 " >  
-              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
-              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,1) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,1) == false' class=""> 續 </div> </v-chip>
-              <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
-          </v-chip-group>  
-      </v-row> 
-  </div>
-
-  <div class="flex justify-center w-full my-3"> 
-       <v-row> 
-          <v-chip class="my-3 w-12 mx-1 blue darken-1"> 06-3 </v-chip>  
-          <v-text-field solo class="text-xs w-8 px-1" label="號碼牌登記為"  ></v-text-field>  
-          <v-text-field solo class="text-s w-24 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>   
-          <v-chip-group v-model="od.bk_pos1_2"   
+          <v-chip-group v-model="seat.pos02_3"   
                         active-class="bg-blue-600 text-white text-xs  "
                         class="w-1/3 " >  
               <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,0) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,0) == false' class=""> 首 </div> </v-chip>
@@ -852,252 +1089,12 @@
               <v-chip class="text-xs" > <div v-if='ck(od.ntadd_pos1_2,2) == true' class="text-xl text-yellow-400 font-black animate-bounce ">  </div> <div v-if='ck(od.ntadd_pos1_2,2) == false' class=""> 保 </div> </v-chip>
           </v-chip-group>  
       </v-row> 
-  </div>
-   
- 
+  </div> 
+
 <hr>
 
 <div class ="flex justify-center bg-green-900 text-gray-100 py-2 "> 下個時段  </div>
-<div class="bg-green-50">
-        <div class="flex justify-center w-full "> 
-  <div class="grid grid-cols-5 " >  
-    <div class="col-span-2 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
-                text-xs text-center py-1.5 px-2 my-2 mr-1 "
-                v-on:click="ckary('21')"
-                > 
-            換</div>
-    <div class="col-span-3 rounded-lg text-xs bg-green-600
-                text-white text-center py-2 my-2 mr-1 ">
-            北棚-1  </div >   
-    </div >   
-  <v-chip-group v-model="od.ntadd_pos1_1" multiple 
-        active-class="bg-green-600 text-white text-xs">  
-        <v-chip   class="text-xs" > 6 </v-chip>
-        <v-chip   class="text-xs" > 5 </v-chip>
-        <v-chip   class="text-xs" > 4 </v-chip>
-        <v-chip   class="text-xs" > 3 </v-chip>
-        <v-chip   class="text-xs" > 2 </v-chip>
-        <v-chip   class="text-xs" > 1 </v-chip> 
-  </v-chip-group>  
-  </div> 
-  <!-- ..... -->
-
-        <div class="flex justify-center w-full "> 
-  <div class="grid grid-cols-5 " >  
-    <div class="col-span-2 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
-                text-xs text-center py-1.5 px-2 my-2 mr-1 "
-                v-on:click="ckary('22')"
-                > 
-            換</div>
-    <div class="col-span-3 rounded-lg text-xs bg-green-600
-                text-white text-center py-2 my-2 mr-1 ">
-            北棚-2  </div >   
-    </div >   
-  <v-chip-group v-model="od.ntadd_pos1_2"   multiple 
-        active-class="bg-green-600 text-white text-xs  "
-          >  
-        <v-chip   class="text-xs" > 6 </v-chip>
-        <v-chip   class="text-xs" > 5 </v-chip>
-        <v-chip   class="text-xs" > 4 </v-chip>
-        <v-chip   class="text-xs" > 3 </v-chip>
-        <v-chip   class="text-xs" > 2 </v-chip>
-        <v-chip   class="text-xs" > 1 </v-chip> 
-  </v-chip-group>  
-  </div> 
-  <!-- ..... -->
-
-              <div class="flex justify-center w-full "> 
-  <div class="grid grid-cols-5 " >  
-    <div class="col-span-2 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
-                text-xs text-center py-1.5 px-2 my-2 mr-1 "
-                v-on:click="ckary('23')"
-                > 
-            換</div>
-    <div class="col-span-3 rounded-lg text-xs bg-green-600
-                text-white text-center py-2 my-2 mr-1 ">
-            北棚-3  </div >   
-    </div >   
-  <v-chip-group v-model="od.ntadd_pos1_3"   multiple 
-        active-class="bg-green-600 text-white text-xs  "
-          >  
-        <v-chip   class="text-xs" > 6 </v-chip>
-        <v-chip   class="text-xs" > 5 </v-chip>
-        <v-chip   class="text-xs" > 4 </v-chip>
-        <v-chip   class="text-xs" > 3 </v-chip>
-        <v-chip   class="text-xs" > 2 </v-chip>
-        <v-chip   class="text-xs" > 1 </v-chip> 
-  </v-chip-group>  
-  </div> 
-  <!-- ..... -->
-
-              <div class="flex justify-center w-full "> 
-  <div class="grid grid-cols-5 " >  
-    <div class="col-span-2 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
-                text-xs text-center py-1.5 px-2 my-2 mr-1 "
-                v-on:click="ckary('24')"
-                > 
-            換</div>
-    <div class="col-span-3 rounded-lg text-xs bg-green-600
-                text-white text-center py-2 my-2 mr-1 ">
-            北棚-4  </div >   
-    </div >   
-  <v-chip-group v-model="od.ntadd_pos1_4"   multiple 
-        active-class="bg-green-600 text-white text-xs  "
-          >  
-        <v-chip   class="text-xs" > 6 </v-chip>
-        <v-chip   class="text-xs" > 5 </v-chip>
-        <v-chip   class="text-xs" > 4 </v-chip>
-        <v-chip   class="text-xs" > 3 </v-chip>
-        <v-chip   class="text-xs" > 2 </v-chip>
-        <v-chip   class="text-xs" > 1 </v-chip> 
-  </v-chip-group>  
-  </div> 
-  <!-- ..... -->
-
-              <div class="flex justify-center w-full "> 
-  <div class="grid grid-cols-5 " >  
-    <div class="col-span-2 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
-                text-xs text-center py-1.5 px-2 my-2 mr-1 "
-                v-on:click="ckary('25')"
-                > 
-            換</div>
-    <div class="col-span-3 rounded-lg text-xs bg-green-600
-                text-white text-center py-2 my-2 mr-1 ">
-            北棚-5  </div >   
-    </div >   
-  <v-chip-group v-model="od.ntadd_pos1_5"   multiple 
-        active-class="bg-green-600 text-white text-xs  "
-          >  
-        <v-chip   class="text-xs" > 6 </v-chip>
-        <v-chip   class="text-xs" > 5 </v-chip>
-        <v-chip   class="text-xs" > 4 </v-chip>
-        <v-chip   class="text-xs" > 3 </v-chip>
-        <v-chip   class="text-xs" > 2 </v-chip>
-        <v-chip   class="text-xs" > 1 </v-chip> 
-  </v-chip-group>  
-  </div> 
-  <!-- ..... -->
-
-              <div class="flex justify-center w-full "> 
-  <div class="grid grid-cols-5 " >  
-    <div class="col-span-2 rounded-2xl bg-green-400 border-b-4 border-green-700 text-green-900 font-bold
-                text-xs text-center py-1.5 px-2 my-2 mr-1 "
-                v-on:click="ckary('26')"
-                > 
-            換</div>
-    <div class="col-span-3 rounded-lg text-xs bg-green-600
-                text-white text-center py-2 my-2 mr-1 ">
-            北棚-6  </div >   
-    </div >   
-  <v-chip-group v-model="od.ntadd_pos1_6"   multiple 
-        active-class="bg-green-600 text-white text-xs  "
-          >  
-        <v-chip   class="text-xs" > 6 </v-chip>
-        <v-chip   class="text-xs" > 5 </v-chip>
-        <v-chip   class="text-xs" > 4 </v-chip>
-        <v-chip   class="text-xs" > 3 </v-chip>
-        <v-chip   class="text-xs" > 2 </v-chip>
-        <v-chip   class="text-xs" > 1 </v-chip> 
-  </v-chip-group>  
-  </div> 
-
-  <hr>
-  <!-- <div class ="flex justify-center bg-gray-900 text-gray-100 "> 南場 下時段  </div> -->
-  <!-- ..... -->  
-  <div class="flex justify-center w-full "> 
-  <div class="grid grid-cols-5 " >  
-    <div class="col-span-2 rounded-2xl bg-yellow-400 border-b-4 border-yellow-700 text-yellow-900 font-bold
-                text-xs text-center py-1.5 px-2 my-2 mr-1 "
-                v-on:click="ckary('27')"
-                > 
-            換</div>
-    <div class="col-span-3 rounded-lg text-xs bg-yellow-400
-                text-center py-2 my-2 mr-1 ">
-            南棚-7  </div >   
-    </div >   
-  <v-chip-group v-model="od.ntadd_pos1_7"   multiple 
-        active-class="bg-yellow-600 text-white text-xs  "
-          >  
-        <v-chip   class="text-xs" > 6 </v-chip>
-        <v-chip   class="text-xs" > 5 </v-chip>
-        <v-chip   class="text-xs" > 4 </v-chip>
-        <v-chip   class="text-xs" > 3 </v-chip>
-        <v-chip   class="text-xs" > 2 </v-chip>
-        <v-chip   class="text-xs" > 1 </v-chip> 
-  </v-chip-group>  
-  </div>  
-  <!-- ..... -->  
-  <div class="flex justify-center w-full "> 
-  <div class="grid grid-cols-5 " >  
-    <div class="col-span-2 rounded-2xl bg-yellow-400 border-b-4 border-yellow-700 text-yellow-900 font-bold
-                text-xs text-center py-1.5 px-2 my-2 mr-1 "
-                v-on:click="ckary('28')"
-                > 
-            換</div>
-    <div class="col-span-3 rounded-lg text-xs bg-yellow-400
-                text-center py-2 my-2 mr-1 ">
-            南棚-8  </div >   
-    </div >   
-  <v-chip-group v-model="od.ntadd_pos1_8"   multiple 
-        active-class="bg-yellow-600 text-white text-xs  "
-          >  
-        <v-chip   class="text-xs" > 6 </v-chip>
-        <v-chip   class="text-xs" > 5 </v-chip>
-        <v-chip   class="text-xs" > 4 </v-chip>
-        <v-chip   class="text-xs" > 3 </v-chip>
-        <v-chip   class="text-xs" > 2 </v-chip>
-        <v-chip   class="text-xs" > 1 </v-chip> 
-  </v-chip-group>  
-  </div>     
-  <!-- ..... -->  
-  <div class="flex justify-center w-full "> 
-  <div class="grid grid-cols-5 " >  
-    <div class="col-span-2 rounded-2xl bg-yellow-400 border-b-4 border-yellow-700 text-yellow-900 font-bold
-                text-xs text-center py-1.5 px-2 my-2 mr-1 "
-                v-on:click="ckary('29')"
-                > 
-            換</div>
-    <div class="col-span-3 rounded-lg text-xs bg-yellow-400
-                text-center py-2 my-2 mr-1 ">
-            南棚-9  </div >   
-    </div >   
-  <v-chip-group v-model="od.ntadd_pos1_9"   multiple 
-        active-class="bg-yellow-600 text-white text-xs  "
-          >  
-        <v-chip   class="text-xs" > 6 </v-chip>
-        <v-chip   class="text-xs" > 5 </v-chip>
-        <v-chip   class="text-xs" > 4 </v-chip>
-        <v-chip   class="text-xs" > 3 </v-chip>
-        <v-chip   class="text-xs" > 2 </v-chip>
-        <v-chip   class="text-xs" > 1 </v-chip> 
-  </v-chip-group>  
-  </div>  
-  <!-- ..... -->  
-  <div class="flex justify-center w-full "> 
-  <div class="grid grid-cols-5 " >  
-    <div class="col-span-2 rounded-2xl bg-yellow-400 border-b-4 border-yellow-700 text-yellow-900 font-bold
-                text-xs text-center py-1.5 px-2 my-2 mr-1 "
-                v-on:click="ckary('210')"
-                > 
-            換</div>
-    <div class="col-span-3 rounded-lg text-xs bg-yellow-400
-                text-center py-2 my-2 mr-1 ">
-            南棚-10  </div >   
-    </div >   
-  <v-chip-group v-model="od.ntadd_pos1_10"   multiple 
-        active-class="bg-yellow-600 text-white text-xs  "
-          >  
-        <v-chip   class="text-xs" > 6 </v-chip>
-        <v-chip   class="text-xs" > 5 </v-chip>
-        <v-chip   class="text-xs" > 4 </v-chip>
-        <v-chip   class="text-xs" > 3 </v-chip>
-        <v-chip   class="text-xs" > 2 </v-chip>
-        <v-chip   class="text-xs" > 1 </v-chip> 
-  </v-chip-group>  
-  </div>        
  
-   
-</div>  
 </div> 
 
     </v-tab-item>
@@ -1117,6 +1114,8 @@
 import TutorialDataService from "../services/TutorialDataService";
 import WordDataService from "../services/WordDataService";
 import odDataService from "../services/odDataService";
+import SeatPrepareService from "../services/SeatPrepareService";
+
 
 export default {
   name: "add-tutorial",
@@ -1124,8 +1123,22 @@ export default {
     return {
       includeFiles: false,
       enabled: false,
+      toggle_exclusive: [],
+       show: false,
+       statu01_1:[],
+       slted01_1:[],
       // - - - 
-       
+      // names: [{ first: "", last: "" }],
+      seat:{
+        od_date:"",
+        pos01_1:[{tempCardID: "", lftTm: "", nowstu: "" ,slted:[]}],
+         
+        pos_02:[{ tempCardID: "", lftTm: "", nowstu: "" , kid: "" }],
+        pos01_3:[{ tempCardID: "", lftTm: "", nowstu: "" , kid: "",slted:[] }],
+      },
+
+// seat.pos01_1.son
+
       menu: false,
       modal: false,
       menu2: false,
@@ -1163,9 +1176,7 @@ export default {
         ntadd_pos1_7:[],
         ntadd_pos1_8:[],
         ntadd_pos1_9:[],
-        ntadd_pos1_10:[],
-
-        
+        ntadd_pos1_10:[], 
 
         bk_pos2_1:[],
         bk_pos2_2:[],
@@ -1237,6 +1248,16 @@ export default {
                 // console.log("ans = " + ans);  // true: 只要有部分符合，則為 true 
            return  ans 
      }, 
+
+    //  ckSt(ary_gp,sno,){  
+    //    this.seat.pos_01 = this.od.ntadd_pos0_1; this.od.ntadd_pos0_1 =[];
+    //   //  var ans = aryy.some(function(item, index, array)
+    //   //           {
+    //   //             return item == cdtion // 當全部 age 大於 10 才能回傳 true
+    //   //           });
+    //   //           // console.log("ans = " + ans);  // true: 只要有部分符合，則為 true 
+    //        return  ans 
+    //  }, 
 
     ckary(ary_gp) {
            
@@ -1339,6 +1360,25 @@ export default {
         });
     },
 
+
+    saveSeat() {
+      var data = { 
+        od_date  : this.seat.od_date,
+        pos_01: this.seat.pos_01,
+        pos_02: this.seat.pos_02,
+        
+      };
+
+      odDataService.create(data)
+        .then(() => {
+          console.log("Created new item successfully!");
+          this.submitted = true;
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+
     saveODR() {
       var data = {
         // title: this.tutorial.title,
@@ -1384,6 +1424,9 @@ export default {
           console.log(e);
         });
     },
+    
+
+
     
     newTutorial() {
       this.submitted = false;
@@ -1434,6 +1477,7 @@ export default {
   },
   mounted() {
     TutorialDataService.getAll().on("value", this.onDataChange);
+    SeatPrepareService.getAll().on("value", this.onDataChange);
   },
 };
 </script>

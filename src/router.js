@@ -26,7 +26,7 @@ export default new Router({
     //   path: "/",
     //   name: "bkadd",
     //   component: () => import("./components/bkAdd")
-    // }, 
+    // },  
     {
       path: "/rg",
       name: "setRgDta3",
@@ -144,6 +144,11 @@ export default new Router({
       name: "PMNAdd",
       component: () => import("./components/PMNAdd")
     }, 
+    {
+      path: "/Tadd",
+      name: "TutorialsList",
+      component: () => import("./components/TutorialAdd")
+    },
     {
       path: "/TutorialsList",
       name: "TutorialsList",

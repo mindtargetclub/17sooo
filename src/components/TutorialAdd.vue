@@ -104,6 +104,12 @@ export default {
         description: "",
         published: false
       };
+      
+       this.tutorial = {
+        title: "",
+        description: "",
+        published: false
+      };
     },
   },
   mounted() {
