@@ -26,15 +26,20 @@
          
       </div>
 
-     <div class="flex justify-center w-full my-3">  
+     <div class="flex justify-center w-full mt-10 my-3">  
       <v-row> 
-          <v-text-field solo v-model="currentTutorial.pos" class="text-xs w-1/12 px-1" label="場區"  ></v-text-field>  
-          <v-text-field solo v-model="currentTutorial.sno" class="text-xs w-1/12 px-1" label="位置"  ></v-text-field>  
-          <v-text-field solo v-model="currentTutorial.sno_idx" class="text-xs w-1/12 px-1" label="序號"  ></v-text-field>  
-          <v-text-field solo v-model="currentTutorial.tmp_idx" class="text-xs w-1/12 px-1" label="牌號"  ></v-text-field>  
+          <v-text-field filled   
+           label="場區"
+           v-model="currentTutorial.pos" class="text-xs w-1/12 px-1"   ></v-text-field>  
+         
+         
+         
+          <v-text-field filled  v-model="currentTutorial.sno" class="text-xs w-1/12 px-1" label="位置"  ></v-text-field>  
+          <v-text-field filled  v-model="currentTutorial.sno_idx" class="text-xs w-1/12 px-1" label="序號"  ></v-text-field>  
+          <v-text-field filled clearable  v-model="currentTutorial.tmp_idx" class="text-xs w-1/12 px-1" label="牌號"  ></v-text-field>  
  
-          <v-text-field solo v-model="currentTutorial.left_time" class="text-xs w-1/6 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>  
-          <v-text-field solo v-model="currentTutorial.memo" class="text-xs w-1/3 px-1" label="備註"  ></v-text-field>   
+          <v-text-field filled clearable  v-model="currentTutorial.left_time" class="text-xs w-1/6 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>  
+          <v-text-field filled clearable  v-model="currentTutorial.memo" class="text-xs w-1/3 px-1" label="備註"  ></v-text-field>   
 
       <v-btn icon @click="show = !show" >
         <v-icon x-large class="w-1/4" >{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
@@ -48,7 +53,7 @@
                     <v-row > 
                     <p>活動狀態</p> 
 
-                       <v-chip-group v-model="currentTutorial.tmp_idx"  
+                       <v-chip-group v-model="currentTutorial.memo"  
                                     class=" " >   
                           <v-chip active-class="bg-green-500   text-white text-x" value="第一次"    >   首 </v-chip>
                           <v-chip active-class="bg-red-500     text-white text-x" value="有玩過"    >  有玩過 </v-chip>  
@@ -170,6 +175,7 @@ show: true,
         sno: this.currentTutorial.sno,
         sno_idx: this.currentTutorial.sno_idx,
         tmp_idx: this.currentTutorial.tmp_idx,
+
         left_time: this.currentTutorial.left_time,
         memo: this.currentTutorial.memo,
 
