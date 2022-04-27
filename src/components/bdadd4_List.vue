@@ -12,6 +12,7 @@
           v-for="(tutorial, index) in tutorials"
           :key="index"
           @click="setActiveTutorial(tutorial, index)"
+
         > 
           <div class=" flex  w-full">
             <div class="w-1/6   text-xs">
@@ -145,6 +146,8 @@ show: false,
     setActiveTutorial(tutorial, index) {
       this.currentTutorial = tutorial;
       this.currentIndex = index;
+
+      // alert('tmp_idx = ' + this.currentTutorial.tmp_idx);  
     },
 
     removeAllTutorials() {

@@ -23,6 +23,10 @@
         <v-btn  class="border-2 border-solid px-2" @click="updateTutorial">
           更新內容
         </v-btn> 
+
+        <v-btn  class="border-2 border-solid px-2" @click="resetTutorial">
+          重置
+        </v-btn> 
          
       </div>
 
@@ -36,7 +40,7 @@
          
           <v-text-field filled  v-model="currentTutorial.sno" class="text-xs w-1/12 px-1" label="位置"  ></v-text-field>  
           <v-text-field filled  v-model="currentTutorial.sno_idx" class="text-xs w-1/12 px-1" label="序號"  ></v-text-field>  
-          <v-text-field filled clearable  v-model="currentTutorial.tmp_idx" class="text-xs w-1/12 px-1" label="牌號"  ></v-text-field>  
+          <v-text-field filled clearable  v-model="currentTutorial.tmp_idx" class="text-xs w-1/12 px-1" label="牌號"  v-on:change="updateTutorial" ></v-text-field>  
  
           <v-text-field filled clearable  v-model="currentTutorial.left_time" class="text-xs w-1/6 px-2" label="離場時間"  placeholder="離場時間"  ></v-text-field>  
           <v-text-field filled clearable  v-model="currentTutorial.memo" class="text-xs w-1/3 px-1" label="備註"  ></v-text-field>   
@@ -163,6 +167,50 @@ show: true,
         .then(() => {
           this.currentTutorial.published = status;
           this.message = "The status was updated successfully!";
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
+
+    // clearAll(idx)
+    // {
+    //    const data = {
+         
+    //     tmp_idx: "", 
+    //     left_time: "",
+    //     memo: "",
+
+    //     // slted: this.currentTutorial.slted,
+    //     // statu: this.currentTutorial.statu
+
+         
+    //   }
+
+    //   TutorialDataService.update(this.currentTutorial.key, data)
+    //     .then(() => {
+    //       this.message = "更新成功!";
+    //     })
+    //     .catch((e) => {
+    //       console.log(e);
+    //     });
+
+    // },
+    resetTutorial()
+    {
+      this.currentTutorial.tmp_idx="";
+      this.currentTutorial.left_time="";
+      this.currentTutorial.memo="";
+
+      const data = {   
+        tmp_idx: "", 
+        left_time: "",
+        memo: "",  
+      };
+
+      TutorialDataService.update(this.currentTutorial.key, data)
+        .then(() => {
+          this.message = "更新成功!";
         })
         .catch((e) => {
           console.log(e);

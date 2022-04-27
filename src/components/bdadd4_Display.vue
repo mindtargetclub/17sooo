@@ -46,11 +46,14 @@
                   class=" text-xs bg-red-100 py-2 pl-3 my-1 border-2 rounded-sm border-red-300 "
                    v-if="tutorial.sno == 1 | tutorial.sno == 2 "
           >
-             <div class=" flex  w-full">
+            <div class=" flex  w-full">
                 <div class=" w-1/5">
                   {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
                 </div>
-                <div class="  w-2/5   text-xs font-black"> {{ tutorial.tmp_idx }}, {{ tutorial.left_time }}離</div>  
+                <div class="  w-2/5   text-xs font-black"> 
+                  <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
+                
+                  , {{ tutorial.left_time }}離</div>  
                 <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div>
                 
               </div>
@@ -59,15 +62,23 @@
           <v-list-item-content 
                   class=" text-xs bg-gray-100 py-2 pl-3 my-1 border-2 rounded-sm border-gray-300 "
                    v-if="tutorial.sno == 3 | tutorial.sno == 4 "
+                   @click="sh()"
           >
              <div class=" flex  w-full">
                 <div class=" w-1/5">
                   {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
                 </div>
-                <div class="  w-2/5   text-xs font-black"> {{ tutorial.tmp_idx }}, {{ tutorial.left_time }}離</div>  
+                <div class="  w-2/5   text-xs font-black"> 
+                  <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
+                
+                  , {{ tutorial.left_time }}離</div>  
                 <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div>
                 
+                
+               
+                
               </div>
+              </v-hover>
           </v-list-item-content>
 
           <v-list-item-content 
@@ -78,7 +89,10 @@
                 <div class=" w-1/5">
                   {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
                 </div>
-                <div class="  w-2/5   text-xs font-black"> {{ tutorial.tmp_idx }}, {{ tutorial.left_time }}離</div>  
+                <div class="  w-2/5   text-xs font-black">  
+                  <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
+                
+                  , {{ tutorial.left_time }}離</div>  
                 <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div>
                 
               </div>
@@ -92,7 +106,10 @@
                 <div class=" w-1/5">
                   {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
                 </div>
-                <div class="  w-2/5   text-xs font-black"> {{ tutorial.tmp_idx }}, {{ tutorial.left_time }}離</div>  
+                <div class="  w-2/5   text-xs font-black"> 
+                  <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
+                  
+                    , {{ tutorial.left_time }}離</div>    
                 <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div>
                 
               </div>
@@ -141,6 +158,11 @@ show: false,
     };
   }, 
   methods: { 
+sh(){
+
+alert('gooo');
+},
+
     onDataChange(items) {
        
       let _tutorials = []; 
