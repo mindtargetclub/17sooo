@@ -10,6 +10,8 @@ import Print from 'vue-print-nb'
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
+import PrettyCheckbox from 'pretty-checkbox-vue';
+Vue.use(PrettyCheckbox);
 
 import JsonCSV from 'vue-json-csv'
 // Vue.use(JsonCSV) 

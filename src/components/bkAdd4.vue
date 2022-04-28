@@ -6,58 +6,16 @@
   <div class=" grid grid-cols-3 gap-2  "> 
  
 
-      <!-- <div class= "col-span-2"> 
-        <v-menu
-              ref="menu"
-              v-model="menu"
-              :close-on-content-click="false"
-              :return-value.sync="date"
-              transition="scale-transition"
-              offset-y
-              min-width="auto"
-            >
-              <template v-slot:activator="{ on, attrs }">
-                <v-text-field solo v-model="st.pos" class="text-xs w-1/12 px-1" label="場區"  ></v-text-field>  
-                <v-text-field
-                  v-model="tutorial.title"
-                  label="日期設定" 
-                  readonly
-                  v-bind="attrs"
-                  v-on="on"
-                ></v-text-field>
-              </template>
-
-              
-              <v-date-picker
-                v-model="tutorial.title"
-                no-title
-                scrollable
-              >
-                <v-spacer></v-spacer>
-                <v-btn
-                  text
-                  color="primary"
-                  @click="menu = false"
-                >
-                  Cancel
-                </v-btn>
-                <v-btn
-                  text
-                  color="primary"
-                  @click="$refs.menu.save(date)"
-                >
-                  OK
-                </v-btn>
-              </v-date-picker> 
-      </v-menu>
-
+ 
       
-      </div>   -->
       
       <div class= "col-span-1">
         <!-- <button @click="saveODR" class="btn btn-success"> 儲存...記錄 </button> -->
         <!-- <button @click="saveT" class="btn btn-success">T</button> -->
         <button @click="saveS" class="btn btn-success">Save</button>
+
+        <!-- <button @click="autoBud" class="btn btn-success">autoBud</button> -->
+        <button @click="autoInstallByforLoop" class="btn btn-success">批次_新增靶位</button>
       </div>   
 <!-- </div> -->
 
@@ -213,10 +171,7 @@ export default {
 
        st_sno:"",
        statu01_1:[],
-       slted01_1:[], 
-       
-      
-
+       slted01_1:[],  
 
       st: {
         pos:"北",
@@ -298,6 +253,149 @@ export default {
         .catch(e => {
           console.log(e);
         });
+    },
+
+    saveS_by_idx(_sno_idx) {
+      var data = {
+        pos: this.st.pos,
+        sno: this.st._sno,
+        sno_idx: _sno_idx, 
+
+      };
+
+      SeatDataService.create(data)
+        .then(() => {
+          console.log("Created new item successfully!");
+          this.submitted = true;
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+
+
+    newDataa(_sno,_sno_idx){
+
+ 
+    var dta = {
+            pos: '南',
+            sno: _sno.toString(),
+            sno_idx: '0'+_sno_idx.toString(),
+            tmp_idx: this.st.tmp_idx, 
+            left_time: this.st.left_time, 
+            memo: this.st.memo, 
+            slted: this.st.slted,
+            statu: this.st.statu 
+          };
+
+      return dta
+    },
+
+autoInstallByforLoop() { 
+      
+for(let ii = 13; ii <= 18; ii++){
+
+  for (let i = 1; i <= 3; i++) {
+            var data = this.newDataa(ii,i);
+
+                  SeatDataService.create(data)
+                    .then(() => {
+                      console.log("Created new item successfully!");
+                      // 
+                    })
+                    .catch(e => {
+                      console.log(e);
+                    });
+        } 
+
+}
+
+      this.submitted = true;
+
+
+    },
+
+    autoBud() { 
+      
+       var data = {
+        pos: this.st.pos,
+        sno: this.st.sno,
+        sno_idx: '01',
+        tmp_idx: this.st.tmp_idx,
+
+        left_time: this.st.left_time,
+
+        
+        memo: this.st.memo,
+
+        slted: this.st.slted,
+        statu: this.st.statu
+        
+
+      };
+
+      SeatDataService.create(data)
+        .then(() => {
+          console.log("Created new item successfully!");
+          // this.submitted = true;
+        })
+        .catch(e => {
+          console.log(e);
+        });
+
+var data2 = {
+        pos: this.st.pos,
+        sno: this.st.sno,
+        sno_idx: '02',
+        tmp_idx: this.st.tmp_idx,
+
+        left_time: this.st.left_time,
+
+        
+        memo: this.st.memo,
+
+        slted: this.st.slted,
+        statu: this.st.statu
+        
+
+      };
+
+      SeatDataService.create(data2)
+        .then(() => {
+          console.log("Created new item successfully!");
+          // this.submitted = true;
+        })
+        .catch(e => {
+          console.log(e);
+        });
+
+        var data3 = {
+        pos: this.st.pos,
+        sno: this.st.sno,
+        sno_idx: '03',
+        tmp_idx: this.st.tmp_idx,
+
+        left_time: this.st.left_time,
+
+        
+        memo: this.st.memo,
+
+        slted: this.st.slted,
+        statu: this.st.statu
+        
+
+      };
+
+      SeatDataService.create(data3)
+        .then(() => {
+          console.log("Created new item successfully!");
+          // this.submitted = true;
+        })
+        .catch(e => {
+          console.log(e);
+        });
+
+
     },
  
 

@@ -5,120 +5,208 @@
     <div class="w-full ">
       <h4 class="mt-10 text-2xl font-black " >靶道列表</h4>
 
-      <!-- <ul class=" "> 
-        <li
-          class="bg-gray-100 py-2 pl-3 my-2 border-2 rounded-sm border-gray-300 "  
-          v-if="tutorial.sno == 1 | tutorial.sno == 2 "
 
-          :class="{ active: index == currentIndex }"
-          v-for="(tutorial, index) in tutorials"  
-          :key="index"
-          @click="setActiveTutorial(tutorial, index)"
-        > 
-          <div class=" flex w-full ">
-            <div class="w-1/6 text-xs "  >
-                {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
-            </div>
-            <div class="w-1/5   text-xs font-black"> , {{ tutorial.left_time }}離</div>  
-            <div class="  text-xs text-blue-500 "> -- {{ tutorial.tmp_idx }} :: {{ tutorial.memo }}   </div>
-             
-          </div>
-        
-          <div class="text-xs " >  
-          </div>
+        <v-tabs
+            v-model="tab"
+            background-color="primary" 
+            fixed-tabs
+              
+          > 
+            <v-tab key='k1' href='#k1' v-if="!hide"  >    
+              中央 _北場
+            </v-tab>
 
-          <div class="text-s font-black" >
-          
-          </div> 
-        </li> 
-      </ul>  -->
+            <v-tab key='k2' href='#k2' > 
+              中央 _南場
+            </v-tab>
 
+            <v-tab key='k3' href='#k3' v-if="!hide"  >    
+              北北東 _場  
+            </v-tab> 
+          </v-tabs>  
 
-      <v-list-item-group 
-        color="primary"
-      >
-        <v-list-item
-          v-for="(tutorial, index) in tutorials"  
-          :key="index"
-        >
-          
-          <v-list-item-content 
-                  class=" text-xs bg-red-100 py-2 pl-3 my-1 border-2 rounded-sm border-red-300 "
-                   v-if="tutorial.sno == 1 | tutorial.sno == 2 "
-          >
-            <div class=" flex  w-full">
-                <div class=" w-1/5">
-                  {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
-                </div>
-                <div class="  w-2/5   text-xs font-black"> 
-                  <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
-                
-                  , {{ tutorial.left_time }}離</div>  
-                <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div>
-                
-              </div>
-          </v-list-item-content>
+      <v-tabs-items v-model="tab">
+ 
 
-          <v-list-item-content 
-                  class=" text-xs bg-gray-100 py-2 pl-3 my-1 border-2 rounded-sm border-gray-300 "
-                   v-if="tutorial.sno == 3 | tutorial.sno == 4 "
-                   @click="sh()"
-          >
-             <div class=" flex  w-full">
-                <div class=" w-1/5">
-                  {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
-                </div>
-                <div class="  w-2/5   text-xs font-black"> 
-                  <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
-                
-                  , {{ tutorial.left_time }}離</div>  
-                <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div>
-                
-                
-               
-                
-              </div>
-              </v-hover>
-          </v-list-item-content>
+        <v-tab-item key='k1' value='k1'> 
+          <v-list-item-group 
+            color="primary" >
+            <v-list-item
+              v-for="(tutorial, index) in tutorials"  
+              :key="index"
+              v-if="tutorial.pos =='北'"
+            > 
+              <v-list-item-content 
+                      class=" text-xs py-2 pl-3 my-1 border-2 rounded-sm bg-red-100 border-red-300 "
+                       v-if="tutorial.sno == 1 | tutorial.sno == 2 "  
+              >
+                <div class=" flex  w-full">
+                    <div class=" w-1/5">
+                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
+                    </div>
+                    <div class="  w-2/5   text-xs font-black"> 
+                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
+                    
+                      , {{ tutorial.left_time }}離</div>  
+                    <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div>
+                    
+                  </div>
+              </v-list-item-content>
 
-          <v-list-item-content 
-                  class=" text-xs bg-green-100 py-2 pl-3 my-1 border-2 rounded-sm border-green-300 "
-                   v-if="tutorial.sno == 5 | tutorial.sno == 6 "
-          >
-             <div class=" flex  w-full">
-                <div class=" w-1/5">
-                  {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
-                </div>
-                <div class="  w-2/5   text-xs font-black">  
-                  <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
-                
-                  , {{ tutorial.left_time }}離</div>  
-                <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div>
-                
-              </div>
-          </v-list-item-content>
+              <v-list-item-content 
+                      class=" text-xs  py-2 pl-3 my-1 border-2 rounded-sm bg-yellow-100 border-yellow-300 "
+                      v-if="tutorial.sno == 3 | tutorial.sno == 4 "
+                      @click="sh()"
+              >
+                <div class=" flex  w-full">
+                    <div class=" w-1/5">
+                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
+                    </div>
+                    <div class="  w-2/5   text-xs font-black"> 
+                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
+                    
+                      , {{ tutorial.left_time }}離</div>  
+                    <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div>
+                      
+                  </div> 
+              </v-list-item-content>
 
-          <v-list-item-content 
-                  class=" text-xs bg-yellow-100 py-2 pl-3 my-1 border-2 rounded-sm border-yellow-300 "
-                   v-if="tutorial.sno == 7 | tutorial.sno == 8 "
-          >
-             <div class=" flex  w-full">
-                <div class=" w-1/5">
-                  {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
-                </div>
-                <div class="  w-2/5   text-xs font-black"> 
-                  <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
+              <v-list-item-content 
+                      class=" text-xs bg-green-100 py-2 pl-3 my-1 border-2 rounded-sm border-green-300 "
+                      v-if="tutorial.sno == 5 | tutorial.sno == 6 "
+              >
+                <div class=" flex  w-full">
+                    <div class=" w-1/5">
+                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
+                    </div>
+                    <div class="  w-2/5   text-xs font-black">  
+                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
+                    
+                      , {{ tutorial.left_time }}離</div>  
+                    <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div>
+                    
+                  </div>
+              </v-list-item-content>
+
+              <v-list-item-content 
+                      class=" text-xs py-2 pl-3 my-1 border-2 rounded-sm  bg-gray-100 border-gray-300 "
+                      v-if="tutorial.sno == 7 | tutorial.sno == 8 "
+              >
+                <div class=" flex  w-full">
+                    <div class=" w-1/5">
+                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
+                    </div>
+                    <div class="  w-2/5   text-xs font-black"> 
+                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
+                      
+                        , {{ tutorial.left_time }}離</div>    
+                    <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div>
+                    
+                  </div>
+              </v-list-item-content>
+
+             <v-list-item-content 
+                      class=" text-xs  py-2 pl-3 my-1 border-2 rounded-sm bg-indigo-100 border-indigo-300 "
+                      v-if="tutorial.sno == 9 | tutorial.sno == 10 "
+              >
+                <div class=" flex  w-full">
+                    <div class=" w-1/5">
+                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
+                    </div>
+                    <div class="  w-2/5   text-xs font-black"> 
+                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
+                      
+                        , {{ tutorial.left_time }}離</div>    
+                    <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div> 
+                  </div>
+              </v-list-item-content>
+
+              <v-list-item-content 
+                      class=" text-xs  py-2 pl-3 my-1 border-2 rounded-sm bg-pink-100 border-pink-300 "
+                      v-if="tutorial.sno == 11 | tutorial.sno == 12 "
+              >
+                <div class=" flex  w-full">
+                    <div class=" w-1/5">
+                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
+                    </div>
+                    <div class="  w-2/5   text-xs font-black"> 
+                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
+                      
+                        , {{ tutorial.left_time }}離</div>    
+                    <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div> 
+                  </div>
+              </v-list-item-content>
+              
+              
+            </v-list-item>
+          </v-list-item-group>
+        </v-tab-item>
+
+                <v-tab-item key='k2' value='k2' > 
                   
-                    , {{ tutorial.left_time }}離</div>    
-                <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div>
-                
-              </div>
-          </v-list-item-content>
-          
-           
-        </v-list-item>
-      </v-list-item-group>
+          <v-list-item-group 
+            color="primary" 
+            >
+            <v-list-item
+              v-for="(tutorial, index) in tutorials"  
+              :key="index" 
+              v-if="tutorial.pos =='南'"
+            > 
+                  
+              <v-list-item-content 
+                      class=" text-xs  py-2 pl-3 my-1 border-2 rounded-sm bg-blue-100 border-blue-300 "
+                      v-if="tutorial.sno == 13 | tutorial.sno == 14 "
+              >
+                <div class=" flex  w-full">
+                    <div class=" w-1/5">
+                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
+                    </div>
+                    <div class="  w-2/5   text-xs font-black"> 
+                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
+                      
+                        , {{ tutorial.left_time }}離</div>    
+                    <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div> 
+                  </div>
+              </v-list-item-content>   
 
+              <v-list-item-content 
+                      class=" text-xs  py-2 pl-3 my-1 border-2 rounded-sm bg-green-100 border-green-300 "
+                      v-if="tutorial.sno == 15 | tutorial.sno == 16 "
+              >
+                <div class=" flex  w-full">
+                    <div class=" w-1/5">
+                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
+                    </div>
+                    <div class="  w-2/5   text-xs font-black"> 
+                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
+                      
+                        , {{ tutorial.left_time }}離</div>    
+                    <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div> 
+                  </div>
+              </v-list-item-content>
+
+              <v-list-item-content 
+                      class=" text-xs  py-2 pl-3 my-1 border-2 rounded-sm bg-red-100 border-red-300 "
+                      v-if="tutorial.sno == 17 | tutorial.sno == 18 "
+              >
+                <div class=" flex  w-full">
+                    <div class=" w-1/5">
+                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
+                    </div>
+                    <div class="  w-2/5   text-xs font-black"> 
+                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
+                      
+                        , {{ tutorial.left_time }}離</div>    
+                    <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div> 
+                  </div>
+              </v-list-item-content>
+              
+            </v-list-item>
+          </v-list-item-group>
+        </v-tab-item>
+
+
+      </v-tabs-items>
     </div> 
 
         <!-- <div class="w-2/3 ml-10">
@@ -150,7 +238,9 @@ export default {
   
 
   data() {
-    return {  
+    return { 
+      tab:"",
+      // - - - - 
 show: false,
       tutorials: [],
       currentTutorial: null,
