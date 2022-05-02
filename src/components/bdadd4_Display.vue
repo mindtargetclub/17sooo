@@ -151,6 +151,8 @@
               v-for="(tutorial, index) in tutorials"  
               :key="index" 
               v-if="tutorial.pos =='南'"
+              v-bind:class="descending ?tutorial.sno"
+               
             > 
                   
               <v-list-item-content 
@@ -208,19 +210,7 @@
 
       </v-tabs-items>
     </div> 
-
-        <!-- <div class="w-2/3 ml-10">
-          <div v-if="currentTutorial">
-            <tutorial-details
-              :tutorial="currentTutorial"
-              @refreshList="refreshList"
-            />
-          </div>
-          <div v-else>
-            <br />
-            <p>Please 確認 on a Tutorial...</p>
-          </div>
-        </div> -->
+ 
     <hr> 
   </div>
 </template>

@@ -85,12 +85,13 @@
                                     class=" " multiple >   
                           <v-chip active-class="bg-green-500   text-white text-x" value="第一次"    >   首 </v-chip>
                           <v-chip active-class="bg-red-500     text-white text-x" value="有玩過"    >  有玩過 </v-chip>  
-                          <v-chip active-class="bg-blue-500    text-white text-x" value="續時中"    >   續 </v-chip>
+                          <v-chip active-class="bg-blue-500    text-white text-x" value="續.半小時 "    >   續.半小時 </v-chip>
+                          <v-chip active-class="bg-blue-500    text-white text-x" value="續.一小時 "    >   續.一小時 </v-chip>
                           <v-chip active-class="bg-yellow-500  text-white text-x" value="遲到中"    >   遲到中 </v-chip>  
                            <v-chip active-class="bg-red-500    text-white text-x" value="下時段保留"    >  已預約 </v-chip> 
                       </v-chip-group>  
                         
-                   <p>預備工具建議</p> 
+                   <!-- <p>預備工具建議</p> 
                       <v-chip-group v-model="currentTutorial.memo"  
                         active-class="bg-yellow-600 text-white text-xs  "
                         class="  " multiple>   
@@ -98,7 +99,22 @@
                           <v-chip active-class="bg-green-500   text-white text-x" value="男" >  成人男 </v-chip>
                           <v-chip active-class="bg-green-500   text-white text-x" value="右手兒童" >  R兒童 </v-chip> 
                           <v-chip active-class="bg-green-500   text-white text-x" value="左手兒童" >  L兒童 </v-chip> 
+                      </v-chip-group>   -->
+
+                      <v-col>
+                   <p>距離</p>
+                      <v-chip-group v-model="currentTutorial.memo"  
+                        active-class="bg-yellow-600 text-white text-xs  "
+                        class=" " multiple >   
+                          <v-chip active-class="bg-green-500   text-white text-x" value="輕體驗"  >  8 </v-chip>
+                          <v-chip active-class="bg-green-500   text-white text-x" value="輕體驗"  >  15 </v-chip>
+                          <v-chip active-class="bg-green-500   text-white text-x" value="輕體驗"  >  20 </v-chip>
+                          <v-chip active-class="bg-green-500   text-white text-x" value="輕體驗"  >  30 </v-chip>
+                          <v-chip active-class="bg-green-500   text-white text-x" value="練反曲">  50 </v-chip>
+                          <v-chip active-class="bg-green-500   text-white text-x" value="長距離">  70 </v-chip> 
+                          <v-chip active-class="bg-green-500   text-white text-x" value="長距離">  90 </v-chip> 
                       </v-chip-group>  
+                      </v-col>
 
                     </v-row>
                     <v-row>
@@ -113,16 +129,7 @@
                           <v-chip active-class="bg-green-500   text-white text-x" value="選手" >  選手 </v-chip> 
                       </v-chip-group>  
 </v-col>
-<v-col>
-                   <p>距離</p>
-                      <v-chip-group v-model="currentTutorial.memo"  
-                        active-class="bg-yellow-600 text-white text-xs  "
-                        class=" " multiple >   
-                          <v-chip active-class="bg-green-500   text-white text-x" value="輕體驗"  >  體驗距離 </v-chip>
-                          <v-chip active-class="bg-green-500   text-white text-x" value="練反曲">  反曲弓練習 </v-chip>
-                          <v-chip active-class="bg-green-500   text-white text-x" value="長距離">  特殊長距離 </v-chip> 
-                      </v-chip-group>  
-                      </v-col>
+
                     </v-row>
 
 

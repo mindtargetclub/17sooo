@@ -49,19 +49,24 @@ export default new Router({
       component: () => import("./components/supsetting")
     }, 
     {
+      path: "/asaskAdd5",
+      name: "asaskAdd5",
+      component: () => import("./components/asaskAdd5")
+    },
+    {
       path: "/",
-      name: "bkadd2",
-      component: () => import("./components/bkAdd4")
+      name: "asaskAdd5",
+      component: () => import("./components/asaskAdd5")
     },
     {
-      path: "/bk4",
-      name: "bkList",
-      component: () => import("./components/bdadd4_List")
+      path: "/asaak5_List",
+      name: "asaak5_List",
+      component: () => import("./components/asaak5_List")
     },
     {
-      path: "/bk4_Display",
-      name: "bkList",
-      component: () => import("./components/bdadd4_Display")
+      path: "/asaak5_Display",
+      name: "asaak5_Display",
+      component: () => import("./components/asask5_Display")
     }, 
     
     {

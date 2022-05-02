@@ -1,18 +1,33 @@
 <template> 
 
+
+<!-- pos     --- :: 題本編號  -->
+<!-- sno     --- :: 大題編號  -->
+<!-- sno_idx --- :: 中題編號  -->
+<!-- sno_dtl --- :: 小題編號  -->
+
+<!-- questype  --- :: 問題類型  -->
+<!-- question  --- :: 問題內容 :: -->
+<!-- quesopts  --- :: 問題選項 :: arry(5) -->
+<!-- quesinduc  --- :: 問題備註  -->
+<!-- quesimge  --- :: 問題說明圖  -->
+
+
+
   <div class=" flex justify-center  "> 
 
-    <div class="w-2/3 ml-10">
+    <div class="w-7/12 ">
     <v-banner  
       sticky
     >
 <!-- grid grid-cols-5 gap-1  -->
-<div class="flex justify-center w-full "> 
-                <div class="mx-1"> 
+<div class="flex justify-center  "> 
+
+                <!-- <div class="mx-1"> 
   <v-switch
                 color="primary"
                 value
-                label="快速複製 離場時間"
+                label="快速場時間"
                 v-model="copyRight_T"
                 input-value="true"
                  
@@ -25,9 +40,9 @@
               placeholder="離場時間"  >
               </v-text-field>   
 
-</div>
+</div> -->
 
-<div class="mx-1">
+<!-- <div class="mx-1">
 
             <v-switch
                 color="primary"
@@ -51,9 +66,9 @@
               :rules="[numberRule]"
                 >
               </v-text-field>   
-          </div>
+          </div> -->
 
-          <div class="mx-1">
+          <!-- <div class="mx-1">
 
             <v-switch
                 color="primary"
@@ -72,7 +87,7 @@
  
                 >
               </v-text-field>   
-          </div>
+          </div> -->
 
 
               <v-dialog
@@ -125,16 +140,10 @@
                     </v-card-actions>
                   </v-card>
                 </template>
-              </v-dialog>
-            <!-- </v-col> -->
-          <!-- </v-row>    -->
-  <!-- <div class="...">01</div>  -->
-  <!-- <div class="col-span-2 ...">04</div>
-  <div class="...">05</div>
-  <div class="...">06</div>
-  <div class="col-span-2 ...">07</div> -->
-</div>
-<hr>
+              </v-dialog> 
+</div> 
+
+
       <div v-if="currentTutorial">
         <tutorial-details
           :tutorial="currentTutorial"
@@ -148,150 +157,54 @@
       </v-banner>
     </div>
     
-    <div class="w-1/3">  
+    <div class="w-5/12">  
       <v-tabs
             v-model="tab"
             background-color="primary" 
             fixed-tabs
               
           > 
-            <v-tab key='k1' href='#k1' v-if="!hide"  >    
-              中央 _北場
-            </v-tab>
+           <v-tab key='k3' href='#k3' v-if="!hide"  >    
+              北北東 _場  
+            </v-tab> 
 
-            <v-tab key='k2' href='#k2' > 
+           <v-tab key='k2' href='#k2' > 
               中央 _南場
             </v-tab>
 
-            <v-tab key='k3' href='#k3' v-if="!hide"  >    
-              北北東 _場  
+          <v-tab key='k1' href='#k1' v-if="!hide"  >    
+              中央 _北場
             </v-tab> 
+
+           
       </v-tabs>  
       <v-tabs-items v-model="tab"> 
-        <v-tab-item key='k1' value='k1'> 
-          <v-list-item-group 
+        <v-tab-item key='k1' value='k1'>  
+          <!-- <v-radio-group 
             color="primary" >
-            <v-list-item
+            <v-radio
               v-for="(tutorial, index) in tutorials"  
               :key="index"
-              v-if="tutorial.pos =='北'"
+              :label= "tutorial.slted"
+
               @click="setActiveTutorial(tutorial, index)"
-            > 
+            >   
+            </v-radio>
+          </v-radio-group> -->
+{{ this.ex7 }}
+          <v-radio-group
+              v-model="ex7"
+              column
+               v-for="(tutorial, index) in tutorials"  
+              :key="index" 
+            >
+              <v-radio
+                :label="tutorial.pos+ '_' +tutorial.sno + '_' +tutorial.sno_idx"
+                color="red"
+                :value="index"
+              ></v-radio>  
+            </v-radio-group>
 
-            <!-- <p-check v-model="ckbx" value=index class="p-icon p-round p-pulse mt-6 mx-3" color="success"> </p-check> -->
-
-              <v-list-item-content 
-                      class=" text-xs py-2 pl-3 my-1 border-2 rounded-sm bg-red-100 border-red-300 "
-                       v-if="tutorial.sno == 1 | tutorial.sno == 2 "  
-              >
-
-              <div class="grid grid-cols-7 gap-1"> 
-                 <div class=" "> 
-                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
-                    </div>  
-                 <div class="  col-span-2    text-xs font-black"> 
-                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span>  
-                      , {{ tutorial.left_time }} 離場 </div>  
-                    <div class=" col-span-4   text-xs text-blue-500 "> {{ tutorial.memo }}   </div> 
-              </div>
-                <!-- <div class=" flex  w-full">  
-
-
-                    <div class=" w-1/6 flex"> 
-                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
-                    </div>
-                    <div class="  w-2/6   text-xs font-black"> 
-                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
-                    
-                      , {{ tutorial.left_time }} 離場 </div>  
-                    <div class=" w-3/6  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div>
-                    
-                  </div> -->
-
-
-              </v-list-item-content>
-
-              <v-list-item-content 
-                      class=" text-xs  py-2 pl-3 my-1 border-2 rounded-sm bg-yellow-100 border-yellow-300 "
-                      v-if="tutorial.sno == 3 | tutorial.sno == 4 "
-                      @click="sh()"
-              >
-                <div class="grid grid-cols-7 gap-1"> 
-                 <div class=" "> 
-                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
-                    </div>  
-                 <div class="  col-span-2    text-xs font-black"> 
-                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span>  
-                      , {{ tutorial.left_time }} 離場 </div>  
-                    <div class=" col-span-4   text-xs text-blue-500 "> {{ tutorial.memo }}   </div> 
-              </div>
-              </v-list-item-content>
-
-              <v-list-item-content 
-                      class=" text-xs bg-green-100 py-2 pl-3 my-1 border-2 rounded-sm border-green-300 "
-                      v-if="tutorial.sno == 5 | tutorial.sno == 6 "
-              >
-              <div class="grid grid-cols-7 gap-1"> 
-                 <div class=" "> 
-                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
-                    </div>  
-                 <div class="  col-span-2    text-xs font-black"> 
-                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span>  
-                      , {{ tutorial.left_time }} 離場 </div>  
-                    <div class=" col-span-4   text-xs text-blue-500 "> {{ tutorial.memo }}   </div> 
-              </div>
-              </v-list-item-content>
-
-              <v-list-item-content 
-                      class=" text-xs py-2 pl-3 my-1 border-2 rounded-sm  bg-gray-100 border-gray-300 "
-                      v-if="tutorial.sno == 7 | tutorial.sno == 8 "
-              >
-                <div class=" flex  w-full">
-                    <div class=" w-1/5">
-                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
-                    </div>
-                    <div class="  w-2/5   text-xs font-black"> 
-                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span> 
-                      
-                        , {{ tutorial.left_time }} 離場 </div>    
-                    <div class=" w-3/5  text-xs text-blue-500 "> --  :: {{ tutorial.memo }}   </div>
-                    
-                  </div>
-              </v-list-item-content>
-
-             <v-list-item-content 
-                      class=" text-xs  py-2 pl-3 my-1 border-2 rounded-sm bg-indigo-100 border-indigo-300 "
-                      v-if="tutorial.sno == 9 | tutorial.sno == 10 "
-              >
-                <div class="grid grid-cols-7 gap-1"> 
-                 <div class=" "> 
-                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
-                    </div>  
-                 <div class="  col-span-2    text-xs font-black"> 
-                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span>  
-                      , {{ tutorial.left_time }} 離場 </div>  
-                    <div class=" col-span-4   text-xs text-blue-500 "> {{ tutorial.memo }}   </div> 
-              </div>
-              </v-list-item-content>
-
-              <v-list-item-content 
-                      class=" text-xs  py-2 pl-3 my-1 border-2 rounded-sm bg-pink-100 border-pink-300 "
-                      v-if="tutorial.sno == 11 | tutorial.sno == 12 "
-              >
-                <div class="grid grid-cols-7 gap-1"> 
-                 <div class=" "> 
-                      {{ tutorial.pos }}_{{ tutorial.sno }}_{{ tutorial.sno_idx }} 
-                    </div>  
-                 <div class="  col-span-2    text-xs font-black"> 
-                      <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span>  
-                      , {{ tutorial.left_time }} 離場 </div>  
-                    <div class=" col-span-4   text-xs text-blue-500 "> {{ tutorial.memo }}   </div> 
-              </div>
-              </v-list-item-content>
-              
-              
-            </v-list-item>
-          </v-list-item-group>
         </v-tab-item>
 
                 <v-tab-item key='k2' value='k2' > 
@@ -318,6 +231,25 @@
                       <span class=" p-1 bg-red-500 rounded-full text-white text-xs font-black"> {{ tutorial.tmp_idx }} </span>  
                       , {{ tutorial.left_time }} 離場 </div>  
                     <div class=" col-span-4   text-xs text-blue-500 "> {{ tutorial.memo }}   </div> 
+
+                    <div class=" col-span-4   text-xs text-blue-500 "> {{ tutorial.slted}}   
+                      //// {{ ex7 }}
+                      <v-radio-group
+                            v-model="ex7"
+                            column
+                            v-for="(slted, index) in tutorial.slted"  
+                            :key="index" 
+                          >
+                            <v-radio
+                              :label="slted"
+                              color="red"
+                              :value="index"
+                            ></v-radio>  
+                          </v-radio-group>
+                      
+                      </div> 
+                     
+
               </div>
               </v-list-item-content>   
 
@@ -355,6 +287,64 @@
           </v-list-item-group>
         </v-tab-item>
 
+         <v-tab-item key='k3' value='k3' > 
+
+          <v-list-item-group 
+            color="primary" 
+            > 
+            <v-list-item
+              v-for="(tutorial, index) in tutorials"  
+              :key="index"  
+              @click="setActiveTutorial(tutorial, index)"
+              
+            > 
+            <v-chip class="text-white text-xs mr-5" color="green"  >
+              {{ tutorial.pos }}
+            {{ tutorial.sno }}_{{ tutorial.sno_idx }}_{{ tutorial.sno_dtl }}</v-chip>
+            
+            
+            <span class="text-xs text-green-700 font-semibold tracking-wide">{{ tutorial.question }}</span>
+ 
+
+                       <v-radio-group 
+                            column
+                            v-for="(quesopts, index) in tutorial.quesopts"  
+                            :key="index" 
+                            v-model="ex7[index]"
+                          >
+                            <v-radio
+                              
+                              class="text-white text-xs mr-5"
+                              :label="quesopts"
+                              color="red"
+                              :value="index"
+                              :text="xs"
+                            ></v-radio>  
+                          </v-radio-group>
+
+            </v-list-item>
+          </v-list-item-group>
+
+           <!-- {{ tutorial.pos }},{{ tutorial.sno }},{{ tutorial.sno_idx }},{{ tutorial.sno_dtl }}, -->
+<!-- <hr>
+{{ tutorial.quesopts}}
+{{ tutorial.question }} -->
+         
+
+             <!-- <v-radio-group
+                            v-model="ex7"
+                            column
+                            v-for="(question, index) in tutorial.question"  
+                            :key="index" 
+                          >
+                            <v-radio
+                              :label="question"
+                              color="red"
+                              :value="index"
+                            ></v-radio>  
+                          </v-radio-group> -->
+        </v-tab-item>
+
 
       </v-tabs-items> 
     </div> 
@@ -367,7 +357,7 @@
 
 <script>
 
-import TutorialDetails from "./bkadd4_Mdf";
+import TutorialDetails from "./asask5_Mdf";
  
 import SeatDataService from "../services/SeatPrepareService";
 
@@ -377,10 +367,15 @@ export default {
   
 
   data() {
-    return {  
+    return { 
+      radioGroup:"",
+      ex7:[],
+      
       dialog: false,
       tab:"",
       ckbx:"",
+
+      opts: ['1星','2星','3星','4星','5星'],
       copyRight_N:false,
       copyRight_T:false, 
       copyRight_M:false, 
@@ -411,14 +406,23 @@ export default {
           // published: data.published,
           // date_s:data.date_s,
           // date_mor:data.date_mor,
+          
             pos: data.pos,
             sno: data.sno,
             sno_idx: data.sno_idx,
+            sno_dtl: data.sno_dtl,
+
+            quesopts: data.quesopts,
+            question: data.question,
+            quesinduc: data.quesinduc,
+
             tmp_idx: data.tmp_idx,
             left_time: data.left_time,
             memo: data.memo,
             slted: data.slted,
             statu: data.statu
+
+
         });
       });
 
